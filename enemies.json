@@ -1,0 +1,125 @@
+{
+	"sequence": {
+		"loc": [{
+			"name": "bottom_left",
+			"enemies": [{
+					"index": 1,
+					"loc": "bottom_right",
+					"name": "fat_roman_1",
+					"type": "enemy",
+					"farm_route": false,
+					"cord": {
+						"x": 1946,
+						"y": 218,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 2,
+					"loc": "bottom_right",
+					"name": "fat_roman_2",
+					"type": "enemy",
+					"farm_route": false,
+					"cord": {
+						"x": 1755,
+						"y": 251,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 3,
+					"loc": "bottom_right",
+					"name": "thin_roman_1",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 2079,
+						"y": 320,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 4,
+					"loc": "bottom_right",
+					"name": "fat_roman_3",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 2174,
+						"y": 1100,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 5,
+					"loc": "bottom_right",
+					"name": "fat_roman_4",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 1499,
+						"y": 1215,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 6,
+					"loc": "bottom_left",
+					"name": "fat_roman_5",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 510,
+						"y": 1150,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 7,
+					"loc": "bottom_left",
+					"name": "fat_roman_6",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 507,
+						"y": 1015,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 8,
+					"loc": "bottom_left",
+					"name": "fat_roman_7",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 280,
+						"y": 245,
+						"width": 15,
+						"height": 15
+					}
+				},
+				{
+					"index": 9,
+					"loc": "bottom_left",
+					"name": "fat_roman_8",
+					"type": "enemy",
+					"farm_route": true,
+					"cord": {
+						"x": 559,
+						"y": 660,
+						"width": 15,
+						"height": 15
+					}
+				}
+			]
+		}]
+	}
+}
