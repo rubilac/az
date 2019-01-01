@@ -1,10 +1,10 @@
 from PIL import ImageGrab
 import os
 import time
-import win32api, win32con
+#import win32api, win32con
 import json
 import datetime
-from az_code import *
+from az_code_mac import *
 from PIL import ImageOps
 from numpy import *
 
@@ -14,8 +14,8 @@ def boar_exists(cords):
 	""" return true if on mouse-over at cord a boar hover is observed"""
 	x = cords[0]
 	y = cords[1]
-	box = (x, y-30, x+30, y-25 )
-	left_box = (x-80, y, x-50, y+5 )
+	box = (x*2, y*2-30*2, x*2+30*2, y*2-25*2 )
+	left_box = (x*2-80*2, y*2, x*2-50*2, y*2+5*2 )
 	mousePos((x,y))
 	time.sleep(1)
 	im = ImageOps.grayscale(ImageGrab.grab(box))
@@ -26,7 +26,7 @@ def boar_exists(cords):
 	bm.save('left_test.png', dpi=(116,116))
 	b = array(bm.getcolors())
 	b = b.sum()
-	print a, b
+	print(a, b)
 	for i in boar_exist_int:
 		if i in [a, b]:
 			print("OMG BOAR HERE, GET EM!")
@@ -86,42 +86,43 @@ def farmer(file_name, location, hunt_type, timer=2.5):
         print("{} : Fishing started @ {}".format(datetime.datetime.now(),location))
         move_and_click(get_start_point(file_name, location, hunt_type, 0),5)
         for i in cord_list:
-			if boar_exists(i):
-				move_and_click(i, timer)
-			else:
-				print("Move along, no fish here... continuing to next cord")
+            if boar_exists(i):
+                move_and_click(i, timer)
+            else:
+                print("Move along, no fish here... continuing to next cord")
     else:
         print("Gimme dem Boars!")
         time.sleep(2)
         if type(cord_list[0]) != list:
-        	n = 3
-        	while n > 0:
-				print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
-				#move_and_click(get_start_point(file_name, location, hunt_type, 0),5)
-				for i in cord_list:
-					if boar_exists(i):
-						move_and_click(i, timer)
-					else:
-						print("Move along, no boar here... continuing to next cord")
-				n -= 1
+            n = 3
+            while n > 0:
+                print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
+                #move_and_click(get_start_point(file_name, location, hunt_type, 0),5)
+                for i in cord_list:
+                    if boar_exists(i):
+                        move_and_click(i, timer)
+                    else:
+                        print("Move along, no boar here... continuing to next cord")
+                n -= 1
         else:
             for i in range(len(cord_list)):
-            	n = 3
-            	while n > 0:
-            	 	print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
-	                #move_and_click(get_start_point(file_name, location, hunt_type, i),5)
-	                for x in cord_list[i]:
-						if boar_exists(x):
-							move_and_click(x, timer)
-						else:
-							print("Move along, no boar here... continuing to next cord")
-	            	n -= 1
+                n = 3
+                while n > 0:
+                    print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
+                    #move_and_click(get_start_point(file_name, location, hunt_type, i),5)
+                    for x in cord_list[i]:
+                        if boar_exists(x):
+                            move_and_click(x, timer)
+                        else:
+                            print("Move along, no boar here... continuing to next cord")
+                    n -= 1
 
     
 def does_boar_exist_cursor():
-	data = output_cords()
-	cord = (data['x'], data['y'])
-	boar_exists(cord)
+    mouse.click(Button.left, 1)
+    data = output_cords()
+    cord = (data['x'], data['y'])
+    boar_exists(cord)
 
 
 def cycle():
@@ -140,8 +141,8 @@ def cycle():
 
 if __name__ == '__main__':
 	#while True:
-	cycle()
-   	#farmer('simple.json', 'bottom_left', 'boars', 5)
+	#cycle()
+    #output_cords()
    	#cord = (1028, 1342)
    	#boar_exists(cord)
-   	#does_boar_exist_cursor()
+   	does_boar_exist_cursor()
