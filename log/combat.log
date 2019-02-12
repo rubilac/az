@@ -1,0 +1,56 @@
+2019-02-04 15:37:37,543 DEBUG - STREAM b'IHDR' 16 13
+2019-02-04 15:37:37,544 DEBUG - STREAM b'iCCP' 41 3145
+2019-02-04 15:37:37,544 DEBUG - iCCP profile name b'ICC Profile'
+2019-02-04 15:37:37,544 DEBUG - Compression method 0
+2019-02-04 15:37:37,544 DEBUG - STREAM b'pHYs' 3198 9
+2019-02-04 15:37:37,544 DEBUG - STREAM b'iTXt' 3219 415
+2019-02-04 15:37:37,544 DEBUG - STREAM b'iDOT' 3646 28
+2019-02-04 15:37:37,544 DEBUG - b'iDOT' 3646 28 (unknown)
+2019-02-04 15:37:37,544 DEBUG - STREAM b'IDAT' 3686 16384
+2019-02-04 15:37:39,784 DEBUG - Combat page not open
+2019-02-04 15:37:39,784 DEBUG - Combat images faulty, check input images
+2019-02-04 15:38:38,690 DEBUG - STREAM b'IHDR' 16 13
+2019-02-04 15:38:38,691 DEBUG - STREAM b'iCCP' 41 3145
+2019-02-04 15:38:38,691 DEBUG - iCCP profile name b'ICC Profile'
+2019-02-04 15:38:38,691 DEBUG - Compression method 0
+2019-02-04 15:38:38,691 DEBUG - STREAM b'pHYs' 3198 9
+2019-02-04 15:38:38,691 DEBUG - STREAM b'iTXt' 3219 415
+2019-02-04 15:38:38,691 DEBUG - STREAM b'iDOT' 3646 28
+2019-02-04 15:38:38,691 DEBUG - b'iDOT' 3646 28 (unknown)
+2019-02-04 15:38:38,691 DEBUG - STREAM b'IDAT' 3686 16384
+2019-02-04 15:38:40,920 CRITICAL - Combat page not open
+2019-02-04 15:38:40,920 CRITICAL - Combat images faulty, check input images
+2019-02-04 15:38:56,356 CRITICAL - Combat page not open
+2019-02-04 15:38:56,358 CRITICAL - Combat images faulty, check input images
+2019-02-04 15:41:43,502 WARNING - Combat page not open
+2019-02-04 15:46:24,947 WARNING - Combat page not open
+2019-02-05 12:39:58,754 WARNING - Combat page not open
+2019-02-05 12:40:25,310 WARNING - Combat page not open
+2019-02-05 12:42:22,680 CRITICAL - Combat images faulty, check input images
+2019-02-05 12:42:30,464 WARNING - Combat page not open
+2019-02-05 12:44:11,469 WARNING - Combat page not open
+2019-02-05 12:45:46,700 WARNING - Combat page not open
+2019-02-05 12:46:14,553 WARNING - Combat page not open
+2019-02-05 12:46:47,021 WARNING - Combat page not open
+2019-02-05 13:42:25,895 WARNING - Combat page not open
+2019-02-05 13:43:35,777 WARNING - Combat page not open
+2019-02-05 13:46:14,838 WARNING - Combat page not open
+2019-02-05 13:46:28,188 WARNING - Combat page not open
+2019-02-05 13:48:06,866 WARNING - Combat page not open
+2019-02-05 13:48:26,003 INFO - Found Combat Page, continuing to battle
+2019-02-05 13:48:32,633 INFO - Combat Page Cords: (522, 416)
+2019-02-05 13:49:17,812 INFO - Found Combat Page, continuing to battle
+2019-02-05 13:49:23,530 INFO - Combat Page Cords: (522, 416)
+2019-02-08 12:11:57,667 WARNING - Combat page not open
+2019-02-08 12:12:49,524 INFO - Found Combat Page, continuing to battle
+2019-02-08 12:12:54,006 INFO - Combat Page Cords: (520, 416)
+2019-02-08 12:12:54,011 INFO - Found Enemy and combat view open, ready to combat
+2019-02-08 13:03:31,239 INFO - Found Combat Page, continuing to battle
+2019-02-08 13:03:36,413 INFO - Combat Page Cords: (520, 416)
+2019-02-08 13:03:36,422 INFO - Found Enemy and combat view open, ready to combat
+2019-02-08 13:04:43,996 INFO - Found Combat Page, continuing to battle
+2019-02-08 13:04:49,279 INFO - Combat Page Cords: (520, 416)
+2019-02-08 13:04:49,283 INFO - Found Enemy and combat view open, ready to combat
+2019-02-08 13:07:51,008 INFO - Found Combat Page, continuing to battle
+2019-02-08 13:07:56,477 INFO - Combat Page Cords: (520, 416)
+2019-02-08 13:07:56,486 INFO - Found Enemy and combat view open, ready to combat

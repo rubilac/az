@@ -1,0 +1,1349 @@
+INFO:root:Test message
+INFO:root:Test message
+INFO 2019-01-23 15:25:45,181 - Inventory is open @ (551, 426)
+INFO 2019-01-23 15:27:18,036 - Inventory is open @ (551, 426)
+INFO 2019-01-23 15:29:03,260 - Inventory is open @ (551, 426)
+INFO 2019-01-24 08:43:53,264 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:48:07,225 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:48:07,516 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:49:41,210 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:49:41,505 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:51:43,114 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:51:43,436 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:51:53,261 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:51:53,550 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:53:38,730 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:53:39,022 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:54:46,711 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:54:47,013 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:55:28,305 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 08:55:47,188 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:55:47,484 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 08:56:09,806 - Inventory is not open, open bag and continue
+INFO 2019-01-24 08:56:10,087 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:01:15,363 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:01:15,652 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:01:50,321 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:01:50,603 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:02:08,692 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:02:08,976 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:02:35,011 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:02:35,289 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:03:18,242 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:03:18,517 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:03:43,988 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:03:44,259 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:04:00,705 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:04:01,002 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:05:13,956 - Invalid input file
+WARNING 2019-01-24 09:05:59,688 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:05:59,971 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:06:15,210 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:06:15,496 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:06:30,841 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 09:06:33,688 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:06:33,970 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:07:31,558 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:07:31,832 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:07:31,836 - Invalid input file
+WARNING 2019-01-24 09:07:34,697 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:07:34,964 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:07:34,967 - Invalid input file
+WARNING 2019-01-24 09:09:20,242 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:09:20,529 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:09:20,533 - Invalid input file
+WARNING 2019-01-24 09:12:29,385 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:12:29,674 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:12:29,677 - Invalid input file
+WARNING 2019-01-24 09:18:10,447 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:18:10,751 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:19:24,074 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:19:24,365 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:20:46,431 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:20:46,721 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:21:20,233 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:21:20,528 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:22:12,865 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:22:13,143 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:22:47,637 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:22:47,933 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:24:34,267 - Invalid input file
+CRITICAL 2019-01-24 09:25:31,777 - Invalid input file
+CRITICAL 2019-01-24 09:26:17,299 - Invalid input file
+CRITICAL 2019-01-24 09:27:12,388 - Invalid input file
+CRITICAL 2019-01-24 09:28:34,240 - Invalid input file
+CRITICAL 2019-01-24 09:28:49,796 - Invalid input file
+CRITICAL 2019-01-24 09:29:17,800 - Invalid input file
+CRITICAL 2019-01-24 09:30:24,196 - Invalid input file
+CRITICAL 2019-01-24 09:31:53,702 - Invalid input file
+CRITICAL 2019-01-24 09:33:14,753 - Invalid input file
+CRITICAL 2019-01-24 09:33:36,524 - Invalid input file
+CRITICAL 2019-01-24 09:34:08,081 - Invalid input file
+INFO 2019-01-24 09:35:22,722 - Inventory is open @ (551, 426)
+INFO 2019-01-24 09:36:05,847 - Inventory is open @ (551, 426)
+WARNING 2019-01-24 09:36:15,337 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:36:15,628 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:36:15,632 - Invalid input file
+WARNING 2019-01-24 09:37:03,559 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:37:03,863 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:37:03,867 - Invalid input file
+CRITICAL 2019-01-24 09:37:39,859 - Invalid input file
+CRITICAL 2019-01-24 09:37:42,054 - Invalid input file
+CRITICAL 2019-01-24 09:38:29,535 - Invalid input file
+CRITICAL 2019-01-24 09:39:00,983 - Invalid input file
+WARNING 2019-01-24 09:40:03,734 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:40:04,022 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:40:04,027 - Invalid input file
+WARNING 2019-01-24 09:40:24,185 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:40:24,462 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:40:24,466 - Invalid input file
+WARNING 2019-01-24 09:42:39,406 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 09:42:42,639 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:42:42,929 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:42:42,933 - Invalid input file
+WARNING 2019-01-24 09:43:26,343 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:43:26,633 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:43:26,637 - Invalid input file
+WARNING 2019-01-24 09:43:55,481 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:43:55,788 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:43:55,793 - Invalid input file
+CRITICAL 2019-01-24 09:45:49,458 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:45:49,891 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:45:50,176 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:45:50,180 - Invalid input file
+CRITICAL 2019-01-24 09:48:30,539 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:48:30,955 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:48:31,245 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:48:31,248 - Invalid input file
+CRITICAL 2019-01-24 09:49:40,670 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:49:41,105 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:49:41,406 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:49:41,410 - Invalid input file
+CRITICAL 2019-01-24 09:49:55,791 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:49:56,247 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:49:56,535 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:49:56,539 - Invalid input file
+CRITICAL 2019-01-24 09:50:11,385 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:50:11,829 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:50:12,104 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:50:12,108 - Invalid input file
+WARNING 2019-01-24 09:51:16,418 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:51:16,730 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:51:17,160 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:51:17,427 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:51:17,431 - Invalid input file
+WARNING 2019-01-24 09:51:36,527 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:51:36,849 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:51:37,276 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:51:37,546 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:51:37,550 - Invalid input file
+WARNING 2019-01-24 09:52:22,236 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:52:22,553 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:52:22,971 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:52:23,265 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:52:23,269 - Invalid input file
+WARNING 2019-01-24 09:53:52,379 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:53:52,712 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:53:53,143 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:53:53,414 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:53:53,419 - Invalid input file
+WARNING 2019-01-24 09:54:19,985 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:54:20,312 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:54:20,734 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:54:21,029 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:54:21,034 - Invalid input file
+WARNING 2019-01-24 09:55:11,368 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:55:11,686 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:55:12,124 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:55:12,402 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:55:12,407 - Invalid input file
+WARNING 2019-01-24 09:55:55,274 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:55:55,587 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:55:56,027 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:55:56,329 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:55:56,333 - Invalid input file
+WARNING 2019-01-24 09:56:22,751 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:56:23,074 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:56:23,496 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:56:23,791 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:56:23,795 - Invalid input file
+WARNING 2019-01-24 09:56:44,838 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:56:45,163 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:56:45,601 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:56:45,878 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:56:45,882 - Invalid input file
+WARNING 2019-01-24 09:57:40,568 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:57:40,878 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:57:41,305 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:57:41,597 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:57:41,601 - Invalid input file
+WARNING 2019-01-24 09:57:57,533 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 09:58:01,000 - Inventory is not open, open bag and continue
+CRITICAL 2019-01-24 09:58:01,326 - Cannot find inventory button, quitting...
+WARNING 2019-01-24 09:58:01,755 - Inventory is not open, open bag and continue
+INFO 2019-01-24 09:58:02,023 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 09:58:02,027 - Invalid input file
+WARNING 2019-01-24 10:03:39,688 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:03:40,013 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:03:43,545 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:03:43,824 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:03:43,828 - Invalid input file
+WARNING 2019-01-24 10:04:33,569 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:04:33,883 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:04:37,375 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:04:37,641 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:04:37,645 - Invalid input file
+WARNING 2019-01-24 10:04:49,233 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:04:49,566 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:04:53,054 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:04:53,320 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:04:53,323 - Invalid input file
+WARNING 2019-01-24 10:05:08,808 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:05:09,121 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:05:12,631 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:05:12,900 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:05:12,904 - Invalid input file
+WARNING 2019-01-24 10:05:19,873 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:05:20,189 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:05:23,684 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:05:23,952 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:05:23,957 - Invalid input file
+WARNING 2019-01-24 10:10:51,168 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:10:51,483 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:10:54,972 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:10:55,241 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:10:55,245 - Invalid input file
+WARNING 2019-01-24 10:11:54,675 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 10:11:55,420 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:11:55,699 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:11:55,703 - Invalid input file
+WARNING 2019-01-24 10:12:26,050 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:12:26,360 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:12:29,842 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:12:30,107 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:12:30,111 - Invalid input file
+WARNING 2019-01-24 10:13:22,784 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:13:23,123 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:13:26,612 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:13:26,878 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:13:26,882 - Invalid input file
+WARNING 2019-01-24 10:13:37,983 - Inventory is not open, open bag and continue
+WARNING 2019-01-24 10:13:38,716 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:13:38,999 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:13:39,003 - Invalid input file
+WARNING 2019-01-24 10:13:48,264 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:13:48,590 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:13:52,075 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:13:52,344 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:13:52,347 - Invalid input file
+WARNING 2019-01-24 10:15:00,755 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:15:01,079 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:15:04,558 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:15:04,826 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:15:04,830 - Invalid input file
+WARNING 2019-01-24 10:15:47,612 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:15:47,934 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:15:51,423 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:15:51,696 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:15:51,700 - Invalid input file
+WARNING 2019-01-24 10:16:13,061 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:16:13,382 - Found Inventory Button @ (1173, 1011), openning inventory
+WARNING 2019-01-24 10:16:16,871 - Inventory is not open, open bag and continue
+INFO 2019-01-24 10:16:17,142 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:16:17,145 - Invalid input file
+CRITICAL 2019-01-24 10:16:17,425 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:16:17,707 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:33:01,648 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:33:01,975 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:33:05,462 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:33:05,729 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:33:05,733 - Invalid input file
+CRITICAL 2019-01-24 10:33:06,012 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:33:06,291 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:34:03,354 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:34:03,676 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:34:07,155 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:34:07,438 - Invalid input file
+CRITICAL 2019-01-24 10:34:07,721 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:34:08,001 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:34:29,904 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:34:30,229 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:34:33,707 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:34:33,974 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:34:33,976 - Invalid input file
+CRITICAL 2019-01-24 10:34:34,257 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:34:34,539 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:35:59,839 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:36:00,160 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:36:03,645 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:36:03,918 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:36:03,920 - Invalid input file
+CRITICAL 2019-01-24 10:36:04,201 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:36:04,479 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:38:13,566 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:38:13,898 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:38:17,389 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:38:17,661 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:38:17,662 - Invalid input file
+CRITICAL 2019-01-24 10:38:17,945 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:38:18,228 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 10:52:06,634 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:52:06,968 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 10:52:10,459 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 10:52:10,733 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 10:52:10,734 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 10:52:11,013 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 10:52:11,295 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 12:52:59,560 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:52:59,870 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 12:53:03,358 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:53:03,627 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 12:53:03,628 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 12:53:03,911 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 12:53:04,200 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 12:54:04,593 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:54:04,956 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 12:54:08,442 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:54:08,713 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 12:54:08,714 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 12:54:08,993 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 12:54:09,284 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 12:55:18,310 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:55:18,680 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 12:55:22,162 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:55:22,433 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 12:55:22,434 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 12:55:22,714 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 12:55:23,006 - Caught Exception as No values found in results please refine threshold
+CRITICAL 2019-01-24 12:57:27,706 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:57:28,059 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 12:57:31,544 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 12:57:31,816 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 12:57:31,817 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 12:57:32,097 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 12:57:32,384 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:15:36,596 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:15:37,158 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:15:37,470 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:15:40,957 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:15:41,227 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:15:41,228 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:15:41,508 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:15:41,833 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:16:19,891 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:16:20,366 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:16:20,663 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:16:24,145 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:16:24,418 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:16:24,419 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:16:24,694 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:16:24,970 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:14,499 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:17:15,035 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:15,350 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:17:18,832 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:19,103 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:17:19,104 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:17:19,379 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:17:19,662 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:36,527 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:17:37,035 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:37,326 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:17:40,804 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:17:41,074 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:17:41,075 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:17:41,350 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:17:41,637 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:21:27,314 - Got grayscale image: 28
+INFO 2019-01-24 13:21:27,918 - Saved image: imgtest_tag-1548328887.png
+INFO 2019-01-24 13:21:27,918 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:21:28,523 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:21:28,866 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:21:32,347 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:21:32,611 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:21:32,612 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:21:32,896 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:21:33,179 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:28:10,126 - Got grayscale image: 28
+INFO 2019-01-24 13:28:10,759 - Saved image: imgtest_tag-1548329290.png
+INFO 2019-01-24 13:28:10,759 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:28:11,302 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:28:11,630 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:28:15,113 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:28:15,379 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:28:15,379 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:28:15,654 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:28:15,935 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:32:03,369 - Got grayscale image: 28
+INFO 2019-01-24 13:32:03,997 - Saved image: imgtest_tag-1548329523.png
+INFO 2019-01-24 13:32:03,997 - Got grayscale image: 28
+CRITICAL 2019-01-24 13:32:04,539 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:32:04,867 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 13:32:08,345 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 13:32:08,619 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 13:32:08,620 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 13:32:08,902 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 13:32:09,180 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:00:31,381 - Got color image: 335
+INFO 2019-01-24 14:00:31,990 - Saved image: colorimgtest_tag-1548331231.png
+INFO 2019-01-24 14:00:31,990 - Got color image: 335
+INFO 2019-01-24 14:00:32,598 - Got grayscale image: 28
+INFO 2019-01-24 14:00:33,212 - Saved image: grayimgtest_tag-1548331233.png
+INFO 2019-01-24 14:00:33,213 - Got grayscale image: 28
+CRITICAL 2019-01-24 14:00:33,729 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:00:34,060 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 14:00:37,558 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:00:37,838 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 14:00:37,839 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 14:00:38,120 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 14:00:38,407 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:01:12,733 - Got color image: 335
+INFO 2019-01-24 14:01:13,356 - Saved image: colorimgtest_tag-1548331273.png
+INFO 2019-01-24 14:01:13,356 - Got color image: 335
+INFO 2019-01-24 14:01:13,965 - Got grayscale image: 28
+INFO 2019-01-24 14:01:14,570 - Saved image: grayimgtest_tag-1548331274.png
+INFO 2019-01-24 14:01:14,570 - Got grayscale image: 28
+CRITICAL 2019-01-24 14:01:15,062 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:01:15,379 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-24 14:01:18,864 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-24 14:01:19,134 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-24 14:01:19,134 - Invalid input file: invalid_file
+CRITICAL 2019-01-24 14:01:19,412 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-24 14:01:19,698 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 08:44:08,526 - Got color image: 335
+INFO 2019-01-25 08:44:09,177 - Saved image: colorimgtest_tag-1548398649.png
+INFO 2019-01-25 08:44:09,177 - Got color image: 335
+INFO 2019-01-25 08:44:09,852 - Got grayscale image: 28
+INFO 2019-01-25 08:44:10,509 - Saved image: grayimgtest_tag-1548398650.png
+INFO 2019-01-25 08:44:10,509 - Got grayscale image: 28
+CRITICAL 2019-01-25 08:44:11,057 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 08:44:11,450 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 08:44:15,290 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 08:44:15,606 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 08:44:15,607 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 08:44:15,927 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 08:44:16,273 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:16:34,108 - Got color image: 335
+INFO 2019-01-25 09:16:34,724 - Saved image: colorimgtest_tag-1548400594.png
+INFO 2019-01-25 09:16:34,725 - Got color image: 335
+INFO 2019-01-25 09:16:35,327 - Got grayscale image: 28
+INFO 2019-01-25 09:16:35,906 - Saved image: grayimgtest_tag-1548400595.png
+INFO 2019-01-25 09:16:35,907 - Got grayscale image: 28
+CRITICAL 2019-01-25 09:16:36,425 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:16:36,742 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 09:16:40,264 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:16:40,536 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 09:16:40,537 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 09:16:40,814 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 09:16:41,105 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:22:01,218 - Got color image: 335
+INFO 2019-01-25 09:22:01,806 - Saved image: colorimgtest_tag-1548400921.png
+INFO 2019-01-25 09:22:01,806 - Got color image: 335
+INFO 2019-01-25 09:22:02,414 - Got grayscale image: 28
+INFO 2019-01-25 09:22:03,015 - Saved image: grayimgtest_tag-1548400923.png
+INFO 2019-01-25 09:22:03,015 - Got grayscale image: 28
+CRITICAL 2019-01-25 09:22:03,528 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:22:03,860 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 09:22:07,344 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:22:07,617 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 09:22:07,617 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 09:22:07,896 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 09:22:08,176 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:28:42,853 - Got color image: 335
+INFO 2019-01-25 09:28:43,480 - Saved image: colorimgtest_tag-1548401323.png
+INFO 2019-01-25 09:28:43,480 - Got color image: 335
+INFO 2019-01-25 09:28:44,078 - Got grayscale image: 28
+INFO 2019-01-25 09:28:44,678 - Saved image: grayimgtest_tag-1548401324.png
+INFO 2019-01-25 09:28:44,678 - Got grayscale image: 28
+CRITICAL 2019-01-25 09:28:45,196 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:28:45,519 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 09:28:49,018 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:28:49,292 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 09:28:49,293 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 09:28:49,583 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 09:28:49,876 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:29:53,257 - Got color image: 335
+INFO 2019-01-25 09:29:53,877 - Saved image: colorimgtest_tag-1548401393.png
+INFO 2019-01-25 09:29:53,878 - Got color image: 335
+INFO 2019-01-25 09:29:54,491 - Got grayscale image: 28
+INFO 2019-01-25 09:29:55,100 - Saved image: grayimgtest_tag-1548401395.png
+INFO 2019-01-25 09:29:55,100 - Got grayscale image: 28
+CRITICAL 2019-01-25 09:29:55,636 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:29:55,955 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 09:29:59,460 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 09:29:59,734 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 09:29:59,735 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 09:30:00,020 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 09:30:00,307 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 10:30:39,325 - Got color image: 335
+INFO 2019-01-25 10:30:39,927 - Saved image: colorimgtest_tag-1548405039.png
+INFO 2019-01-25 10:30:39,928 - Got color image: 335
+INFO 2019-01-25 10:30:40,531 - Got grayscale image: 28
+INFO 2019-01-25 10:30:41,129 - Saved image: grayimgtest_tag-1548405041.png
+INFO 2019-01-25 10:30:41,129 - Got grayscale image: 28
+CRITICAL 2019-01-25 10:30:41,647 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 10:30:41,965 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-25 10:30:45,457 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-25 10:30:45,729 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-25 10:30:45,730 - Invalid input file: invalid_file
+CRITICAL 2019-01-25 10:30:46,007 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-25 10:30:46,294 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-26 09:54:48,174 - Refreshing Inventory
+CRITICAL 2019-01-26 09:54:53,365 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 09:58:53,857 - Refreshing Inventory
+CRITICAL 2019-01-26 09:58:58,884 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:00:42,149 - Refreshing Inventory
+CRITICAL 2019-01-26 10:00:47,170 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:01:11,157 - Refreshing Inventory
+CRITICAL 2019-01-26 10:01:16,176 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:01:16,186 - Refreshing bag number: 1
+INFO 2019-01-26 10:18:07,984 - Refreshing Inventory
+CRITICAL 2019-01-26 10:18:13,014 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:18:13,022 - Refreshing bag number: 1
+INFO 2019-01-26 10:21:40,782 - Refreshing Inventory
+CRITICAL 2019-01-26 10:21:45,768 - Caught Exception as local variable 'template' referenced before assignment
+CRITICAL 2019-01-26 10:21:47,665 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:21:47,666 - Refreshing Inventory
+CRITICAL 2019-01-26 10:21:52,549 - Caught Exception as local variable 'template' referenced before assignment
+CRITICAL 2019-01-26 10:21:54,469 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:21:54,470 - Refreshing Inventory
+CRITICAL 2019-01-26 10:21:59,361 - Caught Exception as local variable 'template' referenced before assignment
+CRITICAL 2019-01-26 10:22:01,297 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:22:01,298 - Refreshing Inventory
+INFO 2019-01-26 10:23:08,277 - Refreshing Inventory
+CRITICAL 2019-01-26 10:23:13,268 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:24:16,134 - Refreshing Inventory
+CRITICAL 2019-01-26 10:24:21,171 - Caught Exception as local variable 'template' referenced before assignment
+CRITICAL 2019-01-26 10:24:21,173 - Invalid input file: /opt/dev/az/templates/inventory_icon.png
+INFO 2019-01-26 10:24:45,675 - Refreshing Inventory
+CRITICAL 2019-01-26 10:24:50,664 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:24:52,828 - Found Inventory Button @ (982, 1036), openning inventory
+INFO 2019-01-26 10:24:55,830 - Refreshing Inventory
+CRITICAL 2019-01-26 10:25:00,608 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:25:02,669 - Found Inventory Button @ (982, 1036), openning inventory
+INFO 2019-01-26 10:25:05,671 - Refreshing Inventory
+CRITICAL 2019-01-26 10:25:10,480 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-26 10:25:12,611 - Found Inventory Button @ (982, 1036), openning inventory
+INFO 2019-01-26 10:25:15,614 - Refreshing Inventory
+INFO 2019-01-26 10:28:11,350 - Refreshing Inventory
+CRITICAL 2019-01-26 10:28:16,391 - Caught Exception as local variable 'template' referenced before assignment
+INFO 2019-01-28 09:18:10,807 - Got color image: 323
+INFO 2019-01-28 09:18:11,418 - Saved image: colorimgtest_tag-1548659891.png
+INFO 2019-01-28 09:18:11,419 - Got color image: 323
+INFO 2019-01-28 09:18:11,987 - Got grayscale image: 25
+INFO 2019-01-28 09:18:12,545 - Saved image: grayimgtest_tag-1548659892.png
+INFO 2019-01-28 09:18:12,546 - Got grayscale image: 25
+CRITICAL 2019-01-28 09:18:13,064 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 09:18:13,379 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 09:18:16,888 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 09:18:17,165 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 09:18:17,166 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 09:18:17,447 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 09:18:17,728 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 09:47:15,018 - Refreshing Inventory
+CRITICAL 2019-01-28 09:47:19,559 - Caught Exception as local variable 'template' referenced before assignment
+CRITICAL 2019-01-28 09:47:21,251 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 09:47:21,268 - Refreshing bag number: 1
+INFO 2019-01-28 09:48:19,039 - Got color image: 323
+INFO 2019-01-28 09:48:19,675 - Saved image: colorimgtest_tag-1548661699.png
+INFO 2019-01-28 09:48:19,676 - Got color image: 323
+INFO 2019-01-28 09:48:20,267 - Got grayscale image: 25
+INFO 2019-01-28 09:48:20,886 - Saved image: grayimgtest_tag-1548661700.png
+INFO 2019-01-28 09:48:20,887 - Got grayscale image: 25
+CRITICAL 2019-01-28 09:48:21,090 - Invalid input file: /opt/dev/az/templates/inventory.png
+INFO 2019-01-28 09:48:21,469 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 09:48:24,739 - Invalid input file: /opt/dev/az/templates/inventory.png
+CRITICAL 2019-01-28 09:48:24,782 - Invalid input file: /opt/dev/az/templates/inventory.png
+CRITICAL 2019-01-28 09:48:24,783 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 09:48:25,076 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 09:48:25,372 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:17:48,394 - Got color image: 335
+INFO 2019-01-28 10:17:49,057 - Saved image: colorimgtest_tag-1548663469.png
+INFO 2019-01-28 10:17:49,057 - Got color image: 335
+INFO 2019-01-28 10:17:49,749 - Got grayscale image: 28
+INFO 2019-01-28 10:17:50,407 - Saved image: grayimgtest_tag-1548663470.png
+INFO 2019-01-28 10:17:50,407 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:17:50,619 - Invalid input file: /opt/dev/az/templates/inventory.png
+INFO 2019-01-28 10:17:51,028 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:17:54,318 - Invalid input file: /opt/dev/az/templates/inventory.png
+CRITICAL 2019-01-28 10:17:54,362 - Invalid input file: /opt/dev/az/templates/inventory.png
+CRITICAL 2019-01-28 10:17:54,363 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:17:54,655 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:17:54,948 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:18:28,434 - Got color image: 335
+INFO 2019-01-28 10:18:29,106 - Saved image: colorimgtest_tag-1548663509.png
+INFO 2019-01-28 10:18:29,107 - Got color image: 335
+INFO 2019-01-28 10:18:29,747 - Got grayscale image: 28
+INFO 2019-01-28 10:18:30,397 - Saved image: grayimgtest_tag-1548663510.png
+INFO 2019-01-28 10:18:30,397 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:18:30,912 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:18:31,272 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:18:34,782 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:18:35,057 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:18:35,058 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:18:35,347 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:18:35,641 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:20:47,728 - Got color image: 335
+INFO 2019-01-28 10:20:48,405 - Saved image: colorimgtest_tag-1548663648.png
+INFO 2019-01-28 10:20:48,406 - Got color image: 335
+INFO 2019-01-28 10:20:49,050 - Got grayscale image: 28
+INFO 2019-01-28 10:20:49,767 - Saved image: grayimgtest_tag-1548663649.png
+INFO 2019-01-28 10:20:49,767 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:20:50,314 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:20:50,632 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:20:54,158 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:20:54,443 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:20:54,444 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:20:54,732 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:20:55,030 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:21:38,069 - Got color image: 335
+INFO 2019-01-28 10:21:38,767 - Saved image: colorimgtest_tag-1548663698.png
+INFO 2019-01-28 10:21:38,767 - Got color image: 335
+INFO 2019-01-28 10:21:39,414 - Got grayscale image: 28
+INFO 2019-01-28 10:21:40,103 - Saved image: grayimgtest_tag-1548663700.png
+INFO 2019-01-28 10:21:40,103 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:21:40,664 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:21:40,980 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:21:44,490 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:21:44,770 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:21:44,771 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:21:45,067 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:21:45,370 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:22:04,431 - Got color image: 335
+INFO 2019-01-28 10:22:05,102 - Saved image: colorimgtest_tag-1548663725.png
+INFO 2019-01-28 10:22:05,103 - Got color image: 335
+INFO 2019-01-28 10:22:05,794 - Got grayscale image: 28
+INFO 2019-01-28 10:22:06,474 - Saved image: grayimgtest_tag-1548663726.png
+INFO 2019-01-28 10:22:06,474 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:22:06,977 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:22:07,314 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:22:10,815 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:22:11,098 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:22:11,099 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:22:11,381 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:22:11,673 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:32:45,315 - Got color image: 335
+INFO 2019-01-28 10:32:46,003 - Saved image: colorimgtest_tag-1548664366.png
+INFO 2019-01-28 10:32:46,004 - Got color image: 335
+INFO 2019-01-28 10:32:46,657 - Got grayscale image: 28
+INFO 2019-01-28 10:32:47,283 - Saved image: grayimgtest_tag-1548664367.png
+INFO 2019-01-28 10:32:47,283 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:32:47,818 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:32:48,166 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:32:51,694 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:32:51,973 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:32:51,974 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:32:52,264 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:32:52,559 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:44:37,683 - Got color image: 335
+INFO 2019-01-28 10:44:38,340 - Saved image: colorimgtest_tag-1548665078.png
+INFO 2019-01-28 10:44:38,340 - Got color image: 335
+INFO 2019-01-28 10:44:38,980 - Got grayscale image: 28
+INFO 2019-01-28 10:44:39,611 - Saved image: grayimgtest_tag-1548665079.png
+INFO 2019-01-28 10:44:39,611 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:44:40,146 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:44:40,488 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:44:44,011 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:44:44,295 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:44:44,296 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:44:44,589 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:44:44,883 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:48:49,234 - Got color image: 335
+INFO 2019-01-28 10:48:49,886 - Saved image: colorimgtest_tag-1548665329.png
+INFO 2019-01-28 10:48:49,886 - Got color image: 335
+INFO 2019-01-28 10:48:50,549 - Got grayscale image: 28
+INFO 2019-01-28 10:48:51,220 - Saved image: grayimgtest_tag-1548665331.png
+INFO 2019-01-28 10:48:51,220 - Got grayscale image: 28
+CRITICAL 2019-01-28 10:48:51,790 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:48:52,127 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 10:48:55,693 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 10:48:55,974 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 10:48:55,975 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 10:48:56,260 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 10:48:56,550 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:50:56,550 - Got color image: 335
+INFO 2019-01-28 11:50:57,310 - Saved image: colorimgtest_tag-1548669057.png
+INFO 2019-01-28 11:50:57,310 - Got color image: 335
+INFO 2019-01-28 11:50:58,062 - Got grayscale image: 28
+INFO 2019-01-28 11:50:58,793 - Saved image: grayimgtest_tag-1548669058.png
+INFO 2019-01-28 11:50:58,793 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:50:59,411 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:50:59,780 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:51:03,337 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:51:03,622 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:51:03,623 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:51:03,910 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:51:04,215 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:15,523 - Got color image: 335
+INFO 2019-01-28 11:53:16,200 - Saved image: colorimgtest_tag-1548669196.png
+INFO 2019-01-28 11:53:16,201 - Got color image: 335
+INFO 2019-01-28 11:53:16,894 - Got grayscale image: 28
+INFO 2019-01-28 11:53:17,532 - Saved image: grayimgtest_tag-1548669197.png
+INFO 2019-01-28 11:53:17,532 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:53:18,039 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:18,356 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:53:21,867 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:22,146 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:53:22,147 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:53:22,441 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:53:22,739 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:47,439 - Got color image: 335
+INFO 2019-01-28 11:53:48,102 - Saved image: colorimgtest_tag-1548669228.png
+INFO 2019-01-28 11:53:48,102 - Got color image: 335
+INFO 2019-01-28 11:53:48,747 - Got grayscale image: 28
+INFO 2019-01-28 11:53:49,350 - Saved image: grayimgtest_tag-1548669229.png
+INFO 2019-01-28 11:53:49,350 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:53:49,839 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:50,152 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:53:53,651 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:53:53,932 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:53:53,933 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:53:54,220 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:53:54,513 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:17,919 - Got color image: 335
+INFO 2019-01-28 11:54:18,561 - Saved image: colorimgtest_tag-1548669258.png
+INFO 2019-01-28 11:54:18,561 - Got color image: 335
+INFO 2019-01-28 11:54:19,188 - Got grayscale image: 28
+INFO 2019-01-28 11:54:19,836 - Saved image: grayimgtest_tag-1548669259.png
+INFO 2019-01-28 11:54:19,836 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:54:20,347 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:20,676 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:54:24,179 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:24,458 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:54:24,458 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:54:24,748 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:54:25,039 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:39,174 - Got color image: 335
+INFO 2019-01-28 11:54:39,832 - Saved image: colorimgtest_tag-1548669279.png
+INFO 2019-01-28 11:54:39,832 - Got color image: 335
+INFO 2019-01-28 11:54:40,490 - Got grayscale image: 28
+INFO 2019-01-28 11:54:41,153 - Saved image: grayimgtest_tag-1548669281.png
+INFO 2019-01-28 11:54:41,154 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:54:41,649 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:41,977 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:54:45,478 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:54:45,761 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:54:45,762 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:54:46,061 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:54:46,360 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:55:06,454 - Got color image: 335
+INFO 2019-01-28 11:55:07,123 - Saved image: colorimgtest_tag-1548669307.png
+INFO 2019-01-28 11:55:07,123 - Got color image: 335
+INFO 2019-01-28 11:55:07,794 - Got grayscale image: 28
+INFO 2019-01-28 11:55:08,447 - Saved image: grayimgtest_tag-1548669308.png
+INFO 2019-01-28 11:55:08,447 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:55:08,982 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:55:09,336 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:55:12,979 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:55:13,295 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:55:13,296 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:55:13,655 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:55:14,001 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:56:05,882 - Added new item to store with item_int: 1
+INFO 2019-01-28 11:56:06,610 - Got color image: 335
+INFO 2019-01-28 11:56:07,256 - Saved image: colorimgtest_tag-1548669367.png
+INFO 2019-01-28 11:56:07,257 - Got color image: 335
+INFO 2019-01-28 11:56:07,954 - Got grayscale image: 28
+INFO 2019-01-28 11:56:08,600 - Saved image: grayimgtest_tag-1548669368.png
+INFO 2019-01-28 11:56:08,600 - Got grayscale image: 28
+CRITICAL 2019-01-28 11:56:09,142 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:56:09,468 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 11:56:12,958 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 11:56:13,242 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 11:56:13,243 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 11:56:13,540 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 11:56:13,832 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:20:06,283 - Added new item to store with item_int: 1
+INFO 2019-01-28 15:20:07,011 - Got color image: 335
+INFO 2019-01-28 15:20:07,652 - Saved image: colorimgtest_tag-1548681607.png
+INFO 2019-01-28 15:20:07,653 - Got color image: 335
+INFO 2019-01-28 15:20:08,324 - Got grayscale image: 28
+INFO 2019-01-28 15:20:08,988 - Saved image: grayimgtest_tag-1548681608.png
+INFO 2019-01-28 15:20:08,988 - Got grayscale image: 28
+CRITICAL 2019-01-28 15:20:09,529 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:20:09,851 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 15:20:13,372 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:20:13,658 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 15:20:13,659 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 15:20:13,952 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 15:20:14,250 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:22:22,604 - Added new item to store with item_int: 1
+INFO 2019-01-28 15:22:23,340 - Got color image: 335
+INFO 2019-01-28 15:22:23,986 - Saved image: colorimgtest_tag-1548681743.png
+INFO 2019-01-28 15:22:23,986 - Got color image: 335
+INFO 2019-01-28 15:22:24,652 - Got grayscale image: 28
+INFO 2019-01-28 15:22:25,302 - Saved image: grayimgtest_tag-1548681745.png
+INFO 2019-01-28 15:22:25,303 - Got grayscale image: 28
+CRITICAL 2019-01-28 15:22:25,856 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:22:26,191 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 15:22:29,699 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:22:29,980 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 15:22:29,980 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 15:22:30,287 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 15:22:30,587 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:11,381 - Added new item to store with item_int: 1
+INFO 2019-01-28 15:23:12,061 - Got color image: 335
+INFO 2019-01-28 15:23:12,719 - Saved image: colorimgtest_tag-1548681792.png
+INFO 2019-01-28 15:23:12,719 - Got color image: 335
+INFO 2019-01-28 15:23:13,354 - Got grayscale image: 28
+INFO 2019-01-28 15:23:13,979 - Saved image: grayimgtest_tag-1548681793.png
+INFO 2019-01-28 15:23:13,979 - Got grayscale image: 28
+CRITICAL 2019-01-28 15:23:14,500 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:14,821 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 15:23:18,332 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:18,612 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 15:23:18,612 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 15:23:18,907 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 15:23:19,200 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:31,948 - Added new item to store with item_int: 1
+INFO 2019-01-28 15:23:32,636 - Got color image: 335
+INFO 2019-01-28 15:23:33,270 - Saved image: colorimgtest_tag-1548681813.png
+INFO 2019-01-28 15:23:33,270 - Got color image: 335
+INFO 2019-01-28 15:23:33,878 - Got grayscale image: 28
+INFO 2019-01-28 15:23:34,525 - Saved image: grayimgtest_tag-1548681814.png
+INFO 2019-01-28 15:23:34,525 - Got grayscale image: 28
+CRITICAL 2019-01-28 15:23:35,028 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:35,360 - Found Inventory Button @ (1173, 1011), openning inventory
+CRITICAL 2019-01-28 15:23:38,932 - Caught Exception as No values found in results please refine threshold
+INFO 2019-01-28 15:23:39,245 - Inventory is open @ (551, 426)
+CRITICAL 2019-01-28 15:23:39,249 - Invalid input file: invalid_file
+CRITICAL 2019-01-28 15:23:39,578 - Caught Exception as Too many values found in results, refine threshold
+CRITICAL 2019-01-28 15:23:39,878 - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:24:44,018 INFO - Added new item to store with item_int: 1
+2019-01-28 15:24:46,223 INFO - Added new item to store with item_int: 1
+2019-01-28 15:24:46,890 INFO - Got color image: 335
+2019-01-28 15:24:47,530 INFO - Saved image: colorimgtest_tag-1548681887.png
+2019-01-28 15:24:47,531 INFO - Got color image: 335
+2019-01-28 15:24:48,177 INFO - Got grayscale image: 28
+2019-01-28 15:24:48,842 INFO - Saved image: grayimgtest_tag-1548681888.png
+2019-01-28 15:24:48,843 INFO - Got grayscale image: 28
+2019-01-28 15:24:49,357 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:24:49,710 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-28 15:24:53,218 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:24:53,497 INFO - Inventory is open @ (551, 426)
+2019-01-28 15:24:53,498 CRITICAL - Invalid input file: invalid_file
+2019-01-28 15:24:53,787 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-28 15:24:54,083 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:30:20,885 INFO - Added new item to store with item_int: 1
+2019-01-28 15:30:21,607 INFO - Got color image: 335
+2019-01-28 15:30:22,284 INFO - Saved image: colorimgtest_tag-1548682222.png
+2019-01-28 15:30:22,285 INFO - Got color image: 335
+2019-01-28 15:30:22,947 INFO - Got grayscale image: 28
+2019-01-28 15:30:23,586 INFO - Saved image: grayimgtest_tag-1548682223.png
+2019-01-28 15:30:23,586 INFO - Got grayscale image: 28
+2019-01-28 15:30:24,102 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:30:24,428 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-28 15:30:27,956 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-28 15:30:28,239 INFO - Inventory is open @ (551, 426)
+2019-01-28 15:30:28,240 CRITICAL - Invalid input file: invalid_file
+2019-01-28 15:30:28,530 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-28 15:30:28,816 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 09:01:48,083 INFO - Added new item to store with item_int: 1
+2019-01-29 09:01:48,797 INFO - Got color image: 335
+2019-01-29 09:01:49,455 INFO - Saved image: colorimgtest_tag-1548745309.png
+2019-01-29 09:01:49,455 INFO - Got color image: 335
+2019-01-29 09:01:50,098 INFO - Got grayscale image: 28
+2019-01-29 09:01:50,716 INFO - Saved image: grayimgtest_tag-1548745310.png
+2019-01-29 09:01:50,716 INFO - Got grayscale image: 28
+2019-01-29 09:01:51,255 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 09:01:51,575 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 09:01:55,398 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 09:01:55,673 INFO - Inventory is open @ (551, 426)
+2019-01-29 09:01:55,674 CRITICAL - Invalid input file: invalid_file
+2019-01-29 09:01:55,962 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 09:01:56,256 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:05,090 INFO - Added new item to store with item_int: 1
+2019-01-29 15:56:05,806 INFO - Got color image: 342
+2019-01-29 15:56:06,428 INFO - Saved image: colorimgtest_tag-1548770166.png
+2019-01-29 15:56:06,429 INFO - Got color image: 342
+2019-01-29 15:56:07,036 INFO - Got grayscale image: 28
+2019-01-29 15:56:07,664 INFO - Saved image: grayimgtest_tag-1548770167.png
+2019-01-29 15:56:07,664 INFO - Got grayscale image: 28
+2019-01-29 15:56:08,161 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:08,491 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 15:56:11,971 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:12,275 INFO - Inventory is open @ (551, 426)
+2019-01-29 15:56:12,276 CRITICAL - Invalid input file: invalid_file
+2019-01-29 15:56:12,581 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 15:56:12,896 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:26,229 INFO - Added new item to store with item_int: 1
+2019-01-29 15:56:26,910 INFO - Got color image: 342
+2019-01-29 15:56:27,536 INFO - Saved image: colorimgtest_tag-1548770187.png
+2019-01-29 15:56:27,536 INFO - Got color image: 342
+2019-01-29 15:56:28,180 INFO - Got grayscale image: 28
+2019-01-29 15:56:28,822 INFO - Saved image: grayimgtest_tag-1548770188.png
+2019-01-29 15:56:28,822 INFO - Got grayscale image: 28
+2019-01-29 15:56:29,269 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:29,601 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 15:56:33,046 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:56:33,349 INFO - Inventory is open @ (551, 426)
+2019-01-29 15:56:33,350 CRITICAL - Invalid input file: invalid_file
+2019-01-29 15:56:33,658 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 15:56:33,974 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:15,109 INFO - Added new item to store with item_int: 1
+2019-01-29 15:57:15,765 INFO - Got color image: 342
+2019-01-29 15:57:16,381 INFO - Saved image: colorimgtest_tag-1548770236.png
+2019-01-29 15:57:16,382 INFO - Got color image: 342
+2019-01-29 15:57:17,014 INFO - Got grayscale image: 28
+2019-01-29 15:57:17,630 INFO - Saved image: grayimgtest_tag-1548770237.png
+2019-01-29 15:57:17,630 INFO - Got grayscale image: 28
+2019-01-29 15:57:18,067 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:18,412 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 15:57:21,849 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:22,146 INFO - Inventory is open @ (551, 426)
+2019-01-29 15:57:22,147 CRITICAL - Invalid input file: invalid_file
+2019-01-29 15:57:22,455 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 15:57:22,763 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:35,441 INFO - Added new item to store with item_int: 1
+2019-01-29 15:57:36,089 INFO - Got color image: 342
+2019-01-29 15:57:36,713 INFO - Saved image: colorimgtest_tag-1548770256.png
+2019-01-29 15:57:36,714 INFO - Got color image: 342
+2019-01-29 15:57:37,318 INFO - Got grayscale image: 28
+2019-01-29 15:57:37,963 INFO - Saved image: grayimgtest_tag-1548770257.png
+2019-01-29 15:57:37,963 INFO - Got grayscale image: 28
+2019-01-29 15:57:38,389 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:38,711 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 15:57:42,138 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:57:42,426 INFO - Inventory is open @ (551, 426)
+2019-01-29 15:57:42,426 CRITICAL - Invalid input file: invalid_file
+2019-01-29 15:57:42,728 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 15:57:43,042 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:58:13,621 INFO - Added new item to store with item_int: 1
+2019-01-29 15:58:14,292 INFO - Got color image: 342
+2019-01-29 15:58:14,912 INFO - Saved image: colorimgtest_tag-1548770294.png
+2019-01-29 15:58:14,912 INFO - Got color image: 342
+2019-01-29 15:58:15,507 INFO - Got grayscale image: 28
+2019-01-29 15:58:16,117 INFO - Saved image: grayimgtest_tag-1548770296.png
+2019-01-29 15:58:16,117 INFO - Got grayscale image: 28
+2019-01-29 15:58:16,548 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:58:16,879 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-29 15:58:20,313 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-29 15:58:20,610 INFO - Inventory is open @ (551, 426)
+2019-01-29 15:58:20,611 CRITICAL - Invalid input file: invalid_file
+2019-01-29 15:58:20,910 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-29 15:58:21,210 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 09:53:13,103 INFO - Added new item to store with item_int: 1
+2019-01-30 09:53:14,182 INFO - Got color image: 342
+2019-01-30 09:53:15,054 INFO - Saved image: colorimgtest_tag-1548834795.png
+2019-01-30 09:53:15,054 INFO - Got color image: 342
+2019-01-30 09:53:15,906 INFO - Got grayscale image: 28
+2019-01-30 09:53:16,767 INFO - Saved image: grayimgtest_tag-1548834796.png
+2019-01-30 09:53:16,767 INFO - Got grayscale image: 28
+2019-01-30 09:53:17,240 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 09:53:17,585 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 09:53:21,027 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 09:53:21,312 INFO - Inventory is open @ (551, 426)
+2019-01-30 09:53:21,313 CRITICAL - Invalid input file: invalid_file
+2019-01-30 09:53:21,613 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 09:53:21,911 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:04,260 INFO - Added new item to store with item_int: 1
+2019-01-30 10:04:05,157 INFO - Got color image: 342
+2019-01-30 10:04:06,003 INFO - Saved image: colorimgtest_tag-1548835446.png
+2019-01-30 10:04:06,004 INFO - Got color image: 342
+2019-01-30 10:04:06,859 INFO - Got grayscale image: 28
+2019-01-30 10:04:07,718 INFO - Saved image: grayimgtest_tag-1548835447.png
+2019-01-30 10:04:07,718 INFO - Got grayscale image: 28
+2019-01-30 10:04:08,177 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:08,502 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:04:11,943 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:12,232 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:04:12,233 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:04:12,534 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:04:12,835 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:29,640 INFO - Added new item to store with item_int: 1
+2019-01-30 10:04:30,522 INFO - Got color image: 342
+2019-01-30 10:04:31,380 INFO - Saved image: colorimgtest_tag-1548835471.png
+2019-01-30 10:04:31,380 INFO - Got color image: 342
+2019-01-30 10:04:32,227 INFO - Got grayscale image: 28
+2019-01-30 10:04:33,073 INFO - Saved image: grayimgtest_tag-1548835473.png
+2019-01-30 10:04:33,073 INFO - Got grayscale image: 28
+2019-01-30 10:04:33,484 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:33,819 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:04:37,238 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:04:37,527 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:04:37,528 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:04:37,824 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:04:38,124 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:05:32,212 INFO - Added new item to store with item_int: 1
+2019-01-30 10:05:33,176 INFO - Got color image: 342
+2019-01-30 10:05:34,030 INFO - Saved image: colorimgtest_tag-1548835534.png
+2019-01-30 10:05:34,030 INFO - Got color image: 342
+2019-01-30 10:05:34,879 INFO - Got grayscale image: 28
+2019-01-30 10:05:35,728 INFO - Saved image: grayimgtest_tag-1548835535.png
+2019-01-30 10:05:35,728 INFO - Got grayscale image: 28
+2019-01-30 10:05:36,139 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:05:36,463 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:05:39,893 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:05:40,193 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:05:40,194 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:05:40,505 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:05:40,815 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:06:40,637 INFO - Added new item to store with item_int: 1
+2019-01-30 10:06:41,255 INFO - Got color image: 342
+2019-01-30 10:06:41,788 INFO - Saved image: colorimgtest_tag-1548835601.png
+2019-01-30 10:06:41,789 INFO - Got color image: 342
+2019-01-30 10:06:42,321 INFO - Got grayscale image: 28
+2019-01-30 10:06:42,854 INFO - Saved image: grayimgtest_tag-1548835602.png
+2019-01-30 10:06:42,854 INFO - Got grayscale image: 28
+2019-01-30 10:06:43,312 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:06:43,634 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:06:47,075 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:06:47,372 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:06:47,373 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:06:47,676 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:06:47,983 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:07:13,726 INFO - Added new item to store with item_int: 1
+2019-01-30 10:07:14,320 INFO - Got color image: 342
+2019-01-30 10:07:14,873 INFO - Saved image: colorimgtest_tag-1548835634.png
+2019-01-30 10:07:14,874 INFO - Got color image: 342
+2019-01-30 10:07:15,421 INFO - Got grayscale image: 28
+2019-01-30 10:07:15,959 INFO - Saved image: grayimgtest_tag-1548835635.png
+2019-01-30 10:07:15,959 INFO - Got grayscale image: 28
+2019-01-30 10:07:16,388 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:07:16,711 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:07:20,142 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:07:20,427 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:07:20,428 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:07:20,723 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:07:21,026 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:24:25,441 INFO - Added new item to store with item_int: 1
+2019-01-30 10:24:26,135 INFO - Got color image: 342
+2019-01-30 10:24:26,699 INFO - Saved image: colorimgtest_tag-1548836666.png
+2019-01-30 10:24:26,699 INFO - Got color image: 342
+2019-01-30 10:24:27,257 INFO - Got grayscale image: 28
+2019-01-30 10:24:27,832 INFO - Saved image: grayimgtest_tag-1548836667.png
+2019-01-30 10:24:27,832 INFO - Got grayscale image: 28
+2019-01-30 10:24:28,319 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:24:28,677 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 10:24:32,135 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 10:24:32,431 INFO - Inventory is open @ (551, 426)
+2019-01-30 10:24:32,432 CRITICAL - Invalid input file: invalid_file
+2019-01-30 10:24:32,741 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 10:24:33,058 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:28:42,756 INFO - Added new item to store with item_int: 1
+2019-01-30 11:28:43,420 INFO - Got color image: 342
+2019-01-30 11:28:44,008 INFO - Saved image: colorimgtest_tag-1548840524.png
+2019-01-30 11:28:44,008 INFO - Got color image: 342
+2019-01-30 11:28:44,602 INFO - Got grayscale image: 28
+2019-01-30 11:28:45,172 INFO - Saved image: grayimgtest_tag-1548840525.png
+2019-01-30 11:28:45,173 INFO - Got grayscale image: 28
+2019-01-30 11:28:45,651 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:28:45,967 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:28:49,425 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:28:49,712 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:28:49,713 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:28:50,016 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:28:50,316 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:28:50,335 INFO - Added new item to store with item_int: 1
+2019-01-30 11:29:28,074 INFO - Added new item to store with item_int: 1
+2019-01-30 11:29:28,727 INFO - Got color image: 342
+2019-01-30 11:29:29,316 INFO - Saved image: colorimgtest_tag-1548840569.png
+2019-01-30 11:29:29,316 INFO - Got color image: 342
+2019-01-30 11:29:29,911 INFO - Got grayscale image: 28
+2019-01-30 11:29:30,493 INFO - Saved image: grayimgtest_tag-1548840570.png
+2019-01-30 11:29:30,494 INFO - Got grayscale image: 28
+2019-01-30 11:29:30,923 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:29:31,260 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:29:34,690 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:29:34,976 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:29:34,977 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:29:35,282 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:29:35,580 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:29:35,600 INFO - Added new item to store with item_int: 1
+2019-01-30 11:29:54,809 INFO - Added new item to store with item_int: 1
+2019-01-30 11:29:55,503 INFO - Got color image: 342
+2019-01-30 11:29:56,109 INFO - Saved image: colorimgtest_tag-1548840596.png
+2019-01-30 11:29:56,109 INFO - Got color image: 342
+2019-01-30 11:29:56,707 INFO - Got grayscale image: 28
+2019-01-30 11:29:57,294 INFO - Saved image: grayimgtest_tag-1548840597.png
+2019-01-30 11:29:57,294 INFO - Got grayscale image: 28
+2019-01-30 11:29:57,736 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:29:58,069 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:30:01,503 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:30:01,791 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:30:01,793 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:30:02,087 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:30:02,387 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:30:02,404 INFO - Added new item to store with item_int: 1
+2019-01-30 11:31:24,552 INFO - Added new item to store with item_int: 1
+2019-01-30 11:31:25,147 INFO - Got color image: 342
+2019-01-30 11:31:45,659 INFO - Added new item to store with item_int: 1
+2019-01-30 11:31:46,253 INFO - Got color image: 342
+2019-01-30 11:31:46,843 INFO - Saved image: colorimgtest_tag-1548840706.png
+2019-01-30 11:31:46,844 INFO - Got color image: 342
+2019-01-30 11:31:47,424 INFO - Got grayscale image: 28
+2019-01-30 11:31:48,011 INFO - Saved image: grayimgtest_tag-1548840708.png
+2019-01-30 11:31:48,011 INFO - Got grayscale image: 28
+2019-01-30 11:31:48,454 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:31:48,792 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:31:52,226 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:31:52,519 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:31:52,520 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:31:52,826 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:31:53,128 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:31:53,145 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:20,916 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:21,566 INFO - Got color image: 342
+2019-01-30 11:38:22,169 INFO - Saved image: colorimgtest_tag-1548841102.png
+2019-01-30 11:38:22,169 INFO - Got color image: 342
+2019-01-30 11:38:22,741 INFO - Got grayscale image: 28
+2019-01-30 11:38:23,336 INFO - Saved image: grayimgtest_tag-1548841103.png
+2019-01-30 11:38:23,336 INFO - Got grayscale image: 28
+2019-01-30 11:38:23,344 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:23,855 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:24,199 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:38:27,677 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:27,965 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:38:27,966 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:38:28,271 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:38:28,576 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:28,594 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:47,895 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:48,545 INFO - Got color image: 342
+2019-01-30 11:38:49,148 INFO - Saved image: colorimgtest_tag-1548841129.png
+2019-01-30 11:38:49,148 INFO - Got color image: 342
+2019-01-30 11:38:49,751 INFO - Got grayscale image: 28
+2019-01-30 11:38:50,334 INFO - Saved image: grayimgtest_tag-1548841130.png
+2019-01-30 11:38:50,335 INFO - Got grayscale image: 28
+2019-01-30 11:38:50,342 INFO - Added new item to store with item_int: 1
+2019-01-30 11:38:50,807 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:51,145 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:38:54,599 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:54,894 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:38:54,895 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:38:55,197 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:38:55,501 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:38:55,517 INFO - Added new item to store with item_int: 1
+2019-01-30 11:39:30,397 INFO - Added new item to store with item_int: 1
+2019-01-30 11:39:31,036 INFO - Got color image: 342
+2019-01-30 11:39:31,626 INFO - Saved image: colorimgtest_tag-1548841171.png
+2019-01-30 11:39:31,626 INFO - Got color image: 342
+2019-01-30 11:39:32,202 INFO - Got grayscale image: 28
+2019-01-30 11:39:32,791 INFO - Saved image: grayimgtest_tag-1548841172.png
+2019-01-30 11:39:32,791 INFO - Got grayscale image: 28
+2019-01-30 11:39:32,798 INFO - Added new item to store with item_int: 1
+2019-01-30 11:39:33,275 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:39:33,633 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:39:37,066 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:39:37,358 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:39:37,358 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:39:37,655 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:39:37,953 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:39:37,971 INFO - Added new item to store with item_int: 1
+2019-01-30 11:40:53,958 INFO - Added new item to store with item_int: 1
+2019-01-30 11:40:54,616 INFO - Got color image: 342
+2019-01-30 11:40:55,210 INFO - Saved image: colorimgtest_tag-1548841255.png
+2019-01-30 11:40:55,211 INFO - Got color image: 342
+2019-01-30 11:40:55,793 INFO - Got grayscale image: 28
+2019-01-30 11:40:56,390 INFO - Saved image: grayimgtest_tag-1548841256.png
+2019-01-30 11:40:56,391 INFO - Got grayscale image: 28
+2019-01-30 11:40:56,398 INFO - Added new item to store with item_int: 1
+2019-01-30 11:40:56,857 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:40:57,204 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:41:00,643 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:00,930 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:41:00,931 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:41:01,233 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:41:01,533 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:01,551 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:08,769 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:09,418 INFO - Got color image: 342
+2019-01-30 11:41:10,016 INFO - Saved image: colorimgtest_tag-1548841270.png
+2019-01-30 11:41:10,016 INFO - Got color image: 342
+2019-01-30 11:41:10,606 INFO - Got grayscale image: 28
+2019-01-30 11:41:11,184 INFO - Saved image: grayimgtest_tag-1548841271.png
+2019-01-30 11:41:11,184 INFO - Got grayscale image: 28
+2019-01-30 11:41:11,192 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:11,197 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-01-30 11:41:11,203 INFO - Added new item to store with item_int: 2
+2019-01-30 11:41:11,666 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:12,005 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:41:15,443 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:15,727 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:41:15,729 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:41:16,028 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:41:16,337 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:16,354 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:28,605 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:29,256 INFO - Got color image: 342
+2019-01-30 11:41:29,862 INFO - Saved image: colorimgtest_tag-1548841289.png
+2019-01-30 11:41:29,862 INFO - Got color image: 342
+2019-01-30 11:41:30,448 INFO - Got grayscale image: 28
+2019-01-30 11:41:31,031 INFO - Saved image: grayimgtest_tag-1548841291.png
+2019-01-30 11:41:31,031 INFO - Got grayscale image: 28
+2019-01-30 11:41:31,038 INFO - Added new item to store with item_int: 1
+2019-01-30 11:41:31,049 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-01-30 11:41:31,056 INFO - Added new item to store with item_int: 2
+2019-01-30 11:41:31,532 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:31,863 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:41:35,297 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:35,588 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:41:35,589 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:41:35,883 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:41:36,181 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:41:36,198 INFO - Added new item to store with item_int: 1
+2019-01-30 11:43:06,904 INFO - Added new item to store with item_int: 1
+2019-01-30 11:43:07,557 INFO - Got color image: 342
+2019-01-30 11:43:08,152 INFO - Saved image: colorimgtest_tag-1548841388.png
+2019-01-30 11:43:08,152 INFO - Got color image: 342
+2019-01-30 11:43:08,761 INFO - Got grayscale image: 28
+2019-01-30 11:43:09,344 INFO - Saved image: grayimgtest_tag-1548841389.png
+2019-01-30 11:43:09,344 INFO - Got grayscale image: 28
+2019-01-30 11:43:09,352 INFO - Added new item to store with item_int: 1
+2019-01-30 11:43:09,366 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-01-30 11:43:09,372 INFO - Added new item to store with item_int: 2
+2019-01-30 11:43:09,817 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:43:10,159 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-01-30 11:43:13,604 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:43:13,899 INFO - Inventory is open @ (551, 426)
+2019-01-30 11:43:13,899 CRITICAL - Invalid input file: invalid_file
+2019-01-30 11:43:14,197 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-01-30 11:43:14,501 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-01-30 11:43:14,520 INFO - Added new item to store with item_int: 1
+2019-02-01 09:49:35,799 INFO - Added new item to store with item_int: 1
+2019-02-01 09:49:36,532 INFO - Got color image: 335
+2019-02-01 09:49:37,128 INFO - Saved image: colorimgtest_tag-1549007377.png
+2019-02-01 09:49:37,129 INFO - Got color image: 335
+2019-02-01 09:49:37,752 INFO - Got grayscale image: 27
+2019-02-01 09:49:38,334 INFO - Saved image: grayimgtest_tag-1549007378.png
+2019-02-01 09:49:38,334 INFO - Got grayscale image: 27
+2019-02-01 09:49:38,340 INFO - Added new item to store with item_int: 1
+2019-02-01 09:49:38,351 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-01 09:49:38,357 INFO - Added new item to store with item_int: 2
+2019-02-01 09:49:38,886 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:49:39,209 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-01 09:49:42,691 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:49:42,978 INFO - Inventory is open @ (551, 426)
+2019-02-01 09:49:42,979 CRITICAL - Invalid input file: invalid_file
+2019-02-01 09:49:43,278 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-01 09:49:43,580 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:49:43,599 INFO - Added new item to store with item_int: 1
+2019-02-01 09:50:35,567 INFO - Added new item to store with item_int: 1
+2019-02-01 09:50:36,200 INFO - Got color image: 335
+2019-02-01 09:50:36,811 INFO - Saved image: colorimgtest_tag-1549007436.png
+2019-02-01 09:50:36,812 INFO - Got color image: 335
+2019-02-01 09:50:37,444 INFO - Got grayscale image: 27
+2019-02-01 09:50:38,036 INFO - Saved image: grayimgtest_tag-1549007438.png
+2019-02-01 09:50:38,037 INFO - Got grayscale image: 27
+2019-02-01 09:50:38,043 INFO - Added new item to store with item_int: 1
+2019-02-01 09:50:38,056 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-01 09:50:38,065 INFO - Added new item to store with item_int: 2
+2019-02-01 09:50:38,534 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:50:38,886 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-01 09:50:42,344 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:50:42,634 INFO - Inventory is open @ (551, 426)
+2019-02-01 09:50:42,634 CRITICAL - Invalid input file: invalid_file
+2019-02-01 09:50:42,931 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-01 09:50:43,229 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:50:43,246 INFO - Added new item to store with item_int: 1
+2019-02-01 09:51:35,494 INFO - Added new item to store with item_int: 1
+2019-02-01 09:51:36,165 INFO - Got color image: 335
+2019-02-01 09:51:36,760 INFO - Saved image: colorimgtest_tag-1549007496.png
+2019-02-01 09:51:36,761 INFO - Got color image: 335
+2019-02-01 09:51:37,372 INFO - Got grayscale image: 27
+2019-02-01 09:51:37,972 INFO - Saved image: grayimgtest_tag-1549007497.png
+2019-02-01 09:51:37,973 INFO - Got grayscale image: 27
+2019-02-01 09:51:37,981 INFO - Added new item to store with item_int: 1
+2019-02-01 09:51:37,992 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-01 09:51:37,998 INFO - Added new item to store with item_int: 2
+2019-02-01 09:51:38,437 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:51:38,776 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-01 09:51:42,223 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:51:42,509 INFO - Inventory is open @ (551, 426)
+2019-02-01 09:51:42,510 CRITICAL - Invalid input file: invalid_file
+2019-02-01 09:51:42,805 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-01 09:51:43,104 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-01 09:51:43,124 INFO - Added new item to store with item_int: 1
+2019-02-04 09:18:42,547 INFO - Added new item to store with item_int: 1
+2019-02-04 09:18:43,221 INFO - Got color image: 324
+2019-02-04 09:18:43,840 INFO - Saved image: colorimgtest_tag-1549264723.png
+2019-02-04 09:18:43,840 INFO - Got color image: 324
+2019-02-04 09:18:44,491 INFO - Got grayscale image: 24
+2019-02-04 09:18:45,140 INFO - Saved image: grayimgtest_tag-1549264725.png
+2019-02-04 09:18:45,140 INFO - Got grayscale image: 24
+2019-02-04 09:18:45,146 INFO - Added new item to store with item_int: 1
+2019-02-04 09:18:45,158 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-04 09:18:45,163 INFO - Added new item to store with item_int: 2
+2019-02-04 09:18:45,621 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:18:45,977 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-04 09:18:49,424 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:18:49,716 INFO - Inventory is open @ (551, 426)
+2019-02-04 09:18:49,717 CRITICAL - Invalid input file: invalid_file
+2019-02-04 09:18:50,023 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-04 09:18:50,330 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:18:50,347 INFO - Added new item to store with item_int: 1
+2019-02-04 09:19:22,471 INFO - Added new item to store with item_int: 1
+2019-02-04 09:19:23,226 INFO - Got color image: 324
+2019-02-04 09:19:23,859 INFO - Saved image: colorimgtest_tag-1549264763.png
+2019-02-04 09:19:23,859 INFO - Got color image: 324
+2019-02-04 09:19:24,524 INFO - Got grayscale image: 24
+2019-02-04 09:19:25,161 INFO - Saved image: grayimgtest_tag-1549264765.png
+2019-02-04 09:19:25,162 INFO - Got grayscale image: 24
+2019-02-04 09:19:25,169 INFO - Added new item to store with item_int: 1
+2019-02-04 09:19:25,180 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-04 09:19:25,186 INFO - Added new item to store with item_int: 2
+2019-02-04 09:19:25,665 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:19:26,011 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-04 09:19:29,455 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:19:29,756 INFO - Inventory is open @ (551, 426)
+2019-02-04 09:19:29,757 CRITICAL - Invalid input file: invalid_file
+2019-02-04 09:19:30,062 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-04 09:19:30,409 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:19:30,428 INFO - Added new item to store with item_int: 1
+2019-02-04 09:20:11,506 INFO - Added new item to store with item_int: 1
+2019-02-04 09:20:12,218 INFO - Got color image: 324
+2019-02-04 09:20:12,879 INFO - Saved image: colorimgtest_tag-1549264812.png
+2019-02-04 09:20:12,879 INFO - Got color image: 324
+2019-02-04 09:20:13,497 INFO - Got grayscale image: 24
+2019-02-04 09:20:14,130 INFO - Saved image: grayimgtest_tag-1549264814.png
+2019-02-04 09:20:14,131 INFO - Got grayscale image: 24
+2019-02-04 09:20:14,138 INFO - Added new item to store with item_int: 1
+2019-02-04 09:20:14,149 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-04 09:20:14,154 INFO - Added new item to store with item_int: 2
+2019-02-04 09:20:14,601 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:20:14,935 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-04 09:20:18,369 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:20:18,659 INFO - Inventory is open @ (551, 426)
+2019-02-04 09:20:18,660 CRITICAL - Invalid input file: invalid_file
+2019-02-04 09:20:18,964 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-04 09:20:19,271 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:20:19,289 INFO - Added new item to store with item_int: 1
+2019-02-04 09:25:45,924 INFO - Added new item to store with item_int: 1
+2019-02-04 09:25:46,579 INFO - Got color image: 324
+2019-02-04 09:25:47,199 INFO - Saved image: colorimgtest_tag-1549265147.png
+2019-02-04 09:25:47,200 INFO - Got color image: 324
+2019-02-04 09:25:47,819 INFO - Got grayscale image: 24
+2019-02-04 09:25:48,423 INFO - Saved image: grayimgtest_tag-1549265148.png
+2019-02-04 09:25:48,423 INFO - Got grayscale image: 24
+2019-02-04 09:25:48,432 INFO - Added new item to store with item_int: 1
+2019-02-04 09:25:48,442 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-04 09:25:48,447 INFO - Added new item to store with item_int: 2
+2019-02-04 09:25:48,890 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:25:49,229 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-04 09:25:52,661 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:25:52,952 INFO - Inventory is open @ (551, 426)
+2019-02-04 09:25:52,953 CRITICAL - Invalid input file: invalid_file
+2019-02-04 09:25:53,257 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-04 09:25:53,561 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-04 09:25:53,577 INFO - Added new item to store with item_int: 1
+2019-02-08 14:23:17,885 INFO - Added new item to store with item_int: 1
+2019-02-08 14:23:19,270 INFO - Got color image: 335
+2019-02-08 14:23:20,531 INFO - Saved image: colorimgtest_tag-1549628600.png
+2019-02-08 14:23:20,532 INFO - Got color image: 335
+2019-02-08 14:23:21,850 INFO - Got grayscale image: 27
+2019-02-08 14:23:23,134 INFO - Saved image: grayimgtest_tag-1549628603.png
+2019-02-08 14:23:23,134 INFO - Got grayscale image: 27
+2019-02-08 14:23:23,150 INFO - Added new item to store with item_int: 1
+2019-02-08 14:23:23,168 WARNING - Item_int not found, adding item to store with default values, please populate data
+2019-02-08 14:23:23,178 INFO - Added new item to store with item_int: 2
+2019-02-08 14:23:23,882 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-08 14:23:24,398 INFO - Found Inventory Button @ (1173, 1011), openning inventory
+2019-02-08 14:23:28,038 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-08 14:23:28,524 INFO - Inventory is open @ (551, 426)
+2019-02-08 14:23:28,525 CRITICAL - Invalid input file: invalid_file
+2019-02-08 14:23:28,983 CRITICAL - Caught Exception as Too many values found in results, refine threshold
+2019-02-08 14:23:29,435 CRITICAL - Caught Exception as No values found in results please refine threshold
+2019-02-08 14:23:29,464 INFO - Added new item to store with item_int: 1
+2019-02-08 14:24:34,429 CRITICAL - Caught Exception as local variable 'template' referenced before assignment
+2019-02-08 14:24:34,431 ERROR - Bag is not open, opening bag and trying cleanup inventory again
+2019-02-08 14:24:37,513 CRITICAL - Caught Exception as No values found in results please refine threshold

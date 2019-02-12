@@ -1,0 +1,1561 @@
+{
+    "il": [
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28775496,
+            "item_max": 2,
+            "item_name": "amphorae",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29913407,
+            "item_max": 100,
+            "item_name": "apples",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29063437,
+            "item_max": 100,
+            "item_name": "bagpipes",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28893359,
+            "item_max": 100,
+            "item_name": "beetroot",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28518842,
+            "item_max": 100,
+            "item_name": "belgian_snacks",
+            "item_stacksize": 2
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 27515199,
+            "item_max": 100,
+            "item_name": "florentine_steaks",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 35376251,
+            "item_max": 2,
+            "item_name": "boar_bones",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32606571,
+            "item_max": 2,
+            "item_name": "entrails",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30538306,
+            "item_max": 2,
+            "item_name": "boar_skins",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 5,
+            "item_count_prev": 4,
+            "item_delete": false,
+            "item_int": 34146084,
+            "item_max": 100,
+            "item_name": "boar_teeth",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30036244,
+            "item_max": 100,
+            "item_name": "bresaola",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 33686022,
+            "item_max": 100,
+            "item_name": "brooms",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32423383,
+            "item_max": 100,
+            "item_name": "caber",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 10,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 33417900,
+            "item_max": 100,
+            "item_name": "carrots",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 5,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 26621953,
+            "item_max": 100,
+            "item_name": "wheels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31298959,
+            "item_max": 100,
+            "item_name": "centurions",
+            "item_stacksize": 100
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 26433821,
+            "item_max": 100,
+            "item_name": "cervisia_barrels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30589256,
+            "item_max": 100,
+            "item_name": "chariots",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31596427,
+            "item_max": 100,
+            "item_name": "chariot_jacks",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30090826,
+            "item_max": 100,
+            "item_name": "chariot_permits",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30169354,
+            "item_max": 100,
+            "item_name": "etrurian_wine",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 5,
+            "item_count_prev": 6,
+            "item_delete": false,
+            "item_int": 30063435,
+            "item_max": 100,
+            "item_name": "chicken",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33942007,
+            "item_max": 100,
+            "item_name": "chisel",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31582060,
+            "item_max": 100,
+            "item_name": "coal",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32406387,
+            "item_max": 100,
+            "item_name": "corsican_cheese",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 4,
+            "item_count_prev": 5,
+            "item_delete": false,
+            "item_int": 30603699,
+            "item_max": 100,
+            "item_name": "crabs",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31062618,
+            "item_max": 100,
+            "item_name": "dates",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25776115,
+            "item_max": 100,
+            "item_name": "door",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32071657,
+            "item_max": 100,
+            "item_name": "drinking_horns",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33190943,
+            "item_max": 100,
+            "item_name": "mountain_flowers",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 34032106,
+            "item_max": 100,
+            "item_name": "egyptian_fish",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33900680,
+            "item_max": 100,
+            "item_name": "egyptian_sword",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 26422389,
+            "item_max": 100,
+            "item_name": "empty_barrels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 5,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 33450873,
+            "item_max": 100,
+            "item_name": "feathers",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29260152,
+            "item_max": 100,
+            "item_name": "fish_soup",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 27405027,
+            "item_max": 100,
+            "item_name": "flagstones",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 29758269,
+            "item_max": 100,
+            "item_name": "flat_stone",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32104341,
+            "item_max": 100,
+            "item_name": "flax",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34261877,
+            "item_max": 100,
+            "item_name": "fondue_swords",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32002882,
+            "item_max": 0,
+            "item_name": "fish",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 22205388,
+            "item_max": 100,
+            "item_name": "fur_vests",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29280326,
+            "item_max": 100,
+            "item_name": "gaulish_soup",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25290744,
+            "item_max": 100,
+            "item_name": "gaulish_humbugs",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30987399,
+            "item_max": 100,
+            "item_name": "red_gemstones",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 5,
+            "item_count_prev": 4,
+            "item_delete": false,
+            "item_int": 29383881,
+            "item_max": 100,
+            "item_name": "gold_ore",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34556421,
+            "item_max": 100,
+            "item_name": "golden_sickles",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34626730,
+            "item_max": 100,
+            "item_name": "gothic_halberds",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25147985,
+            "item_max": 100,
+            "item_name": "grease",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 33050373,
+            "item_max": 100,
+            "item_name": "winged_helmets",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33008250,
+            "item_max": 100,
+            "item_name": "heros_helmet",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32214523,
+            "item_max": 100,
+            "item_name": "horns",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33145616,
+            "item_max": 100,
+            "item_name": "horses",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28689507,
+            "item_max": 100,
+            "item_name": "swift_horses",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33065787,
+            "item_max": 100,
+            "item_name": "iberian_helmets",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34494673,
+            "item_max": 100,
+            "item_name": "iberian_swords",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 35747789,
+            "item_max": 0,
+            "item_name": "icicles",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 31221414,
+            "item_max": 100,
+            "item_name": "iron_bars",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33047511,
+            "item_max": 100,
+            "item_name": "iron_hammers",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 4,
+            "item_count_prev": 4,
+            "item_delete": false,
+            "item_int": 28636235,
+            "item_max": 2,
+            "item_name": "iron_ore",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32820793,
+            "item_max": 100,
+            "item_name": "irons_scraps",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32036694,
+            "item_max": 100,
+            "item_name": "leather",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28116241,
+            "item_max": 100,
+            "item_name": "leather_strap",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 31028374,
+            "item_max": 100,
+            "item_name": "linen_cloth",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 4,
+            "item_count_prev": 5,
+            "item_delete": false,
+            "item_int": 32175044,
+            "item_max": 100,
+            "item_name": "lobsters",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 27189576,
+            "item_max": 100,
+            "item_name": "cows_hoof_mould",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31980895,
+            "item_max": 100,
+            "item_name": "blocks_of_marble",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 33590060,
+            "item_max": 100,
+            "item_name": "menhirs",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 26387639,
+            "item_max": 100,
+            "item_name": "milestones",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31652277,
+            "item_max": 100,
+            "item_name": "mistletoe",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31202971,
+            "item_max": 100,
+            "item_name": "mortars",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 4,
+            "item_count_prev": 6,
+            "item_delete": false,
+            "item_int": 31734090,
+            "item_max": 100,
+            "item_name": "mushrooms",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 33744771,
+            "item_max": 100,
+            "item_name": "nails",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28836102,
+            "item_max": 100,
+            "item_name": "nordic_sausages",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 8,
+            "item_delete": false,
+            "item_int": 29946229,
+            "item_max": 100,
+            "item_name": "oats",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33061371,
+            "item_max": 100,
+            "item_name": "obelisks",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 35090035,
+            "item_max": 100,
+            "item_name": "paddles",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34989175,
+            "item_max": 100,
+            "item_name": "paintbrushes",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31042715,
+            "item_max": 100,
+            "item_name": "panforte",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29750865,
+            "item_max": 100,
+            "item_name": "papyrus",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31511211,
+            "item_max": 100,
+            "item_name": "papyrus_scrolls",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30021667,
+            "item_max": 100,
+            "item_name": "parsley",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 27454867,
+            "item_max": 100,
+            "item_name": "pasta",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 10,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 33828507,
+            "item_max": 100,
+            "item_name": "pearls",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32459469,
+            "item_max": 100,
+            "item_name": "pickaxes",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32887210,
+            "item_max": 0,
+            "item_name": "sand",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30251769,
+            "item_max": 100,
+            "item_name": "pizzas",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 6,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 33526195,
+            "item_max": 100,
+            "item_name": "rabbits",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 27053292,
+            "item_max": 100,
+            "item_name": "racing_gloves",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31683743,
+            "item_max": 100,
+            "item_name": "reins",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 32094765,
+            "item_max": 100,
+            "item_name": "resin",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30606057,
+            "item_max": 100,
+            "item_name": "risotto",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28421685,
+            "item_max": 100,
+            "item_name": "roasted_chicken",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31201602,
+            "item_max": 100,
+            "item_name": "rock_oil",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33695354,
+            "item_max": 100,
+            "item_name": "roman_couch",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30406718,
+            "item_max": 100,
+            "item_name": "roman_sandal",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 27668447,
+            "item_max": 100,
+            "item_name": "ropes",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 31736918,
+            "item_max": 100,
+            "item_name": "salt",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34490115,
+            "item_max": 100,
+            "item_name": "sawfish",
+            "item_stacksize": 6
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31974836,
+            "item_max": 100,
+            "item_name": "sharpening_stones",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25799936,
+            "item_max": 100,
+            "item_name": "shields",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31373736,
+            "item_max": 100,
+            "item_name": "quality_shields",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 26295517,
+            "item_max": 100,
+            "item_name": "poor_shields",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33779307,
+            "item_max": 100,
+            "item_name": "shovels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 31626478,
+            "item_max": 100,
+            "item_name": "smelly_fish",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34898008,
+            "item_max": 0,
+            "item_name": "snowballs",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30723313,
+            "item_max": 100,
+            "item_name": "spartan_helmets",
+            "item_stacksize": 6
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34773276,
+            "item_max": 100,
+            "item_name": "spears",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34938825,
+            "item_max": 100,
+            "item_name": "balanced_spears",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34960738,
+            "item_max": 100,
+            "item_name": "poor_spears",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 33883108,
+            "item_max": 100,
+            "item_name": "steel_bars",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31454625,
+            "item_max": 100,
+            "item_name": "stone_blocks",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 32767856,
+            "item_max": 100,
+            "item_name": "stone_hammers",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28830358,
+            "item_max": 100,
+            "item_name": "maps",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 6,
+            "item_count_prev": 6,
+            "item_delete": false,
+            "item_int": 29865487,
+            "item_max": 100,
+            "item_name": "strawberry",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 31968284,
+            "item_max": 100,
+            "item_name": "swiss_cheese",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33751461,
+            "item_max": 100,
+            "item_name": "swords",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33602248,
+            "item_max": 100,
+            "item_name": "balanced_swords",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 3,
+            "item_delete": false,
+            "item_int": 34029900,
+            "item_max": 100,
+            "item_name": "poor_swords",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31051840,
+            "item_max": 100,
+            "item_name": "thread",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 4,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34398448,
+            "item_max": 0,
+            "item_name": "twisted_branch",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30044517,
+            "item_max": 100,
+            "item_name": "silver_viking_shield",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28514243,
+            "item_max": 100,
+            "item_name": "warriors_special",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 26695951,
+            "item_max": 100,
+            "item_name": "water",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29469196,
+            "item_max": 100,
+            "item_name": "whips",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 26011185,
+            "item_max": 100,
+            "item_name": "wine_barrels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28170888,
+            "item_max": 100,
+            "item_name": "wooden_planks",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32785959,
+            "item_max": 100,
+            "item_name": "wooden_swords",
+            "item_stacksize": 6
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33717132,
+            "item_max": 100,
+            "item_name": "wreath",
+            "item_stacksize": 500
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33451960,
+            "item_max": 100,
+            "item_name": "minor_potion_of_regeneration",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33685350,
+            "item_max": 100,
+            "item_name": "minor_lumberjack_potion",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34080476,
+            "item_max": 100,
+            "item_name": "minor_potion_of_blocking",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 34152442,
+            "item_max": 100,
+            "item_name": "minor_potion_of_critical_hit",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32155417,
+            "item_max": 100,
+            "item_name": "medium_potion_of_defense",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32000164,
+            "item_max": 100,
+            "item_name": "medium_potion_of_healthpoints",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33213563,
+            "item_max": 100,
+            "item_name": "medium_potion_of_strength",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30946720,
+            "item_max": 100,
+            "item_name": "wine_frome_durocortorum",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31712646,
+            "item_max": 100,
+            "item_name": "gothic_spiked_club",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 28499254,
+            "item_max": 100,
+            "item_name": "chairs",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 35430280,
+            "item_max": 100,
+            "item_name": "corsican_switchblade",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 2,
+            "item_delete": false,
+            "item_int": 34455958,
+            "item_max": 0,
+            "item_name": "dippers",
+            "item_stacksize": 6
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31141816,
+            "item_max": 100,
+            "item_name": "fish_on_spears",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 3,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 32547385,
+            "item_max": 100,
+            "item_name": "gold_bars",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 26771205,
+            "item_max": 100,
+            "item_name": "gothic_helmet",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33516330,
+            "item_max": 100,
+            "item_name": "hatchets",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30616832,
+            "item_max": 100,
+            "item_name": "mint",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 31311194,
+            "item_max": 0,
+            "item_name": "nordic_skull_necklace",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 2,
+            "item_count_prev": 5,
+            "item_delete": false,
+            "item_int": 30864363,
+            "item_max": 100,
+            "item_name": "oysters",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33759886,
+            "item_max": 100,
+            "item_name": "rolling_pin",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 33722790,
+            "item_max": 100,
+            "item_name": "shoes",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29550144,
+            "item_max": 100,
+            "item_name": "golden_viking_shield",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 24104003,
+            "item_max": 100,
+            "item_name": "malted_water",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 30785694,
+            "item_max": 100,
+            "item_name": "major_stonebreaker_potion",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33614090,
+            "item_max": 100,
+            "item_name": "minor_potion_of_defense",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31638957,
+            "item_max": 100,
+            "item_name": "helmet",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31300122,
+            "item_max": 100,
+            "item_name": "heros_belt",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30544959,
+            "item_max": 100,
+            "item_name": "bronze_viking_shield",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33611233,
+            "item_max": 100,
+            "item_name": "minor_potion_of_healthpoints",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 1,
+            "item_delete": false,
+            "item_int": 29728678,
+            "item_max": 100,
+            "item_name": "tent",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31496720,
+            "item_max": 100,
+            "item_name": "cakes",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31519351,
+            "item_max": 100,
+            "item_name": "egyptian_fish_stew",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32724580,
+            "item_max": 100,
+            "item_name": "fishing_nets",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33202251,
+            "item_max": 100,
+            "item_name": "horned_helmet",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33391885,
+            "item_max": 100,
+            "item_name": "newspapers",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33132288,
+            "item_max": 100,
+            "item_name": "fan_banners",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30222060,
+            "item_max": 100,
+            "item_name": "racing_shirts",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30579424,
+            "item_max": 100,
+            "item_name": "sphinx_noses",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 34830941,
+            "item_max": 100,
+            "item_name": "sumerian_bows",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31980062,
+            "item_max": 100,
+            "item_name": "swordfish",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 30983163,
+            "item_max": 100,
+            "item_name": "tables",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25692950,
+            "item_max": 100,
+            "item_name": "major_lumberjack_potion",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 27266933,
+            "item_max": 100,
+            "item_name": "major_potion_of_blocking",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 25911559,
+            "item_max": 100,
+            "item_name": "major_potion_of_healthpoints",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 1,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28798081,
+            "item_max": 100,
+            "item_name": "major_potion_of_strength",
+            "item_stacksize": 5
+        }
+    ]
+}
