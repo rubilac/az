@@ -88,7 +88,7 @@ def move_screen_right(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((480, 540), (480-dist, 540))
+        move_screen((500, 600), (500-dist, 600))
         num_times -= 1
 
 
@@ -97,7 +97,7 @@ def move_screen_down(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((480, 540), (480, 540-dist))
+        move_screen((480, 600), (480, 600-dist))
         num_times -= 1    
 
 
@@ -106,7 +106,7 @@ def move_screen_left(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((480, 540), (480+dist, 540))
+        move_screen((500, 600), (500+dist, 600))
         num_times -= 1
 
 
@@ -115,7 +115,7 @@ def move_screen_up(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((480, 540), (480, 540+dist))
+        move_screen((500, 600), (500, 600+dist))
         num_times -= 1
 
 

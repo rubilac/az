@@ -188,11 +188,12 @@ trs_h = 1200*2
 method = cv2.TM_CCOEFF_NORMED
 threshold = 0.90
 
-boar_templates = ['bt_1.png', 'bt_2.png','bt_3.png', 'bt_4.png', 'bt_5.png', 'bt_6.png', 'bt_7.png', "b_0.png", "b_1.png", "b_10.png", "b_11.png", "b_12.png", "b_13.png", "b_14.png", "b_17.png", "b_18.png", "b_19.png", "b_2.png", "b_20.png", "b_21.png", "b_22.png", "b_23.png", "b_24.png", "b_25.png", "b_26.png", "b_27.png", "b_28.png", "b_29.png", "b_3.png", "b_30.png", "b_31.png", "b_32.png", "b_33.png", "b_34.png", "b_35.png", "b_36.png", "b_37.png", "b_38.png", "b_4.png", "b_5.png", "b_6.png", "b_7.png", "b_8.png"]
 
+template_path_boar = '/opt/dev/az/templates/boar/'
+load_boars = os.listdir(template_path_boar)
 boar_templates_loaded = []
-for boar_tmp in boar_templates:
-    boar_tmp = cv2.imread(boar_tmp, cv2.IMREAD_GRAYSCALE)
+for boar_tmp in load_boars:
+    boar_tmp = cv2.imread(template_path_boar+boar_tmp, cv2.IMREAD_GRAYSCALE)
     boar_templates_loaded.append(boar_tmp)
 
 def get_boar_locs(template_list):
@@ -361,7 +362,7 @@ def get_anchor():
     """ Get the cords of the anchor """
     threshold = 0.99
     segment = cv2.imread("segment.png", cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread("anchor.png", cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread("/opt/dev/az/templates/anchor.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(segment, template, method)
     fres = np.where(result >= threshold)
     cord = (int(fres[1]/2), int(fres[0]/2))
@@ -372,17 +373,22 @@ def get_anchor():
 def cycle():
     n = 4
     navy('bottom_right', 6)
+    time.sleep(2)
     mousePos((672, 730))
+    time.sleep(0.2)
     move_and_click((672, 730), 10)
+    time.sleep(0.2)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type_3(n)
     navy('bottom_left', 6)
+    time.sleep(2)
     move_and_click((762, 978), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type_3(n)
     navy('top_right', 6)
+    time.sleep(2)
     move_and_click((935, 702), 10)
     for i in range(n):
         print("Starting round {}".format(i))
@@ -400,6 +406,7 @@ def get_anchored_cursor(anchor):
 
 
 def fish_path():
+    segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
     print("Starting Fishing now!")
     navy('top_left', 6)
@@ -435,6 +442,7 @@ def fish_path():
     mousePos(anchor_convert(anchor, (-213, 105)))
     move_and_click(anchor_convert(anchor, (-213, 105)), 5)
     navy('top_right', 6)
+    time.sleep(2)
     mousePos(anchor_convert(anchor, (-480, 178)))
     move_and_click(anchor_convert(anchor,(-480, 178)), 15) #Top right Start    
     mousePos(anchor_convert(anchor, (-473, 97)))
@@ -457,14 +465,15 @@ def multi_window_run():
 
 
 if __name__ == '__main__':
+    multi_window_run()
+    #fish_path()
     #anchor = get_anchor()
     #navy('bottom_left', 6)
     #move_screen_right(2, 300)
     #move_screen_up(4, 300)
-    #navy('top_right', 6)
+    #aCCvy('top_right', 6)
     #move_screen_up(3, 300)
     #fish_path()
     #get_anchored_cursor(anchor)
     #time.sleep(1)
-    #cursor_grab_iter(3, 3)
-    pass
+    

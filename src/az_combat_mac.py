@@ -33,6 +33,8 @@ for enemy in load_enemies:
 	enemy_tmp = cv2.imread(enemy_template_folder+enemy)
 	enemies_loaded.append(enemy_tmp)
 
+attack_screen_dimensions = ()
+
 
 class Combat():
 	def __init__(self):
@@ -111,6 +113,12 @@ class Combat():
 		if save:
 			segment.save(fn, 'PNG')
 		return segment
+
+
+	def get_screen_segment(self, name, x, y, w, h):
+		segment = ImageGrab.grab(bbox=(x, y, x+w, y+h))
+		segment.save(name, 'PNG')
+		return segment		
 		
 
 	def find_enemies_from_template(self, screen='', enemy=''):
@@ -146,31 +154,99 @@ class Combat():
 		return (x, y)
 
 
-	def select_fighters(self, combat_cord):
+	def get_atk_screen(self, cord):
+		#cord = self.get_combat_page_cord()
+		#cord = self.correct_cords(cord, 2, self.x, self.y)
+		x = cord[0]
+		y = cord[1]
+		x_s = x*2-480
+		y_s = y*2
+		atk_screen = self.get_screen_segment('tmp_atk_screen.png',x_s, y_s, 640*2, 520*2)
+		return atk_screen
+
+
+	def get_atk_button(self, cord):
 		pass
+
+
+	def click_pac(self, combat_cord):
+		x_m = 90
+		x, y = combat_cord
+		x_s = x-120
+		y_s = y+400
+		mousePos((x_s, y_s))
+		time.sleep(0.2)
+		mousePos((x_s, y_s))
+		time.sleep(0.2)
+		move_and_click((x_s, y_s))
+		time.sleep(0.2)
+		count = 1
+		ctw = False
+		while ctw == False:
+			x_s += x_m
+			mousePos((x_s, y_s))
+			time.sleep(0.2)
+			mousePos((x_s, y_s))
+			time.sleep(0.2)
+			move_and_click((x_s, y_s))
+			time.sleep(0.2)
+			count += 1
+			ctw = self.get_ctw(combat_cord)
+		mousePos((x+40, y+550))
+		time.sleep(0.2)
+		mousePos((x+40, y+550))
+		time.sleep(0.2)
+		mousePos((x+40, y+550))
+		time.sleep(0.2)
+		move_and_click((x+40, y+550))
+		time.sleep(0.2)
+		move_and_click((x+40, y+550))
+		time.sleep(0.2)
+
+	def get_ctw(self, cord):
+		""" return true if ctw is 100% """
+		self.get_atk_screen(cord)
+		segment = cv2.imread('tmp_atk_screen.png')
+		template = cv2.imread('ctw.png')
+		result = cv2.matchTemplate(segment, template, method)
+		fres = np.where(result >= 0.95)
+		if len(fres[0]) >= 1:
+			print("found green, should stop now")
+			return True
+		else:
+			return False
+
+
+	def clear_enemies(self, enemy_list):
+		print(enemy_list)
+		for enemy in enemy_list:
+			self.engage_enemy(enemy)
+			time.sleep(10)
+			new_el = self.find_all_enemies(self.enemies)
+			self.clear_enemies(new_el)
+
+
 
 
 	def engage_enemy(self, enemy_cord):
 		enemy_cord = self.correct_cords(enemy_cord, 2, self.x, self.y)
+		print(enemy_cord)
 		move_and_click(enemy_cord) #click enemy
 		if self.combat_page_check():
 			cord = self.get_combat_page_cord()
 			logger.info("Found Enemy and combat view open, ready to combat")
-			self.get_screen('atk_page.png', True)
+			self.get_atk_screen(cord)
+			self.click_pac(cord)
 			#self.select_fighters(cord)
 		else:
-			raise Exception("Did not find the combat page")
+			c_l = self.find_all_enemies(self.enemies)
+			self.clear_enemies(c_l)
 
 
 
 if __name__ == '__main__':
 	move_and_click((500, 500))
 	cm = Combat()
-	#cm.get_combat_page_cord()
 	c_l = cm.find_all_enemies(cm.enemies)
-	print(c_l)
-	cm.engage_enemy(c_l[0])
-	#ch = CordHelper()
-	#ch.write_cords_to_file('tmp_find.png', c_l, 'tag')
-
+	cm.clear_enemies(c_l)
 
