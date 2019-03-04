@@ -365,6 +365,7 @@ def get_anchor():
     template = cv2.imread("/opt/dev/az/templates/anchor.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(segment, template, method)
     fres = np.where(result >= threshold)
+    #print(fres, result)
     cord = (int(fres[1]/2), int(fres[0]/2))
     print("Anchor Found @ : {}".format(cord))
     return cord
@@ -451,6 +452,55 @@ def fish_path():
     move_and_click(anchor_convert(anchor, (-836, 106)), 5)
 
 
+def secure_click(cord, anchor='', delay=0.2):
+    if anchor == '':
+        cord = cord
+    else:
+        cord = anchor_convert(anchor, cord)
+    mousePos(cord)
+    time.sleep(0.1)
+    mousePos(cord)
+    time.sleep(0.1)
+    move_and_click(cord, delay)
+
+
+def is_limit_reached(anchor):
+    threshold = 0.95
+    segment_grab(trs_x, trs_y, trs_w, trs_h, True)
+    segment = cv2.imread('segment.png',  cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread('limit_reached.png', cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(segment, template, method)
+    fres = np.where(result >= threshold)
+    if len(fres[0]) >= 1:
+        secure_click((-351, 296), anchor)
+
+
+def screen_checker(limit_reached, upgrade):
+    pass
+
+
+
+def collect_path():
+    segment_grab(trs_x, trs_y, trs_w, trs_h, True)
+    anchor = get_anchor()
+    print("Starting Collecting now!")
+    navy('top_right', 4)
+    secure_click((15, 162), anchor, 1)
+    secure_click((-1025, 634), anchor, 1)
+    secure_click((-942, 543), anchor, 1)
+    secure_click((-832, 595), anchor, 1)
+    navy('bottom_right', 2)
+    secure_click((-178, 694), anchor, 1)
+    move_screen_left(2, 300)
+    secure_click((-592, 860), anchor, 1)
+    secure_click((-178, 694), anchor, 1)
+    navy('bottom_left', 2)
+    secure_click((-814, 815), anchor, 1)
+    navy('top_left', 3)
+    secure_click((-830, 468), anchor, 1)
+    secure_click((-530, 294), anchor, 1)
+
+
 def anchor_convert(anchor, cord):
     return (anchor[0]+cord[0], anchor[1]+cord[1])
 
@@ -462,18 +512,13 @@ def multi_window_run():
         print("Swapping Windows")
         swap_windows()
         time.sleep(3)
-
+        print('Collecting RP!')
+        collect_path()
 
 if __name__ == '__main__':
     multi_window_run()
     #fish_path()
+    #collect_path()
     #anchor = get_anchor()
-    #navy('bottom_left', 6)
-    #move_screen_right(2, 300)
-    #move_screen_up(4, 300)
-    #aCCvy('top_right', 6)
-    #move_screen_up(3, 300)
-    #fish_path()
     #get_anchored_cursor(anchor)
-    #time.sleep(1)
     
