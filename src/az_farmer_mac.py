@@ -4,6 +4,7 @@ import time
 import json
 import datetime
 from az_code_mac import *
+from az_crafting import *
 from PIL import ImageOps
 from numpy import *
 import numpy as np
@@ -12,6 +13,7 @@ import cv2
 import warnings
 import subprocess
 from keyboard import *
+
 
 boar_exist_int = [324, 325, 326, 497, 482, 490, 492, 496, 495, 498, 517, 662, 665, 494, 500, 419, 578, 623, 672, 693, 778, 805, 562, 838, 988, 1014, 1189, 1356, 1507, 1571, 5797, 6499]
 
@@ -150,6 +152,27 @@ def segment_grab(x, y, w, l, save=True):
     if save:
         im.save("segment.png", 'PNG')
         params = ['mogrify', 'segment.png', 'segment.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+def town_grab(x, y, w, l, save=True):
+    new_cord = (x, y, x+w, y+l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("town.png", 'PNG')
+        params = ['mogrify', 'town.png', 'town.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
+def popup_grab(x, y, w, l, save=True):
+    new_cord = (x, y, x+w, y+l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("popup.png", 'PNG')
+        params = ['mogrify', 'popup.png', 'popup.png']
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
@@ -362,13 +385,50 @@ def get_anchor():
     """ Get the cords of the anchor """
     threshold = 0.99
     segment = cv2.imread("segment.png", cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread("/opt/dev/az/templates/anchor.png", cv2.IMREAD_GRAYSCALE)
+    try:
+        template = cv2.imread("/opt/dev/az/templates/anchor.png", cv2.IMREAD_GRAYSCALE)
+        result = cv2.matchTemplate(segment, template, method)
+        fres = np.where(result >= threshold)
+        cord = (int(fres[1]/2), int(fres[0]/2))
+        print("Anchor Found @ : {}".format(cord))
+        return cord
+    except:
+        template = cv2.imread("/opt/dev/az/templates/popup_anchor.png", cv2.IMREAD_GRAYSCALE)
+        result = cv2.matchTemplate(segment, template, method)
+        fres = np.where(result >= threshold)
+        cord = (int(fres[1]/2), int(fres[0]/2))
+        print("Popup Anchor Found @ : {}".format(cord))
+        return cord        
+
+
+def is_ready():
+    """ Check if a building is working """
+    threshold = 0.99
+    segment = cv2.imread("town.png", cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread("/opt/dev/az/templates/ready.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(segment, template, method)
     fres = np.where(result >= threshold)
-    #print(fres, result)
-    cord = (int(fres[1]/2), int(fres[0]/2))
-    print("Anchor Found @ : {}".format(cord))
-    return cord
+    try:
+        type(fres[0][0])
+        return 0 # working
+    except IndexError:
+        return 1 # ready for work
+
+
+def is_popup():
+    """ Check if a popup exists """
+    threshold = 0.99
+    segment = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread("/opt/dev/az/templates/close.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(segment, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        type(fres[0][0])
+        cord = (int(fres[1]/2), int(fres[0]/2))
+        print("Popup found @ : {}".format(cord))
+        return cord
+    except IndexError:
+        return 1 # ready for work   
 
 
 def cycle():
@@ -426,11 +486,11 @@ def fish_path():
     mousePos(anchor_convert(anchor, (-434, 801)))
     move_and_click(anchor_convert(anchor,(-434, 801)), 15) #Middle Bottom Start
     mousePos(anchor_convert(anchor, (-396, 773)))
-    move_and_click(anchor_convert(anchor, (-396, 773)), 5)
+    move_and_click(anchor_convert(anchor, (-396, 765)), 5)
     mousePos(anchor_convert(anchor, (-328, 600)))
     move_and_click(anchor_convert(anchor, (-328, 600)), 5)
     mousePos(anchor_convert(anchor, (-854, 292)))
-    move_and_click(anchor_convert(anchor, (-854, 292)), 5)
+    move_and_click(anchor_convert(anchor, (-854, 280)), 8)
     move_screen_up(4, 300)
     mousePos(anchor_convert(anchor, (-780, 681)))
     move_and_click(anchor_convert(anchor,(-780, 681)), 15) #Middle Top Start
@@ -462,6 +522,17 @@ def secure_click(cord, anchor='', delay=0.2):
     mousePos(cord)
     time.sleep(0.1)
     move_and_click(cord, delay)
+
+
+def secure_mouse_over(cord, anchor='', delay=0.2):
+    if anchor == '':
+        cord = cord
+    else:
+        cord = anchor_convert(anchor, cord)    
+    mousePos(cord)
+    time.sleep(0.1)
+    mousePos(cord)
+    time.sleep(0.1)
 
 
 def is_limit_reached(anchor):
@@ -506,19 +577,17 @@ def anchor_convert(anchor, cord):
 
 
 def multi_window_run():
-    while True:
-        print("Running Cycle")
-        cycle()
-        print("Swapping Windows")
-        swap_windows()
-        time.sleep(3)
-        print('Collecting RP!')
-        collect_path()
+    print("Running Cycle")
+    cycle()
+    time.sleep(3)
+    print('Collecting RP!')
+    collect_path()
 
 if __name__ == '__main__':
-    multi_window_run()
+    #multi_window_run()
+    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     #fish_path()
-    #collect_path()
+    collect_path()
     #anchor = get_anchor()
     #get_anchored_cursor(anchor)
     

@@ -243,10 +243,36 @@ class Combat():
 			self.clear_enemies(c_l)
 
 
-
-if __name__ == '__main__':
-	move_and_click((500, 500))
+def clear_segment():
 	cm = Combat()
 	c_l = cm.find_all_enemies(cm.enemies)
 	cm.clear_enemies(c_l)
+
+
+def clear_all_enemies():
+	print("Clearing Enemies in Top Left!")
+	navy('top_left', 6)
+	clear_segment()
+	print("Clearing Enemies in Bottom Left!")
+	navy('bottom_left', 6)
+	clear_segment()
+	print("Clearing Enemies in Bottom Middle!")
+	navy('bottom_left', 6)
+	move_screen_right(2, 300)
+	clear_segment()
+	print("Clearing Enemies in Middle Middle!")
+	navy('bottom_left', 6)
+	move_screen_right(2, 300)
+	move_screen_up(4, 300)
+	clear_segment()
+	print("Clearing Enemies in Top Right!")
+	navy('top_right', 6)
+	clear_segment()
+	print("Clearing Enemies in Bottom Right!")
+	navy('bottom_right', 6)
+	clear_segment()
+
+
+if __name__ == '__main__':
+	clear_all_enemies()
 

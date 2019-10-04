@@ -4,10 +4,13 @@ import time
 #import win32api, win32con
 import json
 import datetime
-from pynput.mouse import Button, Controller
+from pynput.mouse import Button, Controller 
+import pynput.mouse
 from PIL import ImageOps
+#from az_crafting import *
+#from az_farmer_mac import *
 
-mouse = Controller()
+mouse = pynput.mouse.Controller()
 
 x_pad = 0
 y_pad = 0
@@ -128,6 +131,13 @@ def navy(nav_indicator, num_moves=4):
         nav_bot_l(num_moves)
     elif nav_indicator == "top_left":
         nav_top_l(num_moves)
+
+
+def nav_to_town():
+    move_screen_right(5, 400)
+    move_screen_up(4, 200)
+    move_screen_left(1, 400)
+
 
 def nav_bot_r(num_moves):
     move_screen_right(num_moves, 400)
@@ -272,13 +282,7 @@ def get_test_images():
 
 
 if __name__ == '__main__':
-    pass
-    #n = 10
-    #while n > 0:
-    #    world_tour_1920('spawn_1920_1080.json')
-    #    n -= 1
-    #    print("Cycles Left: {}".format(n))
-    #move_and_click(get_start_point('spawn_1920_1080.json', 'bottom_right', 'boars', 0),15)
-    #output_cords()
+    mousePos()
+    #get_cords()
     #screenGrab()
     #get_test_images()
