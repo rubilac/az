@@ -218,15 +218,14 @@ class Inventory():
 		# Store anchor point
 		# Store Inventory points
 		# Store Sell points
+		# Inventory is open @ (533, 414)
 		self.method = cv2.TM_CCOEFF_NORMED
 		self.threshold = 0.99
-		self.screen_w = 2200
-		self.screen_h = 2200
-		self.end_of_bag = [32705332, 21902624]
+		self.screen_w = 2400
+		self.screen_h = 2400
+		self.end_of_bag = [32705332, 21902624, 32825199]
 		self.del_list = [	
-							31311194, 29946229, 35747789, 34398448, 
-							32002882, 34490115, 34898008, 32887210, 
-							34455958, 29758269
+							32118004, 32706955, 30655535, 34591822
 						]
 		#self.items = load_file(item_file)
 		self.inv_def = {
@@ -293,13 +292,13 @@ class Inventory():
 			Grab a 2200 x 2200 piece of the screen and return the cord of the inventory.png template
 			if the inventory is open, otherwise return False
 		"""
+		template = read_image(inv_img, cv2.IMREAD_GRAYSCALE)
 		if seg == '':
 			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(1,1,self.screen_w,self.screen_h)))
 			ps = np.array(segment.getdata(), dtype='uint8').reshape((segment.size[0], segment.size[1],-1))
 		else:
 			try:
 				ps = read_image(seg, cv2.IMREAD_GRAYSCALE)
-				template = read_image(inv_img, cv2.IMREAD_GRAYSCALE)
 			except:
 				raise Exception('Unable to load open_bag_check images.')
 		
@@ -536,7 +535,7 @@ class Inventory():
 			counter += 1
 
 
-	def bag_cleaner(self, del_list, bag_cord=0, bypass=False):
+	def bag_cleaner(self, del_list, bag_cord=0, bypass=True):
 		""" 
 			Function to get the current bag page and initiate a delete if the item is found in the 
 			delete list.

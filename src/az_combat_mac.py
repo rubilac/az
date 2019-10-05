@@ -165,10 +165,6 @@ class Combat():
 		return atk_screen
 
 
-	def get_atk_button(self, cord):
-		pass
-
-
 	def click_pac(self, combat_cord):
 		x_m = 90
 		x, y = combat_cord
@@ -203,6 +199,7 @@ class Combat():
 		move_and_click((x+40, y+550))
 		time.sleep(0.2)
 
+
 	def get_ctw(self, cord):
 		""" return true if ctw is 100% """
 		self.get_atk_screen(cord)
@@ -226,8 +223,6 @@ class Combat():
 			self.clear_enemies(new_el)
 
 
-
-
 	def engage_enemy(self, enemy_cord):
 		enemy_cord = self.correct_cords(enemy_cord, 2, self.x, self.y)
 		print(enemy_cord)
@@ -241,6 +236,65 @@ class Combat():
 		else:
 			c_l = self.find_all_enemies(self.enemies)
 			self.clear_enemies(c_l)
+
+
+class Legion():
+	def __init__(self):
+		self.screen_w = 2570
+		self.screen_h = 2075
+		self.x = 0
+		self.y = 325
+		self.ch = CordHelper()
+		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
+		self.attack_arrow = self.load_image('/opt/dev/az/templates/combat/legion/red_arrow.png')
+		self.map_pos = (-17, 897)
+
+
+	def load_images_from_dir(self, dirname):
+		out_list = []
+		file_list = os.listdir(dirname)
+		for img in file_list:
+			img_tmp = cv2.imread(dirname+img)
+			out_list.append(img_tmp)
+		return out_list
+
+
+	def load_image(self, img_path):
+		img_tmp = cv2.imread(img_path)
+		return img_tmp
+
+
+	def find_attacker(self, screen=''):
+		if str(screen) == '':
+			self.get_screen('tmp_find.png', True)
+			screen = cv2.imread('tmp_find.png')
+		else:
+			screen = cv2.imread('tmp_find.png')
+		result = cv2.matchTemplate(screen, self.attack_arrow, method)
+		fres = np.where(result >= 0.8)
+		c_list = self.ch.optimise_cord(fres, 20, 100)
+		print("Found Legion Attack @ {}".format(c_list[0]))
+		return c_list
+
+
+	def get_screen(self, fn='tmp.png', save=True):
+		segment = ImageGrab.grab(bbox=(self.x, self.y, self.x+self.screen_w, self.y+self.screen_h))
+		if save:
+			segment.save(fn, 'PNG')
+		return segment
+
+
+	def get_screen_segment(self, name, x, y, w, h):
+		segment = ImageGrab.grab(bbox=(x, y, x+w, y+h))
+		segment.save(name, 'PNG')
+		return segment	
+
+
+	def get_village_screen(self):
+		x_s = 800
+		y_s = 400
+		village_screen = self.get_screen_segment('village.png',x_s, y_s, 240*2, 240*2)
+		return village_screen
 
 
 def clear_segment():
@@ -275,4 +329,10 @@ def clear_all_enemies():
 
 if __name__ == '__main__':
 	clear_all_enemies()
+	#legion = Legion()
+	#cord = legion.find_attacker()
+	#cm = Combat()
+	#cm.clear_enemies(cord)
+
+
 

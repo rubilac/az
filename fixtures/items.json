@@ -4,7 +4,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28775496,
+            "item_int": 28932649,
             "item_max": 2,
             "item_name": "amphorae",
             "item_stacksize": 5
@@ -13,7 +13,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29913407,
+            "item_int": 30270921,
             "item_max": 100,
             "item_name": "apples",
             "item_stacksize": 5
@@ -31,7 +31,16 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28893359,
+            "item_int": 33228436,
+            "item_max": 100,
+            "item_name": "battleaxe",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 29172082,
             "item_max": 100,
             "item_name": "beetroot",
             "item_stacksize": 10
@@ -40,7 +49,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28518842,
+            "item_int": 28718304,
             "item_max": 100,
             "item_name": "belgian_snacks",
             "item_stacksize": 2
@@ -49,7 +58,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 27515199,
+            "item_int": 27624869,
             "item_max": 100,
             "item_name": "florentine_steaks",
             "item_stacksize": 10
@@ -58,7 +67,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 35376251,
+            "item_int": 35507869,
             "item_max": 2,
             "item_name": "boar_bones",
             "item_stacksize": 10
@@ -67,7 +76,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32606571,
+            "item_int": 32706955,
             "item_max": 2,
             "item_name": "entrails",
             "item_stacksize": 10
@@ -76,7 +85,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30538306,
+            "item_int": 30655535,
             "item_max": 2,
             "item_name": "boar_skins",
             "item_stacksize": 10
@@ -85,7 +94,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34146084,
+            "item_int": 34267829,
             "item_max": 100,
             "item_name": "boar_teeth",
             "item_stacksize": 5
@@ -94,7 +103,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30036244,
+            "item_int": 30169025,
             "item_max": 100,
             "item_name": "bresaola",
             "item_stacksize": 10
@@ -112,6 +121,15 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
+            "item_int": 30583340,
+            "item_max": 100,
+            "item_name": "caledonian_salmon",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
             "item_int": 32423383,
             "item_max": 100,
             "item_name": "caber",
@@ -121,7 +139,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33417900,
+            "item_int": 33720978,
             "item_max": 100,
             "item_name": "carrots",
             "item_stacksize": 5
@@ -130,7 +148,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26621953,
+            "item_int": 26696107,
             "item_max": 100,
             "item_name": "wheels",
             "item_stacksize": 5
@@ -139,7 +157,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31298959,
+            "item_int": 31480768,
             "item_max": 100,
             "item_name": "centurions",
             "item_stacksize": 100
@@ -148,9 +166,18 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26433821,
+            "item_int": 26534707,
             "item_max": 100,
             "item_name": "cervisia_barrels",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 28624088,
+            "item_max": 100,
+            "item_name": "chairs",
             "item_stacksize": 5
         },
         {
@@ -166,7 +193,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31596427,
+            "item_int": 31718101,
             "item_max": 100,
             "item_name": "chariot_jacks",
             "item_stacksize": 10
@@ -175,7 +202,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30090826,
+            "item_int": 30195441,
             "item_max": 100,
             "item_name": "chariot_permits",
             "item_stacksize": 10
@@ -184,7 +211,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30169354,
+            "item_int": 30306802,
             "item_max": 100,
             "item_name": "etrurian_wine",
             "item_stacksize": 10
@@ -193,7 +220,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30063435,
+            "item_int": 30258147,
             "item_max": 100,
             "item_name": "chicken",
             "item_stacksize": 5
@@ -202,7 +229,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33942007,
+            "item_int": 34063636,
             "item_max": 100,
             "item_name": "chisel",
             "item_stacksize": 5
@@ -211,7 +238,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31582060,
+            "item_int": 31701978,
             "item_max": 100,
             "item_name": "coal",
             "item_stacksize": 10
@@ -220,7 +247,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32406387,
+            "item_int": 32556682,
             "item_max": 100,
             "item_name": "corsican_cheese",
             "item_stacksize": 5
@@ -229,7 +256,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30603699,
+            "item_int": 30809268,
             "item_max": 100,
             "item_name": "crabs",
             "item_stacksize": 5
@@ -238,7 +265,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31062618,
+            "item_int": 31277728,
             "item_max": 100,
             "item_name": "dates",
             "item_stacksize": 10
@@ -246,8 +273,17 @@
         {
             "item_count_cur": 0,
             "item_count_prev": 0,
+            "item_delete": true,
+            "item_int": 34591822,
+            "item_max": 100,
+            "item_name": "dipper",
+            "item_stacksize": 6
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 25776115,
+            "item_int": 25857938,
             "item_max": 100,
             "item_name": "door",
             "item_stacksize": 5
@@ -274,7 +310,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34032106,
+            "item_int": 34173862,
             "item_max": 100,
             "item_name": "egyptian_fish",
             "item_stacksize": 10
@@ -283,7 +319,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33900680,
+            "item_int": 34059122,
             "item_max": 100,
             "item_name": "egyptian_sword",
             "item_stacksize": 5
@@ -292,7 +328,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26422389,
+            "item_int": 26519116,
             "item_max": 100,
             "item_name": "empty_barrels",
             "item_stacksize": 5
@@ -301,7 +337,16 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33450873,
+            "item_int": 30649749,
+            "item_max": 100,
+            "item_name": "exotic_spices",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33567816,
             "item_max": 100,
             "item_name": "feathers",
             "item_stacksize": 5
@@ -319,7 +364,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 27405027,
+            "item_int": 27482461,
             "item_max": 100,
             "item_name": "flagstones",
             "item_stacksize": 10
@@ -355,7 +400,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32002882,
+            "item_int": 32118004,
             "item_max": 0,
             "item_name": "fish",
             "item_stacksize": 10
@@ -364,7 +409,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 22205388,
+            "item_int": 2228263531082092,
             "item_max": 100,
             "item_name": "fur_vests",
             "item_stacksize": 5
@@ -391,7 +436,16 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30987399,
+            "item_int": 33356694,
+            "item_max": 100,
+            "item_name": "gemstone_daggers",
+            "item_stacksize": 3
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 31295211,
             "item_max": 100,
             "item_name": "red_gemstones",
             "item_stacksize": 3
@@ -400,7 +454,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29383881,
+            "item_int": 29487866,
             "item_max": 100,
             "item_name": "gold_ore",
             "item_stacksize": 5
@@ -418,7 +472,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34626730,
+            "item_int": 34765171,
             "item_max": 100,
             "item_name": "gothic_halberds",
             "item_stacksize": 5
@@ -427,7 +481,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 25147985,
+            "item_int": 25231045,
             "item_max": 100,
             "item_name": "grease",
             "item_stacksize": 10
@@ -436,7 +490,16 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33050373,
+            "item_int": 32525371,
+            "item_max": 100,
+            "item_name": "grindstones",
+            "item_stacksize": 10
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 33164689,
             "item_max": 100,
             "item_name": "winged_helmets",
             "item_stacksize": 5
@@ -454,7 +517,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32214523,
+            "item_int": 32403072,
             "item_max": 100,
             "item_name": "horns",
             "item_stacksize": 10
@@ -463,7 +526,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33145616,
+            "item_int": 33261931,
             "item_max": 100,
             "item_name": "horses",
             "item_stacksize": 5
@@ -472,9 +535,18 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28689507,
+            "item_int": 28798139,
             "item_max": 100,
             "item_name": "swift_horses",
+            "item_stacksize": 5
+        },
+        {
+            "item_count_cur": 0,
+            "item_count_prev": 0,
+            "item_delete": false,
+            "item_int": 32365501,
+            "item_max": 100,
+            "item_name": "horseshoes",
             "item_stacksize": 5
         },
         {
@@ -498,8 +570,8 @@
         {
             "item_count_cur": 0,
             "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 35747789,
+            "item_delete": true,
+            "item_int": 35896781,
             "item_max": 0,
             "item_name": "icicles",
             "item_stacksize": 5
@@ -508,7 +580,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31221414,
+            "item_int": 31317822,
             "item_max": 100,
             "item_name": "iron_bars",
             "item_stacksize": 5
@@ -517,7 +589,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33047511,
+            "item_int": 33181994,
             "item_max": 100,
             "item_name": "iron_hammers",
             "item_stacksize": 5
@@ -526,7 +598,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28636235,
+            "item_int": 28704532,
             "item_max": 2,
             "item_name": "iron_ore",
             "item_stacksize": 10
@@ -535,7 +607,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32820793,
+            "item_int": 32974673,
             "item_max": 100,
             "item_name": "irons_scraps",
             "item_stacksize": 10
@@ -544,7 +616,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32036694,
+            "item_int": 32205191,
             "item_max": 100,
             "item_name": "leather",
             "item_stacksize": 5
@@ -553,7 +625,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28116241,
+            "item_int": 28277431,
             "item_max": 100,
             "item_name": "leather_strap",
             "item_stacksize": 5
@@ -562,7 +634,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31028374,
+            "item_int": 31435154,
             "item_max": 100,
             "item_name": "linen_cloth",
             "item_stacksize": 5
@@ -571,7 +643,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32175044,
+            "item_int": 32342178,
             "item_max": 100,
             "item_name": "lobsters",
             "item_stacksize": 5
@@ -580,7 +652,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 27189576,
+            "item_int": 27607670,
             "item_max": 100,
             "item_name": "cows_hoof_mould",
             "item_stacksize": 5
@@ -589,7 +661,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31980895,
+            "item_int": 32018228,
             "item_max": 100,
             "item_name": "blocks_of_marble",
             "item_stacksize": 10
@@ -598,7 +670,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33590060,
+            "item_int": 33706076,
             "item_max": 100,
             "item_name": "menhirs",
             "item_stacksize": 5
@@ -607,7 +679,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26387639,
+            "item_int": 26765769,
             "item_max": 100,
             "item_name": "milestones",
             "item_stacksize": 5
@@ -616,7 +688,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31652277,
+            "item_int": 31836993,
             "item_max": 100,
             "item_name": "mistletoe",
             "item_stacksize": 5
@@ -625,7 +697,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31202971,
+            "item_int": 31312731,
             "item_max": 100,
             "item_name": "mortars",
             "item_stacksize": 5
@@ -634,7 +706,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31734090,
+            "item_int": 31891533,
             "item_max": 100,
             "item_name": "mushrooms",
             "item_stacksize": 5
@@ -643,7 +715,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33744771,
+            "item_int": 33870169,
             "item_max": 100,
             "item_name": "nails",
             "item_stacksize": 5
@@ -661,7 +733,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29946229,
+            "item_int": 30070385,
             "item_max": 100,
             "item_name": "oats",
             "item_stacksize": 5
@@ -670,7 +742,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33061371,
+            "item_int": 33220831,
             "item_max": 100,
             "item_name": "obelisks",
             "item_stacksize": 5
@@ -679,7 +751,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 35090035,
+            "item_int": 35239176,
             "item_max": 100,
             "item_name": "paddles",
             "item_stacksize": 5
@@ -688,7 +760,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34989175,
+            "item_int": 35136106,
             "item_max": 100,
             "item_name": "paintbrushes",
             "item_stacksize": 10
@@ -697,7 +769,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31042715,
+            "item_int": 31130631,
             "item_max": 100,
             "item_name": "panforte",
             "item_stacksize": 10
@@ -706,7 +778,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29750865,
+            "item_int": 29992881,
             "item_max": 100,
             "item_name": "papyrus",
             "item_stacksize": 10
@@ -715,7 +787,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31511211,
+            "item_int": 31643122,
             "item_max": 100,
             "item_name": "papyrus_scrolls",
             "item_stacksize": 5
@@ -724,7 +796,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30021667,
+            "item_int": 30550526,
             "item_max": 100,
             "item_name": "parsley",
             "item_stacksize": 10
@@ -742,7 +814,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33828507,
+            "item_int": 33951034,
             "item_max": 100,
             "item_name": "pearls",
             "item_stacksize": 3
@@ -751,7 +823,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32459469,
+            "item_int": 32578130,
             "item_max": 100,
             "item_name": "pickaxes",
             "item_stacksize": 5
@@ -760,7 +832,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32887210,
+            "item_int": 33062185,
             "item_max": 0,
             "item_name": "sand",
             "item_stacksize": 10
@@ -769,7 +841,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30251769,
+            "item_int": 30382053,
             "item_max": 100,
             "item_name": "pizzas",
             "item_stacksize": 10
@@ -778,7 +850,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33526195,
+            "item_int": 33634835,
             "item_max": 100,
             "item_name": "rabbits",
             "item_stacksize": 5
@@ -787,7 +859,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 27053292,
+            "item_int": 27319920,
             "item_max": 100,
             "item_name": "racing_gloves",
             "item_stacksize": 10
@@ -796,7 +868,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31683743,
+            "item_int": 31968299,
             "item_max": 100,
             "item_name": "reins",
             "item_stacksize": 10
@@ -805,7 +877,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32094765,
+            "item_int": 32445938,
             "item_max": 100,
             "item_name": "resin",
             "item_stacksize": 5
@@ -814,7 +886,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30606057,
+            "item_int": 30767197,
             "item_max": 100,
             "item_name": "risotto",
             "item_stacksize": 10
@@ -832,7 +904,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31201602,
+            "item_int": 31329548,
             "item_max": 100,
             "item_name": "rock_oil",
             "item_stacksize": 10
@@ -850,7 +922,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30406718,
+            "item_int": 30539234,
             "item_max": 100,
             "item_name": "roman_sandal",
             "item_stacksize": 5
@@ -859,7 +931,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 27668447,
+            "item_int": 27767171,
             "item_max": 100,
             "item_name": "ropes",
             "item_stacksize": 5
@@ -868,7 +940,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31736918,
+            "item_int": 31847772,
             "item_max": 100,
             "item_name": "salt",
             "item_stacksize": 10
@@ -886,7 +958,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31974836,
+            "item_int": 32075802,
             "item_max": 100,
             "item_name": "sharpening_stones",
             "item_stacksize": 5
@@ -895,7 +967,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 25799936,
+            "item_int": 26067265,
             "item_max": 100,
             "item_name": "shields",
             "item_stacksize": 5
@@ -904,7 +976,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31373736,
+            "item_int": 31738944,
             "item_max": 100,
             "item_name": "quality_shields",
             "item_stacksize": 5
@@ -913,7 +985,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26295517,
+            "item_int": 26444638,
             "item_max": 100,
             "item_name": "poor_shields",
             "item_stacksize": 5
@@ -922,7 +994,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33779307,
+            "item_int": 33894427,
             "item_max": 100,
             "item_name": "shovels",
             "item_stacksize": 5
@@ -931,7 +1003,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31626478,
+            "item_int": 31761847,
             "item_max": 100,
             "item_name": "smelly_fish",
             "item_stacksize": 10
@@ -949,7 +1021,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30723313,
+            "item_int": 31116847,
             "item_max": 100,
             "item_name": "spartan_helmets",
             "item_stacksize": 6
@@ -958,7 +1030,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34773276,
+            "item_int": 34913124,
             "item_max": 100,
             "item_name": "spears",
             "item_stacksize": 5
@@ -967,7 +1039,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34938825,
+            "item_int": 35078413,
             "item_max": 100,
             "item_name": "balanced_spears",
             "item_stacksize": 5
@@ -976,7 +1048,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34960738,
+            "item_int": 35095562,
             "item_max": 100,
             "item_name": "poor_spears",
             "item_stacksize": 5
@@ -985,7 +1057,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33883108,
+            "item_int": 33982093,
             "item_max": 100,
             "item_name": "steel_bars",
             "item_stacksize": 5
@@ -994,7 +1066,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31454625,
+            "item_int": 31526820,
             "item_max": 100,
             "item_name": "stone_blocks",
             "item_stacksize": 10
@@ -1003,7 +1075,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 32767856,
+            "item_int": 32878271,
             "item_max": 100,
             "item_name": "stone_hammers",
             "item_stacksize": 5
@@ -1021,7 +1093,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29865487,
+            "item_int": 30047061,
             "item_max": 100,
             "item_name": "strawberry",
             "item_stacksize": 3
@@ -1030,7 +1102,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31968284,
+            "item_int": 32189239,
             "item_max": 100,
             "item_name": "swiss_cheese",
             "item_stacksize": 5
@@ -1039,7 +1111,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33751461,
+            "item_int": 33924690,
             "item_max": 100,
             "item_name": "swords",
             "item_stacksize": 5
@@ -1048,7 +1120,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33602248,
+            "item_int": 33778575,
             "item_max": 100,
             "item_name": "balanced_swords",
             "item_stacksize": 5
@@ -1057,7 +1129,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34029900,
+            "item_int": 34182861,
             "item_max": 100,
             "item_name": "poor_swords",
             "item_stacksize": 5
@@ -1066,7 +1138,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31051840,
+            "item_int": 31156201,
             "item_max": 100,
             "item_name": "thread",
             "item_stacksize": 10
@@ -1084,7 +1156,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30044517,
+            "item_int": 30225933,
             "item_max": 100,
             "item_name": "silver_viking_shield",
             "item_stacksize": 5
@@ -1102,7 +1174,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26695951,
+            "item_int": 26849907,
             "item_max": 100,
             "item_name": "water",
             "item_stacksize": 10
@@ -1111,7 +1183,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29469196,
+            "item_int": 29579985,
             "item_max": 100,
             "item_name": "whips",
             "item_stacksize": 5
@@ -1120,7 +1192,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26011185,
+            "item_int": 26106437,
             "item_max": 100,
             "item_name": "wine_barrels",
             "item_stacksize": 5
@@ -1129,7 +1201,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 28170888,
+            "item_int": 28289039,
             "item_max": 100,
             "item_name": "wooden_planks",
             "item_stacksize": 10
@@ -1147,7 +1219,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33717132,
+            "item_int": 33942592,
             "item_max": 100,
             "item_name": "wreath",
             "item_stacksize": 500
@@ -1156,7 +1228,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33451960,
+            "item_int": 33660940,
             "item_max": 100,
             "item_name": "minor_potion_of_regeneration",
             "item_stacksize": 3
@@ -1165,7 +1237,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33685350,
+            "item_int": 33833614,
             "item_max": 100,
             "item_name": "minor_lumberjack_potion",
             "item_stacksize": 3
@@ -1219,7 +1291,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30946720,
+            "item_int": 31082092,
             "item_max": 100,
             "item_name": "wine_frome_durocortorum",
             "item_stacksize": 5
@@ -1282,7 +1354,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 26771205,
+            "item_int": 26929904,
             "item_max": 100,
             "item_name": "gothic_helmet",
             "item_stacksize": 5
@@ -1291,7 +1363,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33516330,
+            "item_int": 33646256,
             "item_max": 100,
             "item_name": "hatchets",
             "item_stacksize": 5
@@ -1309,7 +1381,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 31311194,
+            "item_int": 31419264,
             "item_max": 0,
             "item_name": "nordic_skull_necklace",
             "item_stacksize": 5
@@ -1318,7 +1390,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30864363,
+            "item_int": 30962582,
             "item_max": 100,
             "item_name": "oysters",
             "item_stacksize": 5
@@ -1327,7 +1399,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33759886,
+            "item_int": 33900670,
             "item_max": 100,
             "item_name": "rolling_pin",
             "item_stacksize": 5
@@ -1345,7 +1417,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29550144,
+            "item_int": 29800858,
             "item_max": 100,
             "item_name": "golden_viking_shield",
             "item_stacksize": 5
@@ -1354,7 +1426,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 24104003,
+            "item_int": 24202244,
             "item_max": 100,
             "item_name": "malted_water",
             "item_stacksize": 5
@@ -1363,7 +1435,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30785694,
+            "item_int": 30858988,
             "item_max": 100,
             "item_name": "major_stonebreaker_potion",
             "item_stacksize": 5
@@ -1399,7 +1471,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30544959,
+            "item_int": 30733959,
             "item_max": 100,
             "item_name": "bronze_viking_shield",
             "item_stacksize": 5
@@ -1417,7 +1489,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 29728678,
+            "item_int": 30001691,
             "item_max": 100,
             "item_name": "tent",
             "item_stacksize": 5
@@ -1453,7 +1525,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33202251,
+            "item_int": 33330317,
             "item_max": 100,
             "item_name": "horned_helmet",
             "item_stacksize": 5
@@ -1471,7 +1543,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 33132288,
+            "item_int": 33286069,
             "item_max": 100,
             "item_name": "fan_banners",
             "item_stacksize": 10
@@ -1480,7 +1552,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 30222060,
+            "item_int": 30409834,
             "item_max": 100,
             "item_name": "racing_shirts",
             "item_stacksize": 10
@@ -1498,7 +1570,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 34830941,
+            "item_int": 34969651,
             "item_max": 100,
             "item_name": "sumerian_bows",
             "item_stacksize": 5
@@ -1543,7 +1615,7 @@
             "item_count_cur": 0,
             "item_count_prev": 0,
             "item_delete": false,
-            "item_int": 25911559,
+            "item_int": 26152047,
             "item_max": 100,
             "item_name": "major_potion_of_healthpoints",
             "item_stacksize": 5
@@ -1555,123 +1627,6 @@
             "item_int": 28798081,
             "item_max": 100,
             "item_name": "major_potion_of_strength",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 21,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 2,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 28854806,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 3,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 30073041,
-            "item_max": 100,
-            "item_name": "replace_me",
-            "item_stacksize": 5
-        },
-        {
-            "item_count_cur": 0,
-            "item_count_prev": 0,
-            "item_delete": false,
-            "item_int": 2,
-            "item_max": 100,
-            "item_name": "replace_me",
             "item_stacksize": 5
         }
     ]

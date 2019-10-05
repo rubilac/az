@@ -584,10 +584,10 @@ def multi_window_run():
     collect_path()
 
 if __name__ == '__main__':
-    #multi_window_run()
+    multi_window_run()
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     #fish_path()
-    collect_path()
+    #collect_path()
     #anchor = get_anchor()
     #get_anchored_cursor(anchor)
     
