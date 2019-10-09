@@ -229,16 +229,6 @@ class Inventory():
 		secure_click(self.search_clear, self.anchor, 1)
 
 
-	def inv_slot_sell_gen(self, slot_cord, slot):
-		""" 
-			Given the slot coordinate, return the coords for each slots sell button 
-		"""
-		sx = slot_cord[0]+75
-		sy = slot_cord[1]+110
-		cord = (sx, sy)
-		return cord
-
-
 	def inv_nav_left(self, bag_cord):
 		""" 
 			Function to navigate the inventory widget right based on anchor
@@ -272,21 +262,32 @@ class Inventory():
 			fres = np.where(result >= 0.99)
 			slots = zip(fres[0], fres[1])
 			slot_set = set(slots)
-			print("Found deletable item {} at the following place(s): {}".format(item_name, slot_set))
 			count = 0
 			for i in slot_set:
 				count += 1
 				slot_list.append(i)
 			out = [slot_list, count]
-			return out
+			if out == [[], 0]:
+				print("No item {} found".format(item_name))
+				return 1
+			else:
+				return out
 		except:
-			return 1 # if I dont find anythin, just return 1
+			print("Error, seems dodge")
+			return 2 # if I dont find anythin, just return 1
 
 
 	def delete_items_from_pane(self, item_name):
 		first_cord = self.get_first_pos(item_name)
-		print("First sell button @: {} Position {} - Delete {} time(s)".format(first_cord[0][0], first_cord[0][1], first_cord[1]))
-		self.delete_item(first_cord[0][0], first_cord[1])
+		print("First sell button @: {} Position {} - Delete {} time(s)".format(first_cord[0][1], first_cord[0][0], first_cord[1]))
+		self.delete_item(first_cord[0][1], first_cord[1])
+
+
+	def delete_all_of_item(self, item_name):
+		item_exists = self.item_in_inventory(item_name)
+		while item_exists != 1:
+			self.delete_items_from_pane(item_name)
+			item_exists = self.item_in_inventory(item_name)
 
 
 	def get_first_pos(self, item_name):
@@ -303,7 +304,6 @@ class Inventory():
 		else:
 			print("Nothing to see here, move along!")
 		
-
 
 	def delete_item(self, cord, num_sells):
 		print("Deleting Item {} times".format(num_sells))
@@ -327,49 +327,41 @@ class Inventory():
 		"""
 		sell_buttons = self.sell_cord_list
 		if cord[0] < 1200 and cord[1] < 800:
-			print("Position 1")
-			out = [self.sell_cord_list[0], 1]
+			out = [1, self.sell_cord_list[0]]
 			return out
 		if cord[0] < 1200 and 800 < cord[1] < 1200:
-			print("Position 2")
-			out = [self.sell_cord_list[1], 2]
+			out = [2, self.sell_cord_list[1]]
 			return out
 		if cord[0] < 1200 and cord[1] > 1200:
-			print("Position 3")
-			out = [self.sell_cord_list[2], 3]
+			out = [3, self.sell_cord_list[2]]
 			return out
 		if cord[0] > 1200 and cord[1] < 800:
-			print("Position 4")
-			out = [self.sell_cord_list[3], 4]
+			out = [4, self.sell_cord_list[3]]
 			return out
 		if cord[0] > 1200 and 800 < cord[1] < 1200:
-			print("Position 5")
-			out = [self.sell_cord_list[4], 5]
+			out = [5, self.sell_cord_list[4]]
 			return out
 		if cord[0] > 1200 and cord[1] > 1200:
-			print("Position 6")
-			out = [self.sell_cord_list[5], 6]
+			out = [6, self.sell_cord_list[5]]
 			return out
 
 
+	def close(self):
+		secure_click((-239, 244), self.anchor, 1)
 
-	def cleanup_loop(self, bag_cord):
-		""" 
-			Function to loop through bags and execute a cleanup until we reach the end of the items in the bag
-		"""
+
+	def delete_keep_n(self, cord, num_sells,  n):
 		pass
 
 
-	def cleanup_inventory(self):
-		""" 
-			Function to coordinate the cleanup of the active inventory according to a whitelist of deletable iterms
-			This function will open the bag if it cannot see that bag is open
-		"""
-		pass
 
 
 if __name__ == '__main__':
 	inventory = Inventory()
-	inventory.delete_items_from_pane('fish')
-	inventory.delete_items_from_pane('entrails')
-	inventory.delete_items_from_pane('boar skins')
+	#inventory.delete_all_of_item('boar skins')
+	inventory.delete_all_of_item('entrails')
+	inventory.delete_all_of_item('fish')
+	inventory.close()
+	#inventory.delete_items_from_pane('fish')
+	#inventory.delete_items_from_pane('entrails')
+	#inventory.delete_items_from_pane('boar skins')

@@ -415,6 +415,20 @@ def is_ready():
         return 1 # ready for work
 
 
+def ready_custom(full_path):
+    """ Check if a building is working """
+    threshold = 0.99
+    segment = cv2.imread("town.png", cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread(full_path, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(segment, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        type(fres[0][0])
+        return 0 # working
+    except IndexError:
+        return 1 # ready for work    
+
+
 def is_popup():
     """ Check if a popup exists """
     threshold = 0.99
@@ -585,9 +599,12 @@ def multi_window_run():
 
 if __name__ == '__main__':
     multi_window_run()
-    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     #fish_path()
     #collect_path()
+    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     #anchor = get_anchor()
     #get_anchored_cursor(anchor)
+    #secure_mouse_over((-546, 535), anchor, 3)
+    #time.sleep(3)
+    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     
