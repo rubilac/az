@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 from az_code_mac import *
 from az_farmer_mac import *
-from PIL import ImageGrab
+from PIL import Image
 from PIL import ImageOps
 from numpy import *
 from pynput.mouse import Controller

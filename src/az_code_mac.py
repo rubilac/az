@@ -1,4 +1,4 @@
-from PIL import ImageGrab
+from PIL import Image
 import os
 import time
 #import win32api, win32con

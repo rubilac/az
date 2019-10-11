@@ -4,9 +4,9 @@ import json
 import datetime
 import numpy as np
 import cv2
-from az_code_mac import *
-from az_farmer_mac import *
-from PIL import ImageGrab
+from az_code import *
+from az_farmer import *
+import pyscreenshot as ImageGrab
 from PIL import ImageOps
 from numpy import *
 from pynput.mouse import Controller
@@ -24,98 +24,89 @@ logger = logging.getLogger()
 
 
 method =  cv2.TM_CCOEFF_NORMED
-craft_pos = (-244, 669)
-blank_spot = (-974, 242)
-close_pos = (-139, 216)
+craft_pos = (876, 707)
+blank_spot = (341, 373)
+close_pos = (960, 345)
 
 
+# Crafting Positions
+first_pos = (564, 415)
+second_pos = (533, 477)
+third_pos = (513, 544)
+fourth_pos = (518, 610)
+fifth_pos = (513, 678)
 
-first_pos = (-587, 291)
-second_pos = (-671, 393)
-fourth_pos = (-686, 548)
-stone_mason_pos = (-668, 321)
-stone_mason_build = (-585, 307)
-carpenter_pos = (-458, 320)
-carpenter_build = (-364, 327)
-blacksmith_pos = (-328, 383)
-blacksmith_build = (-236, 391)
-tailor_pos = (-837, 549)
+# Stone Mason
+stone_mason_pos = (528, 440)
+stone_mason_build = (595, 435)
+
+# Carpenter
+carpenter_pos = (698, 449)
+carpenter_build = (775, 454)
+
+# Blacksmith
+blacksmith_pos = (802, 496)
+blacksmith_build = (874, 504)
+
+# Tailor
+tailor_pos = (396, 631)
+tailor_build = (457, 630)
 
 #Merchandise info
-merch_pos_1 = (-432, 383)
-merch_pos_2 = (-263, 383)
-merch_pos_3 = (-432, 558)
-close_merch_pos = (-158, 271)
-close_merch_pos_2 = (-242, 304)
+merch_pos_1 = (734, 480)
+merch_pos_2 = (863, 479)
+merch_pos_3 = (728, 620)
+close_merch_pos = (943, 390)
+close_merch_pos_2 = (877, 416)
 
 #Fish Market
-fish_market_pos = (-546, 535)
-fish_market_build = (-533, 612)
-fish_market_restock = (-470, 528)
-fish_market_img = '/opt/dev/az/templates/fish_soup.png'
-fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single.png'
+fish_market_pos = (625, 621)
+fish_market_build = (639, 682)
+fish_market_restock = (688, 613)
+fish_market_img = '/opt/dev/az/templates/fish_soup_2.png'
+fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single_2.png'
 
 #Butcher
-butcher_pos = (-432, 599)
-butcher_build = (-404, 691)
-butcher_restock = (-341, 607)
+butcher_pos = (715, 667)
+butcher_build = (740, 741)
+butcher_restock = (787, 673)
 butcher_img = '/opt/dev/az/templates/gaul_soup.png'
-gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single.png'
+gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 
 
 
 #Leatherworker
-leatherworker_pos = (-705, 488)
-leatherworker_build = (-623, 487)
+leatherworker_pos = (496, 583)
+leatherworker_build = (567, 582)
 
-
-
-def get_anchor():
-    """ Get the cords of the anchor """
-    threshold = 0.99
-    segment = cv2.imread("segment.png", cv2.IMREAD_GRAYSCALE)
-    try:
-        template = cv2.imread("/opt/dev/az/templates/anchor.png", cv2.IMREAD_GRAYSCALE)
-        result = cv2.matchTemplate(segment, template, method)
-        fres = np.where(result >= threshold)
-        cord = (int(fres[1]/2), int(fres[0]/2))
-        print("Anchor Found @ : {}".format(cord))
-        return cord
-    except:
-        template = cv2.imread("/opt/dev/az/templates/popup_anchor.png", cv2.IMREAD_GRAYSCALE)
-        result = cv2.matchTemplate(segment, template, method)
-        fres = np.where(result >= threshold)
-        cord = (int(fres[1]/2), int(fres[0]/2))
-        print("Popup Anchor Found @ : {}".format(cord))
-        return cord 
 
 
 class Craft():
 	def __init__(self):
-		self.town_x = 185*2
-		self.town_y = 316*2
-		self.town_w = 885*2
-		self.town_h = 551*2
-		self.anchor = get_anchor()
+		self.town_x = 185
+		self.town_y = 316
+		self.town_w = 885
+		self.town_h = 551
 		self.sell_cord_list = [(-668, 382), (-509, 395), (-342, 383), (-664, 543), (-503, 550), (-344, 560)]
 		print("Crafting Module Engaged!")
+		refresh_checker()
 		nav_to_town()
 
 
 	def collect(self, building):
 		""" Collect from building """
-		secure_click(building,self.anchor, 1)
+		move_and_click(building, 1)
 
 
 	def collect_all(self):
-		secure_click(stone_mason_pos,self.anchor, 1)
-		secure_click(carpenter_pos,self.anchor, 1)
-		secure_click(blacksmith_pos,self.anchor, 1)
-		secure_click(tailor_pos,self.anchor, 1)
-		secure_click(leatherworker_pos,self.anchor, 1)
+		move_and_click(stone_mason_pos, 1)
+		move_and_click(carpenter_pos, 1)
+		move_and_click(blacksmith_pos, 1)
+		move_and_click(tailor_pos, 1)
+		move_and_click(leatherworker_pos, 1)
 
 
-	def get_image(self, x=1, y=1, width=2400, length=2400, save=True):
+	def get_image(self, x=1, y=1, width=1250, length=920, save=True):
 		"""
 			Given x, y cords and width and length size, take a grayscale image and return the
 			summed value.
@@ -142,7 +133,7 @@ class Craft():
 			returns 0 if working
 			returns 1 if available
 		"""
-		secure_mouse_over(building,self.anchor, 1) # mouseover building
+		mousePos(building, 1) # mouseover building
 		town_grab(self.town_x, self.town_y, self.town_w, self.town_h) # screengrab town
 		self.ready_state = is_ready()
 		return self.ready_state
@@ -151,15 +142,15 @@ class Craft():
 	def craft_stone(self):
 		""" Craft stone """
 		if self.building_state(stone_mason_pos) == 1:
-			secure_click(stone_mason_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(stone_mason_pos,self.anchor, 1)
-			secure_click(stone_mason_build,self.anchor, 1) 
-			secure_click(first_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(stone_mason_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(stone_mason_pos, 1)
+			move_and_click(stone_mason_build, 1) 
+			move_and_click(first_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Stone Block")
 		else:
 			print("Stone Mason is busy, not crafting")
@@ -168,15 +159,15 @@ class Craft():
 	def craft_wood_plank(self):
 		""" Craft Planks """
 		if self.building_state(carpenter_pos) == 1:
-			secure_click(carpenter_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(carpenter_pos,self.anchor, 1)
-			secure_click(carpenter_build,self.anchor, 1) 
-			secure_click(first_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(carpenter_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(carpenter_pos, 1)
+			move_and_click(carpenter_build, 1) 
+			move_and_click(first_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Wood Plank")
 		else:
 			print("Carpenter is busy, not crafting")
@@ -185,15 +176,15 @@ class Craft():
 	def craft_fish_soup(self):
 		""" Craft Fish Soup """
 		if self.building_state(fish_market_pos) == 1:
-			secure_click(fish_market_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(fish_market_pos,self.anchor, 1)
-			secure_click(fish_market_build,self.anchor, 1) 
-			secure_click(second_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(fish_market_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(fish_market_pos, 1)
+			move_and_click(fish_market_build, 1) 
+			move_and_click(second_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Fish Soup")
 		else:
 			print("Fish Market is busy, not crafting")
@@ -202,15 +193,15 @@ class Craft():
 	def craft_iron_bar(self):
 		""" Craft Bar """
 		if self.building_state(blacksmith_pos) == 1:
-			secure_click(blacksmith_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(blacksmith_pos,self.anchor, 1)
-			secure_click(blacksmith_build,self.anchor, 1) 
-			secure_click(first_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(blacksmith_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(blacksmith_pos, 1)
+			move_and_click(blacksmith_build, 1) 
+			move_and_click(first_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Iron Bar")
 		else:
 			print("Blacksmith is busy, not crafting")
@@ -219,15 +210,15 @@ class Craft():
 	def craft_nails(self):
 		""" Craft Bar """
 		if self.building_state(blacksmith_pos) == 1:
-			secure_click(blacksmith_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(blacksmith_pos,self.anchor, 1)
-			secure_click(blacksmith_build,self.anchor, 1) 
-			secure_click(fourth_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(blacksmith_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(blacksmith_pos, 1)
+			move_and_click(blacksmith_build, 1) 
+			move_and_click(fourth_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Nails")
 		else:
 			print("Blacksmith is busy, not crafting")
@@ -236,15 +227,15 @@ class Craft():
 	def craft_gaul_soup(self):
 		""" Craft Gaul Soup """
 		if self.building_state(butcher_pos) == 1:
-			secure_click(butcher_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(butcher_pos,self.anchor, 1)
-			secure_click(butcher_build,self.anchor, 1) 
-			secure_click(first_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(butcher_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(butcher_pos, 1)
+			move_and_click(butcher_build, 1) 
+			move_and_click(first_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Gaul Soup")
 		else:
 			print("Butcher is busy, not crafting")
@@ -253,15 +244,15 @@ class Craft():
 	def craft_leather(self):
 		""" Craft Gaul Soup """
 		if self.building_state(leatherworker_pos) == 1:
-			secure_click(leatherworker_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(leatherworker_pos,self.anchor, 1)
-			secure_click(leatherworker_build,self.anchor, 1) 
-			secure_click(first_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(leatherworker_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(leatherworker_pos, 1)
+			move_and_click(leatherworker_build, 1) 
+			move_and_click(first_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Leather")
 		else:
 			print("Leatherworker is busy, not crafting")
@@ -270,15 +261,15 @@ class Craft():
 	def craft_grease(self):
 		""" Craft Gaul Soup """
 		if self.building_state(leatherworker_pos) == 1:
-			secure_click(leatherworker_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(leatherworker_pos,self.anchor, 1)
-			secure_click(leatherworker_build,self.anchor, 1) 
-			secure_click(fourth_pos,self.anchor, 1)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(craft_pos,self.anchor, 0.2)
-			secure_click(close_pos,self.anchor, 0.2)
+			move_and_click(leatherworker_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(leatherworker_pos, 1)
+			move_and_click(leatherworker_build, 1) 
+			move_and_click(fourth_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
 			print("Crafting Grease")
 		else:
 			print("Leatherworker is busy, not crafting")
@@ -289,7 +280,7 @@ class Craft():
 		# take snapper
 		# if merch exists return false
 		# otherwise return true
-		secure_mouse_over(building,self.anchor, 3) # mouseover building
+		secure_mouse_over(building, 3) # mouseover building
 		time.sleep(3)
 		town_grab(self.town_x, self.town_y, self.town_w, self.town_h) # screengrab town
 		self.ready_state = ready_custom(img_path)
@@ -329,7 +320,7 @@ class Craft():
 
 
 	def load_stock(self, item_name, img_path, pos):
-		secure_click(pos, self.anchor, 1) # Click Merch pos, this will open up inventory frame
+		move_and_click(pos, 1) # Click Merch pos, this will open up inventory frame
 		self.get_image() # Get inventory frame
 		screen = cv2.imread('tmp_merch_stock.png') # LOad our inv frame from pvs
 		template = cv2.imread(img_path) # Load our item we want to stock
@@ -342,29 +333,34 @@ class Craft():
 			cord = (int(fres[0]), int(fres[1]))
 			click_cord = self.get_merch_slot(cord)[0]
 			print("Found {} @ {} in slot {}".format(item_name, cord, click_cord))
-			secure_click(click_cord, self.anchor, 1)
+			move_and_click(click_cord, 1)
 			print("Loading {} in slot {}".format(item_name, pos))
 		except:
 			print("No {} found! Make some!".format(item_name))
 			return 1
 
 
+	def town_grab(self):
+		# pas
+		town_grab(self.town_x, self.town_y, self.town_w, self.town_h)
+
+
 	def load_stock_slots(self, stock, img_path):
 		self.load_stock(stock, img_path, merch_pos_1)
 		self.load_stock(stock, img_path, merch_pos_2)
 		self.load_stock(stock, img_path, merch_pos_3)
-		secure_click(close_merch_pos, self.anchor, 1)
+		move_and_click(close_merch_pos, 1)
 
 
 	def restock_fish_market(self):
 		if self.restock_state(fish_market_pos, fish_market_img) == 1:
 			print("Restocking Fish Market")
-			secure_click(fish_market_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(fish_market_pos,self.anchor, 1)
-			secure_click(fish_market_restock,self.anchor, 1)
+			move_and_click(fish_market_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(fish_market_pos, 1)
+			move_and_click(fish_market_restock, 1)
 			self.load_stock_slots('fish_soup', fish_soup_img)
-			secure_click(close_merch_pos, self.anchor, 1)
+			move_and_click(close_merch_pos, 1)
 		else:
 			print("Fish market full!")
 
@@ -372,12 +368,12 @@ class Craft():
 	def restock_butcher(self):
 		if self.restock_state(butcher_pos, butcher_img) == 1:
 			print("Restocking Butcher!")
-			secure_click(butcher_pos,self.anchor, 1)
-			secure_click(blank_spot,self.anchor, 1)
-			secure_click(butcher_pos,self.anchor, 1)
-			secure_click(butcher_restock,self.anchor, 1)
+			move_and_click(butcher_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(butcher_pos, 1)
+			move_and_click(butcher_restock, 1)
 			self.load_stock_slots('gaul_soup', gaul_soup_img)
-			secure_click(close_merch_pos, self.anchor, 1)
+			move_and_click(close_merch_pos, 1)
 		else:
 			print("Butcher full!")
 
@@ -400,5 +396,5 @@ class Craft():
 if __name__ == '__main__':
 	crafter = Craft()
 	crafter.craft()
-	crafter.restock()
+	#crafter.restock()
 

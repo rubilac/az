@@ -1,70 +1,77 @@
-from PIL import ImageGrab
+import pyscreenshot as ImageGrab
 import os
 import time
-import win32api, win32con
 import json
 import datetime
+from pynput.mouse import Button, Controller 
+import pynput.mouse
+from PIL import ImageOps
 
-#Globals
-#x_pad = 979
-#y_pad = 356
+mouse = pynput.mouse.Controller()
 
-x_pad = 0
-y_pad = 0
+x_pad = 70
+y_pad = 140
+res_w = 1256
+res_h = 920
 
-def screenGrab():
-    box = (x_pad+1, y_pad+1, x_pad+640, y_pad+479)
-    im = ImageGrab.grab(box)
-    im.save(os.getcwd() + '\\full_snap__' + str(int(time.time())) +
-'.png', 'PNG')
+
+def screenGrab(tag='default'):
+    box = (x_pad, y_pad, res_w, res_h)
+    imgray = ImageOps.grayscale(ImageGrab.grab(box))
+    imcol = ImageGrab.grab(box)
+    imcol.save('{}_color.png'.format(tag), 'PNG')
+    imgray.save('{}_gray.png'.format(tag), 'PNG')
 
 
 def get_location(file_name):
-	load_file(file_name)
-
-
-def leftClick(cords):
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-    time.sleep(.1)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-    #print "Left click @ {}".format(cords)
+    #asd
+    load_file(file_name)
 
 
 def leftDown():
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+    #asd
+    mouse.press(Button.left)
     time.sleep(.1)
-    #print 'left Down'
 
 
 def leftUp():
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+    mouse.release(Button.left)
     time.sleep(.1)
-    #print 'left release'
 
 
-def mousePos(cord):
-    win32api.SetCursorPos((x_pad + cord[0], y_pad + cord[1]))
+def mousePos(cord, n=0):
+    #asd
+    mouse.position = (cord[0], cord[1])
+    time.sleep(n)
 
 
 def get_cords():
-    x,y = win32api.GetCursorPos()
-    x = x - x_pad
-    y = y - y_pad
-    print x,y
+    x, y = mouse.position
+    print((x,y))
+    return x, y
+
+
+def get_relative_cords():
+    x,y = get_cords()
+    if x_pad + x > res_w or y_pad + y > res_h:
+        print("Cord out of range!")
+        return False
+    print("Relative Coordinate: {}, {}".format(x_pad + x, y_pad + y))
+    return(x_pad + x,  y_pad + y)
+
 
 def output_cords():
-    x,y = win32api.GetCursorPos()
-    x = x - x_pad
-    y = y - y_pad
-    build_output = {"x": x,"y": y}
-    #print x,y
-    print build_output
+    #x,y = win32api.GetCursorPos()
+    x, y = mouse.position
+    build_output = {"x": int(x),"y": int(y)}
+    print(int(x),int(y)) 
+    print(build_output)
     return build_output
 
 
-def move_and_click(pos, sleep_time=3):
-    mousePos(pos)
-    leftClick(pos)
+def move_and_click(pos, sleep_time=1):
+    mousePos(pos, 0.4)
+    mouse.click(Button.left, 1)
     time.sleep(sleep_time)
 
 
@@ -87,7 +94,7 @@ def move_screen_right(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((700, 217), (717-dist, 217))
+        move_screen((500, 600), (500-dist, 600))
         num_times -= 1
 
 
@@ -96,7 +103,7 @@ def move_screen_down(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((442, 662), (442, 662-dist))
+        move_screen((480, 600), (480, 600-dist))
         num_times -= 1    
 
 
@@ -105,7 +112,7 @@ def move_screen_left(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((0, 217), (0+dist, 217))
+        move_screen((500, 600), (500+dist, 600))
         num_times -= 1
 
 
@@ -114,7 +121,7 @@ def move_screen_up(num_times=1, dist=100):
                 dist - how far to move
     """
     while num_times > 0:
-        move_screen((442, 662), (442, 662+dist))
+        move_screen((500, 600), (500, 600+dist))
         num_times -= 1
 
 
@@ -128,24 +135,31 @@ def navy(nav_indicator, num_moves=4):
     elif nav_indicator == "top_left":
         nav_top_l(num_moves)
 
+
+def nav_to_town():
+    move_screen_right(5, 400)
+    move_screen_up(4, 200)
+    move_screen_left(1, 200)
+
+
 def nav_bot_r(num_moves):
-    move_screen_right(num_moves, 700)
+    move_screen_right(num_moves, 400)
     move_screen_down(num_moves,200)
 
 
 def nav_top_r(num_moves):
-    move_screen_right(num_moves, 700)
+    move_screen_right(num_moves, 400)
     move_screen_up(num_moves, 200)
 
 
 def nav_top_l(num_moves):
     move_screen_up(num_moves, 200)
-    move_screen_left(num_moves, 700)
+    move_screen_left(num_moves, 400)
 
 
 def nav_bot_l(num_moves):
     move_screen_down(num_moves,200)
-    move_screen_left(num_moves, 700)
+    move_screen_left(num_moves, 400)
 
 
 def load_file(file_name):
@@ -154,25 +168,21 @@ def load_file(file_name):
     return data
 
 
-def create_tuple():
-    pass
-
-
-def execute_sequence(file_name):
-    sequence = load_file(file_name)
-    nav_list = []
-    for i in sequence['loc']:
-        nav_list.append()
-
-
-def get_start_point(file_name, location, hunt_type, ind):
-    sequence = load_file(file_name)
-    nav_list = sequence['sequence']['loc']
-    for i in nav_list:
-        if i['name'] == location:
-            ret_loc = (i[hunt_type][ind]['start_point']['x'], i[hunt_type][ind]['start_point']['y'])
-            return ret_loc
+def get_test_images():
+    navy('top_right', 4)
+    screenGrab("test_bt_tr")
+    navy('bottom_right', 4)
+    screenGrab("test_bt_br")
+    navy('bottom_left', 4)
+    screenGrab("test_bt_bl")
+    navy("top_left", 4)
+    screenGrab("test_bt_tr")
 
 
 if __name__ == '__main__':
-   	output_cords()
+    #mousePos((569, 527))
+    #move_and_click((688, 123)) # Focus Chrome frame!
+    #screenGrab()
+    get_cords()
+    #get_test_images()
+    #nav_to_town()
