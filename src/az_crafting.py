@@ -99,6 +99,7 @@ class Craft():
 		self.anchor = get_anchor()
 		self.sell_cord_list = [(-668, 382), (-509, 395), (-342, 383), (-664, 543), (-503, 550), (-344, 560)]
 		print("Crafting Module Engaged!")
+		is_popup()
 		nav_to_town()
 
 
@@ -386,7 +387,7 @@ class Craft():
 		self.craft_stone() # Stone Mason
 		self.craft_wood_plank() # Carpenter
 		self.craft_nails() # Blacksmith
-		self.craft_grease() # Leatherworker
+		self.craft_leather() # Leatherworker
 		self.craft_gaul_soup() # Butcher
 		self.craft_fish_soup() # Fish Market
 

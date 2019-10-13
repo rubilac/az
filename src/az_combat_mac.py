@@ -215,7 +215,6 @@ class Combat():
 
 
 	def clear_enemies(self, enemy_list):
-		print(enemy_list)
 		for enemy in enemy_list:
 			self.engage_enemy(enemy)
 			time.sleep(10)
@@ -225,7 +224,7 @@ class Combat():
 
 	def engage_enemy(self, enemy_cord):
 		enemy_cord = self.correct_cords(enemy_cord, 2, self.x, self.y)
-		print(enemy_cord)
+		print("Fighting!")
 		move_and_click(enemy_cord) #click enemy
 		if self.combat_page_check():
 			cord = self.get_combat_page_cord()
@@ -305,24 +304,30 @@ def clear_segment():
 
 def clear_all_enemies():
 	print("Clearing Enemies in Top Left!")
+	is_popup()
 	navy('top_left', 6)
 	clear_segment()
 	print("Clearing Enemies in Bottom Left!")
+	is_popup()
 	navy('bottom_left', 6)
 	clear_segment()
 	print("Clearing Enemies in Bottom Middle!")
+	is_popup()
 	navy('bottom_left', 6)
 	move_screen_right(2, 300)
 	clear_segment()
 	print("Clearing Enemies in Middle Middle!")
+	is_popup()
 	navy('bottom_left', 6)
 	move_screen_right(2, 300)
 	move_screen_up(4, 300)
 	clear_segment()
 	print("Clearing Enemies in Top Right!")
+	is_popup()
 	navy('top_right', 6)
 	clear_segment()
 	print("Clearing Enemies in Bottom Right!")
+	is_popup()
 	navy('bottom_right', 6)
 	clear_segment()
 

@@ -358,8 +358,11 @@ class Inventory():
 
 if __name__ == '__main__':
 	inventory = Inventory()
-	#inventory.delete_all_of_item('boar skins')
+	is_popup()
+	inventory.delete_all_of_item('boar skins')
+	is_popup()
 	inventory.delete_all_of_item('entrails')
+	is_popup()
 	inventory.delete_all_of_item('fish')
 	inventory.close()
 	#inventory.delete_items_from_pane('fish')

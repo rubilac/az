@@ -14,32 +14,37 @@ import warnings
 import subprocess
 from keyboard import *
 
+trs_x = 1*2
+trs_y = 1*2
+trs_w = 1200*2
+trs_h = 1200*2
+method = cv2.TM_CCOEFF_NORMED
+threshold = 0.90
 
-boar_exist_int = [324, 325, 326, 497, 482, 490, 492, 496, 495, 498, 517, 662, 665, 494, 500, 419, 578, 623, 672, 693, 778, 805, 562, 838, 988, 1014, 1189, 1356, 1507, 1571, 5797, 6499]
+
+template_path_boar = '/opt/dev/az/templates/boar/'
+load_boars = os.listdir(template_path_boar)
+boar_templates_loaded = []
+for boar_tmp in load_boars:
+    boar_tmp = cv2.imread(template_path_boar+boar_tmp, cv2.IMREAD_GRAYSCALE)
+    boar_templates_loaded.append(boar_tmp)
 
 
-def boar_exists(cords):
-    """ return true if on mouse-over at cord a boar hover is observed"""
-    x = cords[0]
-    y = cords[1]
-    box = (x*2, y*2-55, x*2+30, y*2-50 )
-    left_box = (x*2-80, y*2, x*2-50, y*2+5 )
-    mousePos((x,y))
-    time.sleep(1)
-    im = ImageOps.grayscale(ImageGrab.grab(box))
-    a = array(im.getcolors())
-    a = a.sum()
-    bm = ImageOps.grayscale(ImageGrab.grab(left_box))
-    bm.save('left_test.png', dpi=(116,116))
-    b = array(bm.getcolors())
-    b = b.sum()
-    print(a, b)
-    for i in boar_exist_int:
-    	if i in [a, b]:
-    		print("OMG BOAR HERE, GET EM!")
-    		return True
-    return False
+# Button positions
+refresh_button = (-502, 525)
+decline_special_offer = (-421, 598)
+ok_pos = (-440, 667)
+complete_pos = (-540, 667)
+sesterce_close_pos = (-168, 296)
+roman_helmets_close_pos = (-170, 259)
 
+# Image locations
+refresh_img = '/opt/dev/az/templates/popups/refresh.png'
+special_offer_img = '/opt/dev/az/templates/popups/special_offer.png'
+ok_img = '/opt/dev/az/templates/popups/ok.png'
+complete_img = '/opt/dev/az/templates/popups/complete.png'
+sesterce_img = '/opt/dev/az/templates/popups/sesterce.png'
+roman_helmets_img = '/opt/dev/az/templates/popups/roman_helmets.png'
 
 def get_image_info(img):
     """Given an image, return the dtype and shape"""
@@ -55,95 +60,122 @@ def cursor_grab_iter(num, timer):
         time.sleep(timer)
 
 
-def spawner(file_name, location, hunt_type):
-    """return a list of tuples given a sequence file
-    [[(), (), (), ()], [(), (), (), ()]]
-    """
-    sequence = load_file(file_name)
-    spawns = []
-    loc = sequence['sequence']['loc']
-    n = len(loc)-1
-    while n >= 0:
-        n -= 1
-        if loc[n]['name'] == location:
-            if hunt_type == 'fish':
-                spawn_inc = loc[n][hunt_type][0]['spawns']
-                spawn_len = len(spawn_inc)-1
-                spawns = []
-                while spawn_len >= 0:
-                    spawns_temp = (spawn_inc[spawn_len]['x'], spawn_inc[spawn_len]['y'])
-                    spawns.append(spawns_temp)
-                    spawn_len -= 1
-                return spawns
-            elif hunt_type == 'boars':
-                boar_spawns = []
-                for i in range(len(loc[n][hunt_type])):
-                    data = loc[n][hunt_type][i]['spawns']
-                    data_len = len(data)-1
-                    spawns = []
-                    while data_len >= 0:
-                        spawns_temp = (data[data_len]['x'], data[data_len]['y'])
-                        spawns.append(spawns_temp)
-                        data_len -= 1
-                    boar_spawns.append(spawns)
-                return boar_spawns
+def is_popup():
+    """ Check if a popup exists """
+    popup_grab()
+    threshold = 0.97
+    popup_exists = False
+    refresh_check()
+    special_offer_check()
+    ok_check()
+    quest_complete_check()
+    get_more_sesterce_check()
+    get_more_roman_helmets_check()
+    #legion_approaching_check()
+    #legion_kill_check()
 
 
-def get_start_point(file_name, location, hunt_type, ind):
-    sequence = load_file(file_name)
-    nav_list = sequence['sequence']['loc']
-    for i in nav_list:
-        if i['name'] == location:
-            ret_loc = (i[hunt_type][ind]['start_point']['x'], i[hunt_type][ind]['start_point']['y'])
-            return ret_loc
+def refresh_check():
+    template = cv2.imread(refresh_img)
+    refresh_grab()
+    screen = cv2.imread('tmp_refresh.png')
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= 0.99)
+    try:
+        test = fres[0][0]>0
+        print("Refresh Button Found. Waiting 5s before clicking...")
+        time.sleep(1)
+        try:
+            secure_click(refresh_button, anchor, 1)
+        except:
+            print("sad")
+        print("Clicked Refresh, waiting 20s for before continuing")
+        time.sleep(18)
+    except:
+        #print("No refresh button found")
+        pass
 
 
-def farmer(file_name, location, hunt_type, timer=2.5):
-    time.sleep(2)
-    cord_list = spawner(file_name, location, hunt_type)
-    navy(location)
-    time.sleep(2)
-    if hunt_type == 'fish':
-        print("{} : Fishing started @ {}".format(datetime.datetime.now(),location))
-        move_and_click(get_start_point(file_name, location, hunt_type, 0),5)
-        for i in cord_list:
-            if boar_exists(i):
-                move_and_click(i, timer)
-            else:
-                print("Move along, no fish here... continuing to next cord")
-    else:
-        print("Gimme dem Boars!")
-        #time.sleep(2)
-        if type(cord_list[0]) != list:
-            n = 3
-            while n > 0:
-                print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
-                move_and_click(get_start_point(file_name, location, hunt_type, 0),5)
-                for i in cord_list:
-                    if boar_exists(i):
-                        move_and_click(i, timer)
-                    else:
-                        print("Move along, no boar here... continuing to next cord")
-                n -= 1
-        else:
-            for i in range(len(cord_list)):
-                n = 3
-                while n > 0:
-                    print("{} : Boar Round: {} started @ {}".format(datetime.datetime.now(), n, location))
-                    move_and_click(get_start_point(file_name, location, hunt_type, i),5)
-                    for x in cord_list[i]:
-                        if boar_exists(x):
-                            move_and_click(x, timer)
-                        else:
-                            print("Move along, no boar here... continuing to next cord")
-                    n -= 1
+def special_offer_check():
+    template = cv2.imread(special_offer_img, cv2.IMREAD_GRAYSCALE)
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Special offer popup found, clicking decline!")
+        try:
+            print(decline_special_offer, anchor)
+            secure_click(decline_special_offer, anchor, 1)
+        except:
+            print("sad")
+        time.sleep(1)
+        secure_click((-417, 543), anchor, 1)
+    except:
+        pass
 
-    
-def does_boar_exist_cursor():
-    mouse.click(Button.left, 1)
-    data = output_cords()
-    cord = (data['x'], data['y'])
-    boar_exists(cord)
+
+def ok_check():
+    template = cv2.imread(ok_img, cv2.IMREAD_GRAYSCALE)
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Ok button found, clicking ok!")
+        secure_click(ok_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def quest_complete_check():
+    template = cv2.imread(complete_img, cv2.IMREAD_GRAYSCALE)
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Complete Quest popup found, clicking complete!")
+        secure_click(complete_pos, anchor, 1)
+        print("Clicking OK")
+        secure_click(ok_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def get_more_sesterce_check():
+    template = cv2.imread(sesterce_img, cv2.IMREAD_GRAYSCALE)
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Sesterce popup found, clicking X!")
+        secure_click(sesterce_close_pos, anchor, 1)
+        time.sleep(1)
+        print("Clicking OK")
+        #secure_click(sester)
+    except:
+        pass
+
+
+def get_more_roman_helmets_check():
+    template = cv2.imread(roman_helmets_img, cv2.IMREAD_GRAYSCALE)
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Roman helmets popup found, clicking X!")
+        secure_click(roman_helmets_close_pos, anchor, 1)
+        time.sleep(1)
+        print("Doing a cautionary sesterce check")
+        popup_grab()
+        get_more_sesterce_check()
+    except:
+        pass
 
 
 def segment_grab(x, y, w, l, save=True):
@@ -156,6 +188,7 @@ def segment_grab(x, y, w, l, save=True):
     else:
         return im
 
+
 def town_grab(x, y, w, l, save=True):
     new_cord = (x, y, x+w, y+l)
     im = ImageOps.grayscale(ImageGrab.grab(new_cord))
@@ -167,12 +200,34 @@ def town_grab(x, y, w, l, save=True):
         return im
 
 
-def popup_grab(x, y, w, l, save=True):
+def popup_grab(x=200*2,y=300*2 , w=1500, l=1200, save=True):
     new_cord = (x, y, x+w, y+l)
     im = ImageOps.grayscale(ImageGrab.grab(new_cord))
     if save:
         im.save("popup.png", 'PNG')
         params = ['mogrify', 'popup.png', 'popup.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
+def refresh_grab(x=500*2, y=500*2, w=800*2, l=900*2, save=True):
+    new_cord = (x, y, w, l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("tmp_refresh.png", 'PNG')
+        params = ['mogrify', 'tmp_refresh.png', 'tmp_refresh.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
+def cancel_grab(x=200, y=300, w=1000, l=800, save=True):
+    new_cord = (x, y, w, l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("tmp_cancel.png", 'PNG')
+        params = ['mogrify', 'tmp_cancel.png', 'tmp_cancel.png']
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
@@ -204,20 +259,6 @@ def cursor_grab_iter_color(num, timer, w, h):
         time.sleep(timer)
 
 
-trs_x = 1*2
-trs_y = 1*2
-trs_w = 1200*2
-trs_h = 1200*2
-method = cv2.TM_CCOEFF_NORMED
-threshold = 0.90
-
-
-template_path_boar = '/opt/dev/az/templates/boar/'
-load_boars = os.listdir(template_path_boar)
-boar_templates_loaded = []
-for boar_tmp in load_boars:
-    boar_tmp = cv2.imread(template_path_boar+boar_tmp, cv2.IMREAD_GRAYSCALE)
-    boar_templates_loaded.append(boar_tmp)
 
 def get_boar_locs(template_list):
     """Given a segment, clear the segment by clicking an element from the list of templates"""
@@ -264,34 +305,6 @@ def mouse_to_boar(loc):
     y = trs_y/2+loc[1]/2
     mousePos((x, y))
     print(x, y)
-
-
-def find_image_in_segment(img, trs_x, trs_y, trs_w, trs_h):
-    seg = segment_grab(trs_x, trs_y, trs_w, trs_h,False)
-    template = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
-
-
-def clear_segment_type_2(template_list):
-    segment_grab(trs_x, trs_y, trs_w, trs_h)
-    for temp in template_list:
-        segment_grab(trs_x, trs_y, trs_w, trs_h)
-        go_to_first_found(temp)
-
-
-def go_to_first_found(img):
-    segment = cv2.imread('segment.png', cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
-    result = cv2.matchTemplate(segment, template, method)
-    fres = np.where(result >= threshold)
-    if len(fres) <= 0:
-        print("no match... continuing")
-        return
-    else:
-        for i in (zip(*fres[::-1])):
-            x, y = i
-            print("boar found at {} {} using {}".format(x, y, img))
-            go_to_boar(i, 5)
-            break
 
 
 def draw_cord(img, trs_x=trs_x, trs_y=trs_y, trs_w=trs_w, trs_h=trs_h):
@@ -429,24 +442,9 @@ def ready_custom(full_path):
         return 1 # ready for work    
 
 
-def is_popup():
-    """ Check if a popup exists """
-    threshold = 0.99
-    segment = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread("/opt/dev/az/templates/close.png", cv2.IMREAD_GRAYSCALE)
-    result = cv2.matchTemplate(segment, template, method)
-    fres = np.where(result >= threshold)
-    try:
-        type(fres[0][0])
-        cord = (int(fres[1]/2), int(fres[0]/2))
-        print("Popup found @ : {}".format(cord))
-        return cord
-    except IndexError:
-        return 1 # ready for work   
-
-
 def cycle():
     n = 4
+    is_popup()
     navy('bottom_right', 6)
     time.sleep(2)
     mousePos((672, 730))
@@ -456,12 +454,14 @@ def cycle():
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type_3(n)
+    is_popup()
     navy('bottom_left', 6)
     time.sleep(2)
     move_and_click((762, 978), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type_3(n)
+    is_popup()
     navy('top_right', 6)
     time.sleep(2)
     move_and_click((935, 702), 10)
@@ -484,6 +484,7 @@ def fish_path():
     segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
     print("Starting Fishing now!")
+    is_popup()
     navy('top_left', 6)
     mousePos(anchor_convert(anchor,(-608, 262)))
     move_and_click(anchor_convert(anchor,(-608, 262)), 20) #Top left Start
@@ -495,6 +496,7 @@ def fish_path():
     move_and_click(anchor_convert(anchor, (-478, 639)), 5)
     mousePos(anchor_convert(anchor, (-381, 901)))
     move_and_click(anchor_convert(anchor, (-381, 901)), 5)
+    is_popup()
     navy('bottom_left', 6)
     move_screen_right(2, 300)
     mousePos(anchor_convert(anchor, (-434, 801)))
@@ -516,6 +518,7 @@ def fish_path():
     move_and_click(anchor_convert(anchor, (-488, 152)), 5)
     mousePos(anchor_convert(anchor, (-213, 105)))
     move_and_click(anchor_convert(anchor, (-213, 105)), 5)
+    is_popup()
     navy('top_right', 6)
     time.sleep(2)
     mousePos(anchor_convert(anchor, (-480, 178)))
@@ -560,27 +563,26 @@ def is_limit_reached(anchor):
         secure_click((-351, 296), anchor)
 
 
-def screen_checker(limit_reached, upgrade):
-    pass
-
-
-
 def collect_path():
     segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
     print("Starting Collecting now!")
+    is_popup()
     navy('top_right', 4)
     secure_click((15, 162), anchor, 1)
     secure_click((-1025, 634), anchor, 1)
     secure_click((-942, 543), anchor, 1)
     secure_click((-832, 595), anchor, 1)
+    is_popup()
     navy('bottom_right', 2)
     secure_click((-178, 694), anchor, 1)
     move_screen_left(2, 300)
     secure_click((-592, 860), anchor, 1)
     secure_click((-178, 694), anchor, 1)
+    is_popup()
     navy('bottom_left', 2)
     secure_click((-814, 815), anchor, 1)
+    is_popup()
     navy('top_left', 3)
     secure_click((-830, 468), anchor, 1)
     secure_click((-530, 294), anchor, 1)
@@ -598,12 +600,16 @@ def multi_window_run():
     collect_path()
 
 if __name__ == '__main__':
+    anchor = get_anchor()
+    is_popup()
     multi_window_run()
+    #refresh_check()
     #fish_path()
     #collect_path()
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     #anchor = get_anchor()
     #get_anchored_cursor(anchor)
+    #is_popup()
     #secure_mouse_over((-546, 535), anchor, 3)
     #time.sleep(3)
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
