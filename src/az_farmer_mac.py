@@ -37,6 +37,9 @@ ok_pos = (-440, 667)
 complete_pos = (-540, 667)
 sesterce_close_pos = (-168, 296)
 roman_helmets_close_pos = (-170, 259)
+legion_approaching_pos = (-352, 291)
+legion_defeat_pos = (-587, 635)
+
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
@@ -45,6 +48,9 @@ ok_img = '/opt/dev/az/templates/popups/ok.png'
 complete_img = '/opt/dev/az/templates/popups/complete.png'
 sesterce_img = '/opt/dev/az/templates/popups/sesterce.png'
 roman_helmets_img = '/opt/dev/az/templates/popups/roman_helmets.png'
+legion_approaching_img = '/opt/dev/az/templates/popups/legion_approaching.png'
+legion_defeat_img = '/opt/dev/az/templates/popups/legion_defeated.png'
+
 
 def get_image_info(img):
     """Given an image, return the dtype and shape"""
@@ -63,16 +69,17 @@ def cursor_grab_iter(num, timer):
 def is_popup():
     """ Check if a popup exists """
     popup_grab()
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     threshold = 0.97
     popup_exists = False
     refresh_check()
-    special_offer_check()
-    ok_check()
-    quest_complete_check()
-    get_more_sesterce_check()
-    get_more_roman_helmets_check()
-    #legion_approaching_check()
-    #legion_kill_check()
+    special_offer_check(screen)
+    ok_check(screen)
+    quest_complete_check(screen)
+    get_more_sesterce_check(screen)
+    get_more_roman_helmets_check(screen)
+    legion_approaching_check(screen)
+    legion_defeated_check(screen)
 
 
 def refresh_check():
@@ -80,44 +87,41 @@ def refresh_check():
     refresh_grab()
     screen = cv2.imread('tmp_refresh.png')
     result = cv2.matchTemplate(screen, template, method)
-    fres = np.where(result >= 0.99)
+    fres = np.where(result >= 0.98)
     try:
         test = fres[0][0]>0
         print("Refresh Button Found. Waiting 5s before clicking...")
-        time.sleep(1)
+        time.sleep(2)
         try:
+            #print(refresh_button)
             secure_click(refresh_button, anchor, 1)
         except:
             print("sad")
         print("Clicked Refresh, waiting 20s for before continuing")
-        time.sleep(18)
+        time.sleep(20)
     except:
         #print("No refresh button found")
         pass
 
 
-def special_offer_check():
+def special_offer_check(screen):
     template = cv2.imread(special_offer_img, cv2.IMREAD_GRAYSCALE)
-    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(screen, template, method)
     fres = np.where(result >= threshold)
     try:
         test = fres[0][0] > 0
         print("Special offer popup found, clicking decline!")
-        try:
-            print(decline_special_offer, anchor)
-            secure_click(decline_special_offer, anchor, 1)
-        except:
-            print("sad")
+        secure_click(decline_special_offer, anchor, 1)
         time.sleep(1)
         secure_click((-417, 543), anchor, 1)
     except:
         pass
 
 
-def ok_check():
+def ok_check(screen):
     template = cv2.imread(ok_img, cv2.IMREAD_GRAYSCALE)
-    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(screen, template, method)
     fres = np.where(result >= threshold)
     try:
@@ -129,9 +133,9 @@ def ok_check():
         pass
 
 
-def quest_complete_check():
+def quest_complete_check(screen):
     template = cv2.imread(complete_img, cv2.IMREAD_GRAYSCALE)
-    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(screen, template, method)
     fres = np.where(result >= threshold)
     try:
@@ -145,9 +149,9 @@ def quest_complete_check():
         pass
 
 
-def get_more_sesterce_check():
+def get_more_sesterce_check(screen):
     template = cv2.imread(sesterce_img, cv2.IMREAD_GRAYSCALE)
-    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(screen, template, method)
     fres = np.where(result >= threshold)
     try:
@@ -161,9 +165,9 @@ def get_more_sesterce_check():
         pass
 
 
-def get_more_roman_helmets_check():
+def get_more_roman_helmets_check(screen):
     template = cv2.imread(roman_helmets_img, cv2.IMREAD_GRAYSCALE)
-    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(screen, template, method)
     fres = np.where(result >= threshold)
     try:
@@ -173,7 +177,36 @@ def get_more_roman_helmets_check():
         time.sleep(1)
         print("Doing a cautionary sesterce check")
         popup_grab()
-        get_more_sesterce_check()
+        screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+        get_more_sesterce_check(screen)
+    except:
+        pass
+
+
+def legion_approaching_check(screen):
+    template = cv2.imread(legion_approaching_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Legion Approaching popup found, clicking X!")
+        secure_click(legion_approaching_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def legion_defeated_check(screen):
+    template = cv2.imread(legion_defeat_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Legion defeated popup found, clicking X!")
+        secure_click(legion_defeat_pos, anchor, 1)
+        time.sleep(1)
     except:
         pass
 
@@ -257,7 +290,6 @@ def cursor_grab_iter_color(num, timer, w, h):
         cursor_grab_color(w, h, num)
         num -= 1
         time.sleep(timer)
-
 
 
 def get_boar_locs(template_list):
@@ -601,16 +633,10 @@ def multi_window_run():
 
 if __name__ == '__main__':
     anchor = get_anchor()
+    #get_anchored_cursor(anchor)
     is_popup()
     multi_window_run()
     #refresh_check()
     #fish_path()
     #collect_path()
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
-    #anchor = get_anchor()
-    #get_anchored_cursor(anchor)
-    #is_popup()
-    #secure_mouse_over((-546, 535), anchor, 3)
-    #time.sleep(3)
-    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
-    
