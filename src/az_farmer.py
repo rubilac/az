@@ -78,7 +78,7 @@ def refresh_check():
     refresh_grab()
     screen = cv2.imread('tmp_refresh.png')
     result = cv2.matchTemplate(screen, template, method)
-    fres = np.where(result >= 0.99)
+    fres = np.where(result >= 0.90)
     try:
         test = fres[0][0]>0
         #print(fres)
@@ -248,6 +248,15 @@ def segment_grab(x, y, w, l, save=True):
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
+
+
+def segment_grab_custom(cord, tag):
+    x, y, w, l = cord
+    im = ImageOps.grayscale(ImageGrab.grab(cord))
+    filename = "segment_{}.jpg".format(tag)
+    im.save(filename, 'JPEG')
+    params = ['mogrify', filename, filename]
+    subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
 
 
 def popup_grab(x=200,y=300 , w=800, l=600, save=True):
@@ -448,7 +457,7 @@ def write_segment(n):
 def get_anchor():
     """ Get the cords of the anchor """
     threshold = 0.99
-    segment = cv2.imread("segment.png", cv2.IMREAD_GRAYSCALE)
+    segment = cv2.imread("save_segment.png", cv2.IMREAD_GRAYSCALE)
     try:
         template = cv2.imread("/opt/dev/az/templates/anchor_2.png", cv2.IMREAD_GRAYSCALE)
         result = cv2.matchTemplate(segment, template, method)
@@ -549,7 +558,6 @@ def get_anchored_cursor(anchor):
 
 
 def fish_path():
-    segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
     print("Starting Fishing now!")
     refresh_checker()
@@ -626,7 +634,6 @@ def is_limit_reached(anchor):
 
 
 def collect_path():
-    segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
     print("Starting Collecting now!")
     navy('top_right', 4)
@@ -675,12 +682,12 @@ def multi_window_run():
     print('Collecting RP!')
 
 if __name__ == '__main__':
-    segment_grab(trs_x, trs_y, trs_w, trs_h)
     anchor = get_anchor()
+    refresh_checker()
     #get_anchored_cursor(anchor)
     popup_grab()
     multi_window_run()
     #fish_path()
     #collect_path()
     #cycle()
-    #refresh_checker()
+    

@@ -1,67 +1,51 @@
-from PIL import ImageGrab
+import pyscreenshot as ImageGrab
 import os
-import time
-import win32api, win32con
-import json
-import datetime
 from az_code import *
-from PIL import *
+from az_farmer import *
+from PIL import Image
 from PIL import ImageOps
 from numpy import *
 from pytesseract import image_to_string
+import pytesseract
+from tesserocr import PyTessBaseAPI
 
-#player_strength_loc = (2009, 136, 2049, 155)
-#{'y': 136, 'x': 2009}
+# 1916 x 927
+trs_x = 998
+trs_y = 150
+trs_w = 1013
+trs_h = 165
 
-
-current_resources = {
-	"strength": 0,
-	"current_food": 0,
-	"total_food": 0,
-	"sesterti": 0,
-	"helmets": 0,
-	"rp": 0
-}
-
-def get_image(cords):
-	box = cords
-	im = ImageGrab.grab(box)
- 	return im	
+food_cords = (980, 150, 1015, 165)
 
 
-def get_player_stat(file_name, stat, num):
-	data = load_file(file_name)
-	cords = (data[stat]['x'], data[stat]['y'], data[stat]['x']+data[stat]['width'], data[stat]['y']+data[stat]['height'])
-	im = get_image(cords)
-	output_string = image_to_string(im, config='--psm 7')
-	#im.save('eng.comic.exp' + str(num) + '.png', dpi=(116,116))
-	print output_string
-	return output_string
+images = ['10,979.jpg', '17slash34.jpg', '2,255.jpg', '400.jpg', '67.jpg']
+images_bw = ['10,979_bw.jpg', '17slash34_bw.jpg', '2,255_bw.jpg', '400_bw.jpg', '67_bw.jpg']
+# ,
 
 
-def food_split():
-	data = get_player_stat('player.json', 'food', 1)
-	data = data.split('/')
-	return data
+def fixup_images():
+	for image in images:
+		column = Image.open(image)
+		gray = column.convert('L')
+		blackwhite = gray.point(lambda x: 0 if x < 140 else 255, '1')
+		name = image.split('.')
+		new_name = "{}_bw.jpg".format(name[0])
+		blackwhite.save(new_name)
 
-def upgrade_current_resources(timer):
-	time.sleep(timer)
-	current_resources['strength'] = int(get_player_stat('player.json', 'player_strength_loc', 0))
-	time.sleep(timer)
-	food = food_split()
-	current_resources['current_food'] = food[0]
-	current_resources['total_food'] = food[1]
-	time.sleep(timer)
-	current_resources['sesterti'] = int(get_player_stat('player.json', 'sesterti', 2))
-	time.sleep(timer)
-	current_resources['rp'] = int(get_player_stat('player.json', 'rp', 3))
-	time.sleep(timer)
-	current_resources['helmets'] = int(get_player_stat('player.json', 'helmets', 4))
-	print current_resources
-	return current_resources
+
+def get_num_from_image(image):
+	api = PyTessBaseAPI(path='/opt/dev/az/tessdata/.', lang='eng', psm=7)
+	api.SetImageFile(image)
+	#print(api.GetUTF8Text())
+	return api.GetUTF8Text()
+
 
 if __name__ == '__main__':
-	upgrade_current_resources(0.1)
-	#output_cords()
-
-#x1, y1, x2, y2
+	#segment_grab_custom(food_cords, 'food')
+	get_num_from_image('segment_food.jpg')
+	#fixup_images()
+	#print("Colour Images")
+	#for image in images:
+	#	get_num_from_image(image)
+	#print(ocr_core('out.png'))
+	#print(ocr_core('segment_total.png'))
