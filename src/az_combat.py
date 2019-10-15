@@ -322,9 +322,9 @@ class Legion():
 		time.sleep(0.2)
 		move_and_click((x_s, y_s))
 		time.sleep(0.2)
-		count = 1
+		count = 5
 		ctw = False
-		while ctw == False:
+		while count > 0:
 			x_s += x_m
 			mousePos((x_s, y_s))
 			time.sleep(0.2)
@@ -332,9 +332,8 @@ class Legion():
 			time.sleep(0.2)
 			refresh_checker()
 			move_and_click((x_s, y_s))
-			time.sleep(0.2)
-			count += 1
-			ctw = self.get_ctw(combat_cord)
+			time.sleep(1)
+			count -= 1
 		attack_button_x = x+64
 		attack_button_y = y+430
 		attack_button_pos = (x+64, y+430)
@@ -347,7 +346,8 @@ class Legion():
 		move_and_click(attack_button_pos)
 		time.sleep(0.2)
 		move_and_click(attack_button_pos)
-		time.sleep(0.2)
+		time.sleep(10)
+		move_and_click(self.village_pos)
 
 
 	def engage_attacker(self, enemy_cord):
@@ -380,7 +380,7 @@ class Legion():
 
 	def ready_to_attack(self):
 		strength = self.get_strength()
-		if strength > 50:
+		if strength >= 100:
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
 				cord = self.correct_cords(cord, 350, 200)
