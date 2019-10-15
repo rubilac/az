@@ -1,45 +1,36 @@
-from PIL import ImageGrab
+import pyscreenshot as ImageGrab
 import os
 import time
-import win32api, win32con
 import json
 import datetime
+import sys
+import cv2
 from az_code import *
 from PIL import ImageOps
-from numpy import *
+import numpy as np
 
 
-def click_menu(timer=2):
-	move_and_click((995,941), timer)
+
+def show_screen_gray():
+	segment = np.array(ImageOps.grayscale(ImageGrab.grab(bbox=(400, 400, 950, 700))))
+	cv2.namedWindow("main", cv2.WINDOW_NORMAL)
+	cv2.resizeWindow('main', int(550/0.8), int(300/0.8))
+	cv2.imshow('main', cv2.cvtColor(np.array(segment), cv2.COLOR_BGR2RGB))
+	if cv2.waitKey(25) & 0xFF==ord('q'):
+		cv2.destroyAllWindows()
+		sys.exit()
 
 
-def click_punch(timer=2):
-	move_and_click((1408,916), timer)
-
-
-def click_stop(timer):
-	move_and_click((1384,947), timer)
-
-
-def get_rewards(timer):
-	move_and_click((1135,935), timer)
-
-def punch():
-	click_menu()
-	click_punch()
-	click_stop(1.6)
-	click_stop(2)
-	click_stop(3.05)
-	click_stop(3.1)
-	time.sleep(40)
-	get_rewards(4)
-	get_rewards(4)
-	get_rewards(4)
+def show_screen_color():
+	segment = np.array(ImageGrab.grab(bbox=(400, 400, 950, 700)))
+	cv2.namedWindow("main", cv2.WINDOW_NORMAL)
+	cv2.resizeWindow('main', int(550/0.8), int(300/0.8))
+	cv2.imshow('main', cv2.cvtColor(np.array(segment), cv2.COLOR_BGR2RGB))
+	if cv2.waitKey(25) & 0xFF==ord('q'):
+		cv2.destroyAllWindows()
+		sys.exit()
 
 
 if __name__ == '__main__':
-	n = 30
-	while n > 0:
-		punch()
-		n -= 1
-	#output_cords()
+	while True:
+		show_screen_color()

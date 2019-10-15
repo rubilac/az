@@ -21,8 +21,28 @@ trs_w = 1256
 trs_h = 920
 method = cv2.TM_CCOEFF_NORMED
 threshold = 0.8
-refresh_button = (667, 589)
-refresh_img = '/opt/dev/az/templates/refresh.png'
+
+
+# Button positions
+refresh_button = (666, 590)
+decline_special_offer = (-421, 598)
+ok_pos = (720, 703) 
+complete_pos = (638, 702)
+sesterce_close_pos = (937, 411)
+roman_helmets_close_pos = (936, 378)
+legion_approaching_pos = (790, 405)
+legion_defeat_pos = (595, 676)
+
+
+# Image locations
+refresh_img = '/opt/dev/az/templates/popups/refresh.png'
+special_offer_img = '/opt/dev/az/templates/popups/special_offer.png'
+ok_img = '/opt/dev/az/templates/popups/ok.png'
+complete_img = '/opt/dev/az/templates/popups/complete.png'
+sesterce_img = '/opt/dev/az/templates/popups/sesterce.png'
+roman_helmets_img = '/opt/dev/az/templates/popups/roman_helmets.png'
+legion_approaching_img = '/opt/dev/az/templates/popups/legion_approaching.png'
+legion_defeat_img = '/opt/dev/az/templates/popups/legion_defeat.png'
 
 template_path_boar = '/opt/dev/az/templates/boar/'
 load_boars = os.listdir(template_path_boar)
@@ -38,7 +58,22 @@ def get_time():
     print(current_time)
 
 
-def refresh_checker(pp=''):
+def refresh_checker():
+    popup_grab()
+    screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    threshold = 0.97
+    popup_exists = False
+    refresh_check()
+    #special_offer_check(screen)
+    ok_check(screen)
+    quest_complete_check(screen)
+    get_more_sesterce_check(screen)
+    get_more_roman_helmets_check(screen)
+    legion_approaching_check(screen)
+    legion_defeated_check(screen)
+
+
+def refresh_check():
     template = cv2.imread(refresh_img)
     refresh_grab()
     screen = cv2.imread('tmp_refresh.png')
@@ -58,6 +93,113 @@ def refresh_checker(pp=''):
             navy(pp)
     except:
         #print("No refresh button found")
+        pass
+
+
+def special_offer_check(screen):
+    template = cv2.imread(special_offer_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Special offer popup found, clicking decline!")
+        secure_click(decline_special_offer, anchor, 1)
+        time.sleep(1)
+        secure_click((-417, 543), anchor, 1)
+    except:
+        pass
+
+
+def ok_check(screen):
+    template = cv2.imread(ok_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Ok button found, clicking ok!")
+        secure_click(ok_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def quest_complete_check(screen):
+    template = cv2.imread(complete_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Complete Quest popup found, clicking complete!")
+        secure_click(complete_pos, anchor, 1)
+        print("Clicking OK")
+        secure_click(ok_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def get_more_sesterce_check(screen):
+    template = cv2.imread(sesterce_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Sesterce popup found, clicking X!")
+        secure_click(sesterce_close_pos, anchor, 1)
+        time.sleep(1)
+        print("Clicking OK")
+        #secure_click(sester)
+    except:
+        pass
+
+
+def get_more_roman_helmets_check(screen):
+    template = cv2.imread(roman_helmets_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Roman helmets popup found, clicking X!")
+        secure_click(roman_helmets_close_pos, anchor, 1)
+        time.sleep(1)
+        print("Doing a cautionary sesterce check")
+        popup_grab()
+        screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+        get_more_sesterce_check(screen)
+    except:
+        pass
+
+
+def legion_approaching_check(screen):
+    template = cv2.imread(legion_approaching_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Legion Approaching popup found, clicking X!")
+        move_and_click(legion_approaching_pos)
+        time.sleep(1)
+    except:
+        pass
+
+
+def legion_defeated_check(screen):
+    template = cv2.imread(legion_defeat_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Legion defeated popup found, clicking X!")
+        secure_click(legion_defeat_pos, anchor, 1)
+        time.sleep(1)
+    except:
         pass
 
 
@@ -86,12 +228,34 @@ def refresh_grab(x=500, y=500, w=800, l=700, save=True):
         return im
 
 
+def cancel_grab(x=200, y=300, w=1000, l=800, save=True):
+    new_cord = (x, y, w, l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("tmp_cancel.png", 'PNG')
+        params = ['mogrify', 'tmp_cancel.png', 'tmp_cancel.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
 def segment_grab(x, y, w, l, save=True):
     new_cord = (x, y, w, l)
     im = ImageOps.grayscale(ImageGrab.grab(new_cord))
     if save:
         im.save("segment.png", 'PNG')
         params = ['mogrify', 'segment.png', 'segment.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
+def popup_grab(x=200,y=300 , w=800, l=600, save=True):
+    new_cord = (x, y, x+w, y+l)
+    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
+    if save:
+        im.save("popup.png", 'PNG')
+        params = ['mogrify', 'popup.png', 'popup.png']
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
@@ -114,17 +278,6 @@ def town_grab(x, y, w, l, save=True):
     if save:
         im.save("town.png", 'PNG')
         params = ['mogrify', 'town.png', 'town.png']
-        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
-    else:
-        return im
-
-
-def popup_grab(x, y, w, l, save=True):
-    new_cord = (x, y, x+w, y+l)
-    im = ImageOps.grayscale(ImageGrab.grab(new_cord))
-    if save:
-        im.save("popup.png", 'PNG')
-        params = ['mogrify', 'popup.png', 'popup.png']
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
@@ -243,6 +396,7 @@ def write_combined_cords(template_list, n):
             cord_list.append(i)
     return cord_list
 
+
 def remove_bounded_entries(cord_list, b_x, b_y):
     out_list = []
     cord_list = sort_list(cord_list)
@@ -306,7 +460,7 @@ def get_anchor():
         template = cv2.imread("/opt/dev/az/templates/popup_anchor.png", cv2.IMREAD_GRAYSCALE)
         result = cv2.matchTemplate(segment, template, method)
         fres = np.where(result >= threshold)
-        cord = (int(fres[1]/2), int(fres[0]/2))
+        cord = (int(fres[1]), int(fres[0]))
         print("Popup Anchor Found @ : {}".format(cord))
         return cord        
 
@@ -337,22 +491,6 @@ def ready_custom(full_path):
         return 0 # working
     except IndexError:
         return 1 # ready for work    
-
-
-def is_popup():
-    """ Check if a popup exists """
-    threshold = 0.99
-    segment = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread("/opt/dev/az/templates/close.png", cv2.IMREAD_GRAYSCALE)
-    result = cv2.matchTemplate(segment, template, method)
-    fres = np.where(result >= threshold)
-    try:
-        type(fres[0][0])
-        cord = (int(fres[1]/2), int(fres[0]/2))
-        print("Popup found @ : {}".format(cord))
-        return cord
-    except IndexError:
-        return 1 # ready for work   
 
 
 def cycle():
@@ -433,7 +571,7 @@ def fish_path():
     mousePos(anchor_convert(anchor, (14, 721)))
     move_and_click(anchor_convert(anchor, (14, 721)), 5) # Bridge fish
     mousePos(anchor_convert(anchor, (55, 577)))
-    move_and_click(anchor_convert(anchor, (55, 577)), 5) # Probably wrong
+    move_and_click(anchor_convert(anchor, (55, 590)), 5) # Probably wrong
     mousePos(anchor_convert(anchor, (-356, 334)))
     move_and_click(anchor_convert(anchor, (-356, 334)), 8)
     refresh_checker()
@@ -453,7 +591,7 @@ def fish_path():
     mousePos(anchor_convert(anchor, (-702, 279)))
     move_and_click(anchor_convert(anchor, (-702, 279)), 5) #Top right Start 
     mousePos(anchor_convert(anchor, (-786, 227)))
-    move_and_click(anchor_convert(anchor,(-786, 227)), 15)    
+    move_and_click(anchor_convert(anchor,(-786, 227)), 5)    
     mousePos(anchor_convert(anchor, (-600, 228)))
     move_and_click(anchor_convert(anchor, (-600, 228)), 5)
     mousePos(anchor_convert(anchor, (-314, 217)))
@@ -461,10 +599,6 @@ def fish_path():
 
 
 def secure_click(cord, anchor='', delay=0.2):
-    if anchor == '':
-        cord = cord
-    else:
-        cord = anchor_convert(anchor, cord)
     mousePos(cord)
     time.sleep(0.1)
     mousePos(cord)
@@ -473,10 +607,6 @@ def secure_click(cord, anchor='', delay=0.2):
 
 
 def secure_mouse_over(cord, anchor='', delay=0.2):
-    if anchor == '':
-        cord = cord
-    else:
-        cord = anchor_convert(anchor, cord)
     print(cord)
     mousePos(cord)
     time.sleep(0.1)
@@ -517,6 +647,7 @@ def collect_path():
 
 
 def anchor_convert(anchor, cord):
+    # asd
     return (anchor[0]+cord[0], anchor[1]+cord[1])
 
 
@@ -544,11 +675,12 @@ def multi_window_run():
     print('Collecting RP!')
 
 if __name__ == '__main__':
-    #segment_grab(trs_x, trs_y, trs_w, trs_h)
+    segment_grab(trs_x, trs_y, trs_w, trs_h)
+    anchor = get_anchor()
+    #get_anchored_cursor(anchor)
+    popup_grab()
     multi_window_run()
     #fish_path()
-    #anchor = get_anchor()
-    #get_anchored_cursor(anchor)
     #collect_path()
     #cycle()
     #refresh_checker()

@@ -382,7 +382,7 @@ class Craft():
 		self.craft_stone() # Stone Mason
 		self.craft_wood_plank() # Carpenter
 		self.craft_nails() # Blacksmith
-		self.craft_grease() # Leatherworker
+		self.craft_leather() # Leatherworker
 		self.craft_gaul_soup() # Butcher
 		self.craft_fish_soup() # Fish Market
 
