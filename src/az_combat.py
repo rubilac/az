@@ -37,12 +37,13 @@ for enemy in load_enemies:
 attack_screen_dimensions = ()
 
 
+
 class Combat():
 	def __init__(self):
-		self.screen_w = 1256
-		self.screen_h = 920
+		self.screen_w = 1470
+		self.screen_h = 927
 		self.x = 70
-		self.y = 140
+		self.y = 100
 		self.ch = CordHelper()
 		self.enemies = self.load_images_from_dir('/opt/dev/az/templates/combat/enemies/')
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
@@ -249,15 +250,15 @@ class Combat():
 
 class Legion():
 	def __init__(self):
-		self.screen_w = 1256
-		self.screen_h = 920
+		self.screen_w = 1470
+		self.screen_h = 927
 		self.x = 70
-		self.y = 140
+		self.y = 100
 		self.ch = CordHelper()
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
-		self.village_pos = (1169, 879)
-		self.strength_cords = (1060, 150, 1087, 166)
+		self.village_pos = (1376, 877)
+		self.strength_cords = (1268, 120, 1296, 130)
 
 
 	def load_images_from_dir(self, dirname):
@@ -380,7 +381,7 @@ class Legion():
 
 	def ready_to_attack(self):
 		strength = self.get_strength()
-		if strength >= 100:
+		if strength >= 40:
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
 				cord = self.correct_cords(cord, 350, 200)
@@ -489,7 +490,10 @@ def strength():
 
 
 if __name__ == '__main__':
-	move_and_click((688, 123)) # Focus Chrome frame!
-	clear_all_enemies()
+	move_and_click((763, 42)) # Focus Chrome frame!
+	#cm = Combat()
+	#cord = (cm.get_combat_page_cord())
+	#cm.get_atk_screen(cord)
+	#clear_all_enemies()
 	strength()
 

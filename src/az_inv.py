@@ -3,9 +3,9 @@ import sys
 import time
 import json
 import datetime
-from az_code_mac import *
-from az_farmer_mac import *
-from PIL import ImageGrab
+from az_code import *
+from az_farmer import *
+import pyscreenshot as ImageGrab
 from PIL import ImageOps
 from numpy import *
 import pynput.mouse as ms
@@ -73,33 +73,33 @@ class Inventory():
 		# Store Sell points
 		self.method = cv2.TM_CCOEFF_NORMED
 		self.threshold = 0.90
-		self.screen_x = 1
-		self.screen_y = 1
-		self.screen_w = 2400
-		self.screen_h = 2400
+		self.screen_x = 70
+		self.screen_y = 100
+		self.screen_w = 1470
+		self.screen_h = 927
 		self.end_of_bag = [32705332, 21902624]
 		self.del_list_3 = ['boar bones', 'boar_skins', 'boar_tooth', 'crabs', 'egyptian fish', 'gold ore', 'iron ore', 'lobsters', 'mushrooms', 'oats', 'oysters', 'smelly fish', 'stone blocks']
 		self.del_list_2 = []
 		self.del_list_1	= []
 		self.del_list_0	= ['fish', 'entrails', 'sand']
-		self.search_pos = (-852, 265)
-		self.search_clear = (-802, 265)
+		self.search_pos = (460, 363)
+		self.search_clear = (534, 367)
 		self.search_result_pos = (-888, 340)
 		self.anchor = get_anchor()
 		self.img_path = '/opt/dev/az/templates/inventory/items/'
-		self.sell_cord_list = [(-632, 423), (-456, 421), (-303, 424), (-633, 601), (-468, 600), (-302, 603)]
-		self.sell_cord_sell = (-503, 574)
-		self.sell_cord_minus = (-589, 512)
+		self.sell_cord_list = [(672, 492), (803, 489), (937, 493), (673, 634), (804, 634), (934, 634)]
+		self.sell_cord_sell = (772, 612)
+		self.sell_cord_minus = (700, 564)
 
 
-	def open_bag(self, seg='', threshold=0.88):
+	def open_bag_deprecate(self, seg='', threshold=0.88):
 		"""
 			Take a screen grab and locate the inventory icon. If it is found: click it
 			If not quit
 		"""
 		template = read_image(inv_icon_img, cv2.IMREAD_GRAYSCALE)
 		if seg == '':
-			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(1, 1, self.screen_w, self.screen_h)))
+			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(self.screen_x, self.screen_y, self.screen_w, self.screen_h)))
 			#self.get_image(1, 1, self.screen_w, self.screen_h,"default", True)
 			ps = np.array(segment.getdata(), dtype='uint8').reshape((segment.size[0], segment.size[1],-1))
 		else:
@@ -115,7 +115,7 @@ class Inventory():
 
 		logger.debug("Opening Bag Fres: {}".format(fres))
 		try:
-			cord = (int(fres[1]/2+5), int(fres[0]/2+5))
+			cord = (int(fres[1]+5), int(fres[0]+5))
 			logger.info("Found Inventory Button @ {}, openning inventory".format(cord))
 			move_and_click(cord)
 			move_and_click(cord)
@@ -125,6 +125,11 @@ class Inventory():
 			raise Exception("Cannot find inventory button, quitting...")
 
 
+	def open_bag(self):
+		cord = (1412, 817)
+		move_and_click(cord, 1)
+
+
 	def open_bag_check(self, seg='', threshold=0.99):
 		"""
 			Grab a 2200 x 2200 piece of the screen and return the cord of the inventory.png template
@@ -132,7 +137,7 @@ class Inventory():
 		"""
 		template = read_image(inv_img, cv2.IMREAD_GRAYSCALE)
 		if seg == '':
-			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(1,1,self.screen_w,self.screen_h)))
+			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(self.screen_x, self.screen_y, self.screen_w, self.screen_h)))
 			ps = np.array(segment.getdata(), dtype='uint8').reshape((segment.size[0], segment.size[1],-1))
 		else:
 			try:
@@ -149,7 +154,7 @@ class Inventory():
 		logger.debug("Fres {}, Threshold {}".format(fres, threshold))
 		
 		try:
-			cord = (int(fres[1]/2), int(fres[0]/2))
+			cord = (int(fres[1]), int(fres[0]))
 			logger.info("Inventory is open @ {}".format(cord))
 			return cord
 		except TypeError:
@@ -165,7 +170,7 @@ class Inventory():
 			self.open_bag()
 
 
-	def get_image(self, x=1, y=1, width=2400, length=2400, tag="default", save=True):
+	def get_image(self, x=70, y=100, width=1470, length=927, tag="default", save=True):
 		"""
 			Given x, y cords and width and length size, take a grayscale image and return the
 			summed value.
@@ -186,7 +191,7 @@ class Inventory():
 		return int(a)
 
 
-	def get_color_image(self, x, y, width, length, tag="default", save=False):
+	def get_color_image(self,  x=70, y=100, width=1470, length=927, tag="default", save=False):
 		"""
 			Given x, y cords and width and length size, take a color image and return the summed value
 			of all 3 rgb ints.
@@ -233,7 +238,7 @@ class Inventory():
 		""" 
 			Function to navigate the inventory widget right based on anchor
 		"""
-		left_cord = (bag_cord[0]-200, bag_cord[1]+250)
+		left_cord = (553, 521)
 		move_and_click(left_cord)
 		logger.info("Navigating inventory left")
 
@@ -242,7 +247,7 @@ class Inventory():
 		""" 
 			Function to navigate the inventory widget right based on anchor 
 		"""
-		right_cord = (bag_cord[0]+350, bag_cord[1]+250)
+		right_cord = (982, 520)
 		move_and_click(right_cord)
 		logger.info("Navigating inventory right")
 
@@ -285,9 +290,10 @@ class Inventory():
 
 	def delete_all_of_item(self, item_name):
 		item_exists = self.item_in_inventory(item_name)
-		while item_exists != 1:
-			self.delete_items_from_pane(item_name)
-			item_exists = self.item_in_inventory(item_name)
+		self.delete_items_from_pane(item_name)
+		#while item_exists != 1:
+		#	self.delete_items_from_pane(item_name)
+		#	item_exists = self.item_in_inventory(item_name)
 
 
 	def get_first_pos(self, item_name):
@@ -310,14 +316,14 @@ class Inventory():
 		while num_sells > 0:
 			secure_click(cord, self.anchor, 1)
 			secure_click(self.sell_cord_minus, self.anchor, 1)
-			secure_click(self.sell_cord_sell, self.anchor, 1)
+			#secure_click(self.sell_cord_sell, self.anchor, 1)
 			num_sells -= 1
 
 
 	def get_sell_button(self, cord):
-		""" 
+		""" 5
 			cord = (1000, 2000) 
-			pos1 = (<1200, <800)
+			pos1 = ( x < 750,  y < 550)
 			pos2 = (<1200, >800<1200)
 			pos3 = (<1200, >1200)
 			pos4 = (>1200, <800)
@@ -325,29 +331,33 @@ class Inventory():
 			pos6 = (>1200, >1200)
 
 		"""
+		x1= 650+self.screen_x
+		x2= 750+self.screen_x
+		y= 550+self.screen_y
+		print("Item found @ {}".format(cord))
 		sell_buttons = self.sell_cord_list
-		if cord[0] < 1200 and cord[1] < 800:
+		if cord[0] < y and cord[1] < x1:
 			out = [1, self.sell_cord_list[0]]
 			return out
-		if cord[0] < 1200 and 800 < cord[1] < 1200:
+		if cord[0] < y and x1 < cord[1] < x2:
 			out = [2, self.sell_cord_list[1]]
 			return out
-		if cord[0] < 1200 and cord[1] > 1200:
+		if cord[0] < y and cord[1] > x2:
 			out = [3, self.sell_cord_list[2]]
 			return out
-		if cord[0] > 1200 and cord[1] < 800:
+		if cord[0] > y and cord[1] < x1:
 			out = [4, self.sell_cord_list[3]]
 			return out
-		if cord[0] > 1200 and 800 < cord[1] < 1200:
+		if cord[0] > y and x1 < cord[1] < x2:
 			out = [5, self.sell_cord_list[4]]
 			return out
-		if cord[0] > 1200 and cord[1] > 1200:
+		if cord[0] > y and cord[1] > x2:
 			out = [6, self.sell_cord_list[5]]
 			return out
 
 
 	def close(self):
-		secure_click((-239, 244), self.anchor, 1)
+		secure_click((984, 346), self.anchor, 1)
 
 
 	def delete_keep_n(self, cord, num_sells,  n):
@@ -357,11 +367,14 @@ class Inventory():
 
 
 if __name__ == '__main__':
+	move_and_click((763, 42))
 	inventory = Inventory()
+	#inventory.get_image()
 	#inventory.delete_all_of_item('boar skins')
-	inventory.delete_all_of_item('entrails')
-	inventory.delete_all_of_item('fish')
-	inventory.close()
+	inventory.delete_all_of_item('oyster')
+	#inventory.delete_all_of_item('entrails')
+	#inventory.delete_all_of_item('fish')
+	#inventory.close()
 	#inventory.delete_items_from_pane('fish')
 	#inventory.delete_items_from_pane('entrails')
 	#inventory.delete_items_from_pane('boar skins')

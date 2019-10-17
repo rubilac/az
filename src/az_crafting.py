@@ -24,69 +24,71 @@ logger = logging.getLogger()
 
 
 method =  cv2.TM_CCOEFF_NORMED
-craft_pos = (876, 707)
-blank_spot = (341, 373)
-close_pos = (960, 345)
+craft_pos = (980, 686)
+blank_spot = (484, 371) #(341, 373)
+close_pos = (1065, 326)
 
 
 # Crafting Positions
-first_pos = (564, 415)
-second_pos = (533, 477)
-third_pos = (513, 544)
-fourth_pos = (518, 610)
-fifth_pos = (513, 678)
+first_pos = (635, 398) # (564, 415)
+second_pos = (648, 459) # (533, 477)
+third_pos = (665, 522) # (513, 544)
+fourth_pos = (653, 595) # (518, 610)
+fifth_pos = (662, 660) # (513, 678)
 
 # Stone Mason
-stone_mason_pos = (528, 440)
-stone_mason_build = (595, 435)
+stone_mason_pos = (735, 399)
+stone_mason_build = (802, 392)
 
 # Carpenter
-carpenter_pos = (698, 449)
-carpenter_build = (775, 454)
+carpenter_pos = (907, 409)
+carpenter_build = (983, 411)
 
 # Blacksmith
-blacksmith_pos = (802, 496)
-blacksmith_build = (874, 504)
+blacksmith_pos = (1012, 454)
+blacksmith_build = (1081, 463)
 
 # Tailor
-tailor_pos = (396, 631)
-tailor_build = (457, 630)
+tailor_pos = (591, 596)
+tailor_build = (457, 630) # TBD
+
+#Leatherworker
+leatherworker_pos = (708, 538)
+leatherworker_build = (615, 538)
 
 #Merchandise info
-merch_pos_1 = (734, 480)
-merch_pos_2 = (863, 479)
-merch_pos_3 = (728, 620)
-close_merch_pos = (943, 390)
-close_merch_pos_2 = (877, 416)
+merch_pos_1 = (836, 468)
+merch_pos_2 = (964, 460)
+merch_pos_3 = (828, 600)
+close_merch_pos = (1050, 371)
+close_merch_pos_2 = (983, 397)
 
 #Fish Market
-fish_market_pos = (625, 621)
-fish_market_build = (639, 682)
-fish_market_restock = (688, 613)
+fish_market_pos = (837, 580)
+fish_market_build = (864, 532)
+fish_market_restock = (915, 464)
 fish_market_img = '/opt/dev/az/templates/fish_soup_2.png'
 fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single_2.png'
 
 #Butcher
-butcher_pos = (715, 667)
-butcher_build = (740, 741)
-butcher_restock = (787, 673)
+butcher_pos = (927, 629)
+butcher_build = (963, 594)
+butcher_restock = (1013, 525)
 butcher_img = '/opt/dev/az/templates/gaul_soup.png'
 gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 
 
 
-#Leatherworker
-leatherworker_pos = (496, 583)
-leatherworker_build = (567, 582)
+
 
 
 
 class Craft():
 	def __init__(self):
-		self.town_x = 185
-		self.town_y = 316
-		self.town_w = 885
-		self.town_h = 551
+		self.town_x = 442
+		self.town_y = 200
+		self.town_w = 800
+		self.town_h = 450
 		self.sell_cord_list = [(-668, 382), (-509, 395), (-342, 383), (-664, 543), (-503, 550), (-344, 560)]
 		print("Crafting Module Engaged!")
 		refresh_checker()
@@ -379,12 +381,12 @@ class Craft():
 
 
 	def craft(self):
-		self.craft_stone() # Stone Mason
+		#self.craft_stone() # Stone Mason
 		self.craft_wood_plank() # Carpenter
-		self.craft_iron_bar() # Blacksmith
-		self.craft_leather() # Leatherworker
+		#self.craft_iron_bar() # Blacksmith
+		#self.craft_leather() # Leatherworker
 		self.craft_gaul_soup() # Butcher
-		self.craft_fish_soup() # Fish Market
+		#self.craft_fish_soup() # Fish Market
 
 
 	def restock(self):

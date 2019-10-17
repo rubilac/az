@@ -16,23 +16,24 @@ from keyboard import *
 
 
 trs_x = 70
-trs_y = 140
-trs_w = 1256
-trs_h = 920
+trs_y = 100
+trs_w = 1470
+trs_h = 927
 method = cv2.TM_CCOEFF_NORMED
 threshold = 0.8
 
+# Anchor = (1324, 46)
 
 # Button positions
-refresh_button = (666, 590)
-decline_special_offer = (-421, 598)
-ok_pos = (720, 703) 
-complete_pos = (638, 702)
-sesterce_close_pos = (937, 411)
-roman_helmets_close_pos = (936, 378)
-legion_approaching_pos = (790, 405)
-legion_defeat_pos = (595, 676)
-
+refresh_button = (769, 571)# (666, 590)
+decline_special_offer = (-421, 598)#
+ok_pos = (826, 684) # (720, 703)  #
+complete_pos = (711, 681) # (638, 702) #
+sesterce_close_pos = (1040, 392) #
+roman_helmets_close_pos = (1039, 361)# (936, 378)#
+legion_approaching_pos = (894, 387)#
+legion_defeat_pos = (595, 676)#
+achievements_pos = (1064, 326)
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
@@ -43,6 +44,8 @@ sesterce_img = '/opt/dev/az/templates/popups/sesterce.png'
 roman_helmets_img = '/opt/dev/az/templates/popups/roman_helmets.png'
 legion_approaching_img = '/opt/dev/az/templates/popups/legion_approaching.png'
 legion_defeat_img = '/opt/dev/az/templates/popups/legion_defeat.png'
+achievements_img = '/opt/dev/az/templates/popups/achievements.png'
+
 
 template_path_boar = '/opt/dev/az/templates/boar/'
 load_boars = os.listdir(template_path_boar)
@@ -71,14 +74,14 @@ def refresh_checker():
     get_more_roman_helmets_check(screen)
     legion_approaching_check(screen)
     legion_defeated_check(screen)
-
+    achievement_check(screen)
 
 def refresh_check():
     template = cv2.imread(refresh_img)
     refresh_grab()
     screen = cv2.imread('tmp_refresh.png')
     result = cv2.matchTemplate(screen, template, method)
-    fres = np.where(result >= 0.90)
+    fres = np.where(result >= 0.80)
     try:
         test = fres[0][0]>0
         #print(fres)
@@ -106,7 +109,7 @@ def special_offer_check(screen):
         print("Special offer popup found, clicking decline!")
         secure_click(decline_special_offer, anchor, 1)
         time.sleep(1)
-        secure_click((-417, 543), anchor, 1)
+        secure_click((-417, 543), anchor, 1) #change
     except:
         pass
 
@@ -134,6 +137,7 @@ def quest_complete_check(screen):
         test = fres[0][0] > 0
         print("Complete Quest popup found, clicking complete!")
         secure_click(complete_pos, anchor, 1)
+        secure_click((769, 653), anchor, 1)
         print("Clicking OK")
         secure_click(ok_pos, anchor, 1)
         time.sleep(1)
@@ -203,6 +207,20 @@ def legion_defeated_check(screen):
         pass
 
 
+def achievement_check(screen):
+    template = cv2.imread(achievements_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Achievement popup found, clicking X!")
+        secure_click(achievements_pos, anchor, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
 def get_image_info(img):
     """Given an image, return the dtype and shape"""
     template = cv2.imread(img)
@@ -217,7 +235,7 @@ def cursor_grab_iter(num, timer):
         time.sleep(timer)
 
   
-def refresh_grab(x=500, y=500, w=800, l=700, save=True):
+def refresh_grab(x=200, y=500, w=1000, l=700, save=True):
     new_cord = (x, y, w, l)
     im = ImageOps.grayscale(ImageGrab.grab(new_cord))
     if save:
@@ -259,7 +277,7 @@ def segment_grab_custom(cord, tag):
     subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
 
 
-def popup_grab(x=200,y=300 , w=800, l=600, save=True):
+def popup_grab(x=400,y=250 , w=1000, l=600, save=True):
     new_cord = (x, y, x+w, y+l)
     im = ImageOps.grayscale(ImageGrab.grab(new_cord))
     if save:
@@ -476,7 +494,7 @@ def get_anchor():
 
 def is_ready():
     """ Check if a building is working """
-    threshold = 0.90
+    threshold = 0.85
     segment = cv2.imread("town.png", cv2.IMREAD_GRAYSCALE)
     template = cv2.imread("/opt/dev/az/templates/ready_2.png", cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(segment, template, method)
@@ -503,12 +521,13 @@ def ready_custom(full_path):
 
 
 def cycle():
-    move_and_click((688, 123)) #Focus Frame
+    print("Running Cycle")
+    move_and_click((763, 42)) #Focus Frame
     n = 4
     refresh_checker()
     navy('bottom_right', 6)
     time.sleep(2)
-    move_and_click((802, 404), 10) # Starting Position for bottom right boar farm
+    move_and_click((1050, 436), 10) # Starting Position for bottom right boar farm
     time.sleep(0.2)
     for i in range(n):
         print("Starting round {}".format(i))
@@ -516,21 +535,21 @@ def cycle():
     refresh_checker()
     navy('top_left', 6)
     time.sleep(2)
-    move_and_click((451, 395), 4)
+    move_and_click((449, 340), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type(n)
     refresh_checker()
     navy('bottom_left', 6)
     time.sleep(2)
-    move_and_click((762, 978), 10)
+    move_and_click((681, 752), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type(n)
     refresh_checker()
     navy('top_right', 6)
     time.sleep(2)
-    move_and_click((935, 702), 10)
+    move_and_click((1096, 552), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type(n)
@@ -558,68 +577,47 @@ def get_anchored_cursor(anchor):
 
 
 def fish_path():
-    anchor = get_anchor()
     print("Starting Fishing now!")
     refresh_checker()
-    navy('top_left', 6)
-    mousePos(anchor_convert(anchor,(-666, 336)))
-    move_and_click(anchor_convert(anchor,(-666, 336)), 20) #Top left Start
-    mousePos(anchor_convert(anchor, (-745, 286)))
-    move_and_click(anchor_convert(anchor, (-745, 286)), 5)
-    mousePos(anchor_convert(anchor, (-517, 309)))
-    move_and_click(anchor_convert(anchor, (-517, 309)), 5)
-    mousePos(anchor_convert(anchor, (-531, 656)))
-    move_and_click(anchor_convert(anchor, (-531, 656)), 5)
-    mousePos(anchor_convert(anchor, (-451, 863)))
-    move_and_click(anchor_convert(anchor, (-451, 863)), 5)
+    navy('top_left', 4)
+    secure_click((447, 340), anchor, 20) #Top left Start
+    secure_click((368, 292), anchor, 5) # Fish spot top left 1
+    secure_click((600, 316), anchor, 5) # Fish spot top left 2
+    secure_click((592, 666), anchor, 5) # Fish spot top left 3
+    secure_click((665, 861), anchor, 5) # Fish spot top left 4 - Probably wrong
+
     refresh_checker()
-    navy('bottom_left', 6)
-    mousePos(anchor_convert(anchor, (-27, 736)))
-    move_and_click(anchor_convert(anchor,(-27, 736)), 15) # Middle Bottom Start
-    mousePos(anchor_convert(anchor, (14, 721)))
-    move_and_click(anchor_convert(anchor, (14, 721)), 5) # Bridge fish
-    mousePos(anchor_convert(anchor, (55, 577)))
-    move_and_click(anchor_convert(anchor, (55, 590)), 5) # Probably wrong
-    mousePos(anchor_convert(anchor, (-356, 334)))
-    move_and_click(anchor_convert(anchor, (-356, 334)), 8)
+    navy('bottom_left', 4)
+    secure_click((1091, 791), anchor, 5) # bottom_left Start
+    secure_click((1123, 771), anchor, 5) # Fish bottom_left left 1
+    secure_click((1178, 635), anchor, 5) # Fish bottom_left left 2
+    secure_click((754, 386), anchor, 5) # Fish bottom_left left 3
+    secure_click((796, 156), anchor, 5) # Fish bottom_left left 4 - Probably wrong
+    
     refresh_checker()
-    navy('bottom_left', 6)
-    move_screen_up(4, 300)
-    mousePos(anchor_convert(anchor, (-202, 530)))
-    move_and_click(anchor_convert(anchor,(-202, 530)), 15) #Middle Top Start
-    mousePos(anchor_convert(anchor, (-310, 459)))
-    move_and_click(anchor_convert(anchor, (-310, 459)), 5)
-    mousePos(anchor_convert(anchor, (-244, 244)))
-    move_and_click(anchor_convert(anchor, (-244, 244)), 5)
-    mousePos(anchor_convert(anchor, (-59, 260)))
-    move_and_click(anchor_convert(anchor, (-59, 260)), 5)
-    refresh_checker()
-    navy('top_right', 6)
-    time.sleep(2)
-    mousePos(anchor_convert(anchor, (-702, 279)))
-    move_and_click(anchor_convert(anchor, (-702, 279)), 5) #Top right Start 
-    mousePos(anchor_convert(anchor, (-786, 227)))
-    move_and_click(anchor_convert(anchor,(-786, 227)), 5)    
-    mousePos(anchor_convert(anchor, (-600, 228)))
-    move_and_click(anchor_convert(anchor, (-600, 228)), 5)
-    mousePos(anchor_convert(anchor, (-314, 217)))
-    move_and_click(anchor_convert(anchor, (-314, 217)), 5)
+    navy('top_right', 4)
+    secure_click((261, 319), anchor, 5) # top_right Start
+    secure_click((154, 253), anchor, 4) # Fish top_right left 1
+    secure_click((324, 264), anchor, 4) # Fish top_right left 2
+    secure_click((536, 231), anchor, 4) # Fish top_right left 2
+    secure_click((723, 236), anchor, 4) # Fish top_right left 3
+    secure_click((1004, 224), anchor, 4) # Fish top_right left 4 - Probably wrong
 
 
 def secure_click(cord, anchor='', delay=0.2):
     mousePos(cord)
-    time.sleep(0.1)
+    time.sleep(0.2)
     mousePos(cord)
-    time.sleep(0.1)
+    time.sleep(0.2)
     move_and_click(cord, delay)
 
 
 def secure_mouse_over(cord, anchor='', delay=0.2):
     print(cord)
     mousePos(cord)
-    time.sleep(0.1)
+    time.sleep(0.2)
     mousePos(cord)
-    time.sleep(0.1)
+    time.sleep(0.2)
 
 
 def is_limit_reached(anchor):
@@ -676,16 +674,15 @@ def write_boars_to_segment_n(n):
 
 
 def multi_window_run():
-    print("Running Cycle")
     cycle()
     time.sleep(3)
-    print('Collecting RP!')
+
 
 if __name__ == '__main__':
+    #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
-    refresh_checker()
+    #refresh_checker()
     #get_anchored_cursor(anchor)
-    popup_grab()
     multi_window_run()
     #fish_path()
     #collect_path()

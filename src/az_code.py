@@ -10,9 +10,9 @@ from PIL import ImageOps
 mouse = pynput.mouse.Controller()
 
 x_pad = 70
-y_pad = 140
-res_w = 1256
-res_h = 920
+y_pad = 100
+res_w = 1470
+res_h = 927
 
 
 def screenGrab(tag='default'):
@@ -183,6 +183,7 @@ if __name__ == '__main__':
     #mousePos((569, 527))
     #move_and_click((688, 123)) # Focus Chrome frame!
     #screenGrab()
+    #nav_to_town()
     get_cords()
     #get_test_images()
     #nav_to_town()
