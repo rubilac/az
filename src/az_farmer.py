@@ -346,6 +346,8 @@ def cursor_grab_iter_color(num, timer, w, h):
 def go_to_boar(loc, timer):
     x = (trs_x+loc[0])+5
     y = (trs_y+loc[1])+5
+    if y < 160:
+        return
     mousePos((x, y))
     time.sleep(0.2)
     mousePos((x, y))

@@ -258,7 +258,7 @@ class Legion():
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
 		self.village_pos = (1376, 877)
-		self.strength_cords = (1268, 120, 1296, 130)
+		self.strength_cords = (1268, 118, 1296, 130)
 
 
 	def load_images_from_dir(self, dirname):
@@ -494,6 +494,6 @@ if __name__ == '__main__':
 	#cm = Combat()
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
-	#clear_all_enemies()
+	clear_all_enemies()
 	strength()
 

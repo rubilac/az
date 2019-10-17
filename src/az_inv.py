@@ -290,10 +290,10 @@ class Inventory():
 
 	def delete_all_of_item(self, item_name):
 		item_exists = self.item_in_inventory(item_name)
-		self.delete_items_from_pane(item_name)
-		#while item_exists != 1:
-		#	self.delete_items_from_pane(item_name)
-		#	item_exists = self.item_in_inventory(item_name)
+		#self.delete_items_from_pane(item_name)
+		while item_exists != 1:
+			self.delete_items_from_pane(item_name)
+			item_exists = self.item_in_inventory(item_name)
 
 
 	def get_first_pos(self, item_name):
@@ -316,7 +316,7 @@ class Inventory():
 		while num_sells > 0:
 			secure_click(cord, self.anchor, 1)
 			secure_click(self.sell_cord_minus, self.anchor, 1)
-			#secure_click(self.sell_cord_sell, self.anchor, 1)
+			secure_click(self.sell_cord_sell, self.anchor, 1)
 			num_sells -= 1
 
 
@@ -331,9 +331,10 @@ class Inventory():
 			pos6 = (>1200, >1200)
 
 		"""
-		x1= 650+self.screen_x
-		x2= 750+self.screen_x
-		y= 550+self.screen_y
+		cord = (cord[0]+self.screen_y, cord[1]+self.screen_x)
+		x1= 650
+		x2= 750
+		y= 500
 		print("Item found @ {}".format(cord))
 		sell_buttons = self.sell_cord_list
 		if cord[0] < y and cord[1] < x1:
@@ -370,10 +371,14 @@ if __name__ == '__main__':
 	move_and_click((763, 42))
 	inventory = Inventory()
 	#inventory.get_image()
-	#inventory.delete_all_of_item('boar skins')
+	inventory.delete_all_of_item('boar skins')
 	inventory.delete_all_of_item('oyster')
-	#inventory.delete_all_of_item('entrails')
-	#inventory.delete_all_of_item('fish')
+	inventory.delete_all_of_item('entrails')
+	inventory.delete_all_of_item('fish')
+	inventory.delete_all_of_item('oats')
+	inventory.delete_all_of_item('lobster')
+	inventory.delete_all_of_item('iron scraps')
+	inventory.delete_all_of_item('beetroots')
 	#inventory.close()
 	#inventory.delete_items_from_pane('fish')
 	#inventory.delete_items_from_pane('entrails')

@@ -385,7 +385,7 @@ class Craft():
 		self.craft_wood_plank() # Carpenter
 		#self.craft_iron_bar() # Blacksmith
 		#self.craft_leather() # Leatherworker
-		self.craft_gaul_soup() # Butcher
+		#self.craft_gaul_soup() # Butcher
 		#self.craft_fish_soup() # Fish Market
 
 
