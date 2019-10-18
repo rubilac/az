@@ -381,8 +381,8 @@ class Craft():
 
 
 	def craft(self):
-		#self.craft_stone() # Stone Mason
-		self.craft_wood_plank() # Carpenter
+		self.craft_stone() # Stone Mason
+		#self.craft_wood_plank() # Carpenter
 		#self.craft_iron_bar() # Blacksmith
 		#self.craft_leather() # Leatherworker
 		#self.craft_gaul_soup() # Butcher

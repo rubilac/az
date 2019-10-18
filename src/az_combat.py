@@ -76,15 +76,15 @@ class Combat():
 			fres = np.where(result >= 0.8)
 			if len(fres[0])>0 and len(fres[1])>0:
 				logger.info("Found Combat Page, continuing to battle")
-				os.remove('tmp_cpc.png')
+				#os.remove('tmp_cpc.png')
 				return True
 			else:
 				logger.warning("Combat page not open")
-				os.remove('tmp_cpc.png')
+				#os.remove('tmp_cpc.png')
 				return False
 		except:
 			logger.critical("Combat images faulty, check input images")
-			os.remove('tmp_cpc.png')
+			#os.remove('tmp_cpc.png')
 			raise Exception("Combat images faulty, check input images")
 
 
@@ -98,15 +98,15 @@ class Combat():
 			if len(fres[0])>0 and len(fres[1])>0:
 				cord = (int((self.x+fres[1])+10), int((self.y+fres[0])+10))
 				logger.info("Combat Page Cords: {}".format(cord))
-				os.remove('tmp_cpc.png')
+				#os.remove('tmp_cpc.png')
 				return cord
 			else:
 				logger.warning("Combat page not open")
-				os.remove('tmp_cpc.png')
+				#os.remove('tmp_cpc.png')
 				return False
 		except:
 			logger.critical("Combat images faulty, check input images")
-			os.remove('tmp_cpc.png')
+			#os.remove('tmp_cpc.png')
 			raise Exception("Combat images faulty, check input images")
 
 
@@ -159,6 +159,7 @@ class Combat():
 	def get_atk_screen(self, cord):
 		#cord = self.get_combat_page_cord()
 		#cord = self.correct_cords(cord, 2, self.x, self.y)
+		print(cord)
 		x = cord[0]
 		y = cord[1]
 		x_s = x-240
