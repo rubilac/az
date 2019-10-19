@@ -260,7 +260,8 @@ class Legion():
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
 		self.village_pos = (1376, 877)
-		self.strength_cords = (1268, 118, 1296, 130)
+		self.strength_cords = (1275, 115, 1300, 130)
+		self.strength_threshold = 140
 
 
 	def load_images_from_dir(self, dirname):
@@ -289,7 +290,9 @@ class Legion():
 
 	def get_strength(self):
 		segment_grab_custom(self.strength_cords, 'strength') #
-		return int(get_num_from_image('segment_strength.jpg'))
+		strength = int(get_num_from_image('segment_strength.jpg'))
+		print("********Strength is : {}".format(strength))
+		return strength
 
 
 	def get_combat_page_cord(self):
@@ -383,7 +386,7 @@ class Legion():
 
 	def ready_to_attack(self):
 		strength = self.get_strength()
-		if strength >= 40:
+		if strength >= self.strength_threshold:
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
 				cord = self.correct_cords(cord, 350, 200)
@@ -392,7 +395,7 @@ class Legion():
 			else:
 				pass
 		else:
-			print("Not strong enough yet! {}".format(strength))
+			print("Not strong enough yet! {}, I need {} to fight".format(strength, self.strength_threshold))
 			pass
 
 

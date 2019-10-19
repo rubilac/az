@@ -26,8 +26,7 @@ logger = logging.getLogger()
 method =  cv2.TM_CCOEFF_NORMED
 craft_pos = (980, 686)
 blank_spot = (484, 371) #(341, 373)
-close_pos = (1065, 326)
-
+close_pos = (1072, 322)
 
 # Crafting Positions
 first_pos = (635, 398) # (564, 415)
@@ -54,7 +53,7 @@ tailor_build = (457, 630) # TBD
 
 #Leatherworker
 leatherworker_pos = (708, 538)
-leatherworker_build = (615, 538)
+leatherworker_build = (786, 538)
 
 #Merchandise info
 merch_pos_1 = (836, 468)
@@ -65,22 +64,17 @@ close_merch_pos_2 = (983, 397)
 
 #Fish Market
 fish_market_pos = (837, 580)
-fish_market_build = (864, 532)
-fish_market_restock = (915, 464)
-fish_market_img = '/opt/dev/az/templates/fish_soup_2.png'
+fish_market_build = (856, 636)
+fish_market_restock = (908, 569)
+fish_market_img = '/opt/dev/az/templates/fish_soup_vm_fb.png'
 fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single_2.png'
 
 #Butcher
 butcher_pos = (927, 629)
-butcher_build = (963, 594)
-butcher_restock = (1013, 525)
-butcher_img = '/opt/dev/az/templates/gaul_soup.png'
+butcher_build = (956, 699)
+butcher_restock = (1006, 630)
+butcher_img = '/opt/dev/az/templates/gaul_soup_vm_fb.png'
 gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
-
-
-
-
-
 
 
 class Craft():
@@ -328,7 +322,7 @@ class Craft():
 		template = cv2.imread(img_path) # Load our item we want to stock
 		try:
 			result = cv2.matchTemplate(screen, template, method) # Does it match?
-			fres = np.where(result >= 0.99)
+			fres = np.where(result >= 0.95)
 			if fres[0].size == 0:
 				print("Couldn't match {} in open slot".format(item_name))
 				return 1
@@ -382,11 +376,11 @@ class Craft():
 
 	def craft(self):
 		self.craft_stone() # Stone Mason
-		#self.craft_wood_plank() # Carpenter
-		#self.craft_iron_bar() # Blacksmith
-		#self.craft_leather() # Leatherworker
-		#self.craft_gaul_soup() # Butcher
-		#self.craft_fish_soup() # Fish Market
+		self.craft_wood_plank() # Carpenter
+		self.craft_nails() # Blacksmith
+		self.craft_leather() # Leatherworker
+		self.craft_gaul_soup() # Butcher
+		self.craft_fish_soup() # Fish Market
 
 
 	def restock(self):
@@ -398,5 +392,6 @@ class Craft():
 if __name__ == '__main__':
 	crafter = Craft()
 	crafter.craft()
-	#crafter.restock()
+	#crafter.town_grab()
+	crafter.restock()
 

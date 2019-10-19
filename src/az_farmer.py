@@ -32,7 +32,7 @@ complete_pos = (711, 681) # (638, 702) #
 sesterce_close_pos = (1040, 392) #
 roman_helmets_close_pos = (1039, 361)# (936, 378)#
 legion_approaching_pos = (894, 387)#
-legion_defeat_pos = (595, 676)#
+legion_defeat_pos = (715, 660)#
 achievements_pos = (1064, 326)
 
 # Image locations
@@ -89,7 +89,7 @@ def refresh_check():
         time.sleep(5)
         move_and_click(refresh_button)
         print("Clicked Refresh, waiting 20s for before continuing")
-        time.sleep(15)
+        time.sleep(22)
         if pp == '':
             return
         else:
@@ -263,6 +263,17 @@ def segment_grab(x, y, w, l, save=True):
     if save:
         im.save("segment.png", 'PNG')
         params = ['mogrify', 'segment.png', 'segment.png']
+        subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
+    else:
+        return im
+
+
+def segment_grab_color(x, y, w, l, save=True):
+    new_cord = (x, y, w, l)
+    im = ImageGrab.grab(new_cord)
+    if save:
+        im.save("segment_color.png", 'PNG')
+        params = ['mogrify', 'segment_color.png', 'segment_color.png']
         subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
     else:
         return im
@@ -510,7 +521,7 @@ def is_ready():
 
 def ready_custom(full_path):
     """ Check if a building is working """
-    threshold = 0.99
+    threshold = 0.95
     segment = cv2.imread("town.png", cv2.IMREAD_GRAYSCALE)
     template = cv2.imread(full_path, cv2.IMREAD_GRAYSCALE)
     result = cv2.matchTemplate(segment, template, method)
