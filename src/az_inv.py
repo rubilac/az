@@ -252,6 +252,30 @@ class Inventory():
 		logger.info("Navigating inventory right")
 
 
+	def debuff_list(self, debuff_list, buff):
+		"""
+			mylist = [1, 2, 2, 4, 2, 3]
+			for i, j in enumerate(mylist[:-1]):
+			    if j  == mylist[i+1]: 
+			        mylist[i] = "foo" 
+			        mylist[i+1] = "foo"
+			print mylist
+			[1, 'foo', 'foo', 4, 2, 3]
+		"""
+		print("debuff_list: {}".format(debuff_list))
+		out_list = []
+		for i, j in enumerate(debuff_list):
+			if i == 0:
+				out_list.append(j)
+			if j-buff  > debuff_list[i-1]:
+				out_list.append(j)
+		print("out_list: {}".format(out_list))
+		return out_list
+
+
+
+
+
 	def item_in_inventory(self, item_name):
 		"""
 			Given an item name and stacks to keep (int)
@@ -264,9 +288,17 @@ class Inventory():
 		screen = cv2.imread('gray-default.png')
 		try:
 			result = cv2.matchTemplate(screen, item, method) # Load current screen
-			fres = np.where(result >= 0.99)
-			slots = zip(fres[0], fres[1])
+			fres = np.where(result >= 0.88)
+			x_list = []
+			for i in fres[0]:
+				x_list.append(i)
+			y_list = []
+			for i in fres[1]:
+				y_list.append(i)
+			#slots = zip(self.debuff_list(x_list, 10), self.debuff_list(y_list, 10))
+			slots = zip(fres[0], fres[0])
 			slot_set = set(slots)
+			print(slot_set)
 			count = 0
 			for i in slot_set:
 				count += 1
@@ -290,10 +322,11 @@ class Inventory():
 
 	def delete_all_of_item(self, item_name):
 		item_exists = self.item_in_inventory(item_name)
-		#self.delete_items_from_pane(item_name)
-		while item_exists != 1:
-			self.delete_items_from_pane(item_name)
-			item_exists = self.item_in_inventory(item_name)
+		self.delete_items_from_pane(item_name)
+		#while item_exists != 1:
+		#	self.delete_items_from_pane(item_name)
+		#	refresh_checker()
+		#	item_exists = self.item_in_inventory(item_name)
 
 
 	def get_first_pos(self, item_name):
@@ -316,7 +349,7 @@ class Inventory():
 		while num_sells > 0:
 			secure_click(cord, self.anchor, 1)
 			secure_click(self.sell_cord_minus, self.anchor, 1)
-			secure_click(self.sell_cord_sell, self.anchor, 1)
+			#secure_click(self.sell_cord_sell, self.anchor, 1)
 			num_sells -= 1
 
 
@@ -371,23 +404,23 @@ if __name__ == '__main__':
 	move_and_click((763, 42))
 	inventory = Inventory()
 	#inventory.get_image()
-	refresh_checker()
-	inventory.delete_all_of_item('boar skins')
-	refresh_checker()
-	inventory.delete_all_of_item('oyster')
-	refresh_checker()
-	inventory.delete_all_of_item('entrails')
-	refresh_checker()
-	inventory.delete_all_of_item('fish')
+	#refresh_checker()
+	#inventory.delete_all_of_item('boar skins')
+	#refresh_checker()
+	#inventory.delete_all_of_item('oyster')
+	#refresh_checker()
+	#inventory.delete_all_of_item('entrails')
+	#refresh_checker()
+	#inventory.delete_all_of_item('fish')
 	#refresh_checker()
 	#inventory.delete_all_of_item('oats')
-	refresh_checker()
-	inventory.delete_all_of_item('lobster')
-	refresh_checker()
-	inventory.delete_all_of_item('iron scraps')
-	inventory.close()
 	#refresh_checker()
-	#inventory.delete_all_of_item('beetroots')
+	#inventory.delete_all_of_item('lobster')
+	#refresh_checker()
+	#inventory.delete_all_of_item('iron scraps')
+	#inventory.close()
+	#refresh_checker()
+	inventory.delete_all_of_item('beetroots')
 	#inventory.close()
 	#inventory.delete_items_from_pane('fish')
 	#inventory.delete_items_from_pane('entrails')

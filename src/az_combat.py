@@ -95,6 +95,7 @@ class Combat():
 		try:
 			result = cv2.matchTemplate(screen, cpc, method)
 			fres = np.where(result >= 0.95)
+			print(fres)
 			if len(fres[0])>0 and len(fres[1])>0:
 				cord = (int((self.x+fres[1])+10), int((self.y+fres[0])+10))
 				logger.info("Combat Page Cords: {}".format(cord))
@@ -132,7 +133,7 @@ class Combat():
 		else:
 			screen = cv2.imread('tmp_find.png')
 		result = cv2.matchTemplate(screen, enemy, method)
-		fres = np.where(result >= 0.90)
+		fres = np.where(result >= 0.80)
 		c_list = self.ch.optimise_cord(fres, 20, 100)
 		return c_list
 
