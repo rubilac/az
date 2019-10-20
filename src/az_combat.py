@@ -132,7 +132,7 @@ class Combat():
 		else:
 			screen = cv2.imread('tmp_find.png')
 		result = cv2.matchTemplate(screen, enemy, method)
-		fres = np.where(result >= 0.90)
+		fres = np.where(result >= 0.85)
 		c_list = self.ch.optimise_cord(fres, 20, 100)
 		return c_list
 
@@ -405,7 +405,7 @@ class Legion():
 			screen = cv2.imread('village.png')
 		for enemy in enemies:
 			result = cv2.matchTemplate(screen, enemy, method)
-			fres = np.where(result >= 0.95)
+			fres = np.where(result >= 0.85)
 			if len(fres[0]) >= 1:
 				print("Attacker found @ {} {}".format(fres[1][0], fres[0][0]))
 				cord = (fres[1][0], fres[0][0])
@@ -493,6 +493,7 @@ def strength():
 if __name__ == '__main__':
 	move_and_click((763, 42)) # Focus Chrome frame!
 	#cm = Combat()
+	#cm.get_screen('tmp_find.png', True)
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
 	clear_all_enemies()

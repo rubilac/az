@@ -54,7 +54,7 @@ tailor_build = (457, 630) # TBD
 
 #Leatherworker
 leatherworker_pos = (708, 538)
-leatherworker_build = (615, 538)
+leatherworker_build = (775, 540)
 
 #Merchandise info
 merch_pos_1 = (836, 468)
@@ -64,19 +64,18 @@ close_merch_pos = (1050, 371)
 close_merch_pos_2 = (983, 397)
 
 #Fish Market
-fish_market_pos = (837, 580)
-fish_market_build = (864, 532)
-fish_market_restock = (915, 464)
+fish_market_pos = (831, 579)
+fish_market_build = (847, 642)
+fish_market_restock = (896, 571)
 fish_market_img = '/opt/dev/az/templates/fish_soup_2.png'
 fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single_2.png'
 
 #Butcher
-butcher_pos = (927, 629)
-butcher_build = (963, 594)
-butcher_restock = (1013, 525)
+butcher_pos = (926, 626)
+butcher_build = (946, 701)
+butcher_restock = (996, 631)
 butcher_img = '/opt/dev/az/templates/gaul_soup.png'
 gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
-
 
 
 
@@ -382,11 +381,11 @@ class Craft():
 
 	def craft(self):
 		self.craft_stone() # Stone Mason
-		#self.craft_wood_plank() # Carpenter
-		#self.craft_iron_bar() # Blacksmith
+		self.craft_wood_plank() # Carpenter
+		self.craft_iron_bar() # Blacksmith
 		#self.craft_leather() # Leatherworker
-		#self.craft_gaul_soup() # Butcher
-		#self.craft_fish_soup() # Fish Market
+		self.craft_gaul_soup() # Butcher
+		self.craft_fish_soup() # Fish Market
 
 
 	def restock(self):

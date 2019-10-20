@@ -32,7 +32,7 @@ complete_pos = (711, 681) # (638, 702) #
 sesterce_close_pos = (1040, 392) #
 roman_helmets_close_pos = (1039, 361)# (936, 378)#
 legion_approaching_pos = (894, 387)#
-legion_defeat_pos = (595, 676)#
+legion_defeat_pos = (714, 658)#
 achievements_pos = (1064, 326)
 
 # Image locations
@@ -89,7 +89,7 @@ def refresh_check():
         time.sleep(5)
         move_and_click(refresh_button)
         print("Clicked Refresh, waiting 20s for before continuing")
-        time.sleep(15)
+        time.sleep(20)
         if pp == '':
             return
         else:
