@@ -48,8 +48,8 @@ blacksmith_pos = (1012, 454)
 blacksmith_build = (1081, 463)
 
 # Tailor
-tailor_pos = (591, 596)
-tailor_build = (457, 630) # TBD
+tailor_pos = (611, 588)
+tailor_build = (677, 584) # TBD
 
 #Leatherworker
 leatherworker_pos = (708, 538)
@@ -79,11 +79,12 @@ gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 
 class Craft():
 	def __init__(self):
+		from az_farmer import town_grab, refresh_checker
 		self.town_x = 442
 		self.town_y = 200
 		self.town_w = 800
 		self.town_h = 450
-		self.sell_cord_list = [(-668, 382), (-509, 395), (-342, 383), (-664, 543), (-503, 550), (-344, 560)]
+		self.sell_cord_list = [(645, 460), (764, 460), (913, 460), (645, 600), (764, 600), (913, 600)]
 		print("Crafting Module Engaged!")
 		refresh_checker()
 		nav_to_town()
@@ -129,6 +130,7 @@ class Craft():
 			returns 0 if working
 			returns 1 if available
 		"""
+		from az_farmer import town_grab, refresh_checker, is_ready
 		mousePos(building, 1) # mouseover building
 		town_grab(self.town_x, self.town_y, self.town_w, self.town_h) # screengrab town
 		self.ready_state = is_ready()
@@ -270,6 +272,23 @@ class Craft():
 		else:
 			print("Leatherworker is busy, not crafting")
 
+	def craft_flax(self):
+		""" Craft Gaul Soup """
+		if self.building_state(tailor_pos) == 1:
+			move_and_click(tailor_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(tailor_pos, 1)
+			move_and_click(tailor_build, 1) 
+			move_and_click(fifth_pos, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
+			print("Crafting Flax")
+		else:
+			print("Tailor is busy, not crafting")
+
+
 
 	def restock_state(self, building, img_path):
 		# mouseover building
@@ -294,23 +313,26 @@ class Craft():
 			pos6 = (>1200, >1200)
 
 		"""
+		x1 = 650
+		x2 = 800
+		y = 500
 		sell_buttons = self.sell_cord_list
-		if cord[0] < 1250 and cord[1] < 900:
+		if cord[0] < y and cord[1] < x1:
 			out = [self.sell_cord_list[0]]
 			return out
-		if cord[0] < 1250 and 900 < cord[1] < 1200:
+		if cord[0] < y and x1 < cord[1] < x2:
 			out = [self.sell_cord_list[1]]
 			return out
-		if cord[0] < 1250 and cord[1] > 1200:
+		if cord[0] < y and cord[1] > x2:
 			out = [self.sell_cord_list[2]]
 			return out
-		if cord[0] > 1250 and cord[1] < 900:
+		if cord[0] > y and cord[1] < x1:
 			out = [self.sell_cord_list[3]]
 			return out
-		if cord[0] > 1250 and 900 < cord[1] < 1200:
+		if cord[0] > y and x1 < cord[1] < x2:
 			out = [self.sell_cord_list[4]]
 			return out
-		if cord[0] > 1250 and cord[1] > 1200:
+		if cord[0] > y and cord[1] > x2:
 			out = [self.sell_cord_list[5]]
 			return out
 
@@ -334,11 +356,6 @@ class Craft():
 		except:
 			print("No {} found! Make some!".format(item_name))
 			return 1
-
-
-	def town_grab(self):
-		# pas
-		town_grab(self.town_x, self.town_y, self.town_w, self.town_h)
 
 
 	def load_stock_slots(self, stock, img_path):
@@ -377,10 +394,11 @@ class Craft():
 	def craft(self):
 		self.craft_stone() # Stone Mason
 		self.craft_wood_plank() # Carpenter
-		self.craft_nails() # Blacksmith
-		self.craft_leather() # Leatherworker
+		self.craft_iron_bar() # Blacksmith
+		self.craft_grease() # Leatherworker
 		self.craft_gaul_soup() # Butcher
 		self.craft_fish_soup() # Fish Market
+		self.craft_flax() # Tailor Market
 
 
 	def restock(self):
@@ -392,6 +410,6 @@ class Craft():
 if __name__ == '__main__':
 	crafter = Craft()
 	crafter.craft()
-	#crafter.town_grab()
 	crafter.restock()
+	#crafter.town_grab()
 

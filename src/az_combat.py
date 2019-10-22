@@ -260,7 +260,7 @@ class Legion():
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
 		self.village_pos = (1376, 877)
-		self.strength_cords = (1275, 115, 1300, 130)
+		self.strength_cords = (1275, 115, 1340, 130)
 		self.strength_threshold = 140
 
 
@@ -291,8 +291,12 @@ class Legion():
 	def get_strength(self):
 		segment_grab_custom(self.strength_cords, 'strength') #
 		strength = int(get_num_from_image('segment_strength.jpg'))
-		print("********Strength is : {}".format(strength))
-		return strength
+		if strength > 170:
+			print("Strenght read badly, failing...")
+			return False
+		else:
+			print("********Strength is : {}".format(strength))
+			return strength
 
 
 	def get_combat_page_cord(self):
@@ -497,6 +501,7 @@ def strength():
 if __name__ == '__main__':
 	move_and_click((763, 42)) # Focus Chrome frame!
 	#cm = Combat()
+	#cm.get_screen('tmp_find.png',True)
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
 	clear_all_enemies()
