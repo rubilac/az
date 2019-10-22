@@ -132,7 +132,7 @@ class Combat():
 		else:
 			screen = cv2.imread('tmp_find.png')
 		result = cv2.matchTemplate(screen, enemy, method)
-		fres = np.where(result >= 0.85)
+		fres = np.where(result >= 0.75)
 		c_list = self.ch.optimise_cord(fres, 20, 100)
 		return c_list
 
@@ -159,7 +159,6 @@ class Combat():
 	def get_atk_screen(self, cord):
 		#cord = self.get_combat_page_cord()
 		#cord = self.correct_cords(cord, 2, self.x, self.y)
-		print(cord)
 		x = cord[0]
 		y = cord[1]
 		x_s = x-240
@@ -382,11 +381,10 @@ class Legion():
 
 	def ready_to_attack(self):
 		strength = self.get_strength()
-		if strength >= 40:
+		if strength >= 80:
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
 				cord = self.correct_cords(cord, 350, 200)
-				print(cord)
 				self.engage_attacker(cord)
 			else:
 				pass
@@ -497,5 +495,5 @@ if __name__ == '__main__':
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
 	clear_all_enemies()
-	strength()
+	#strength()
 
