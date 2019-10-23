@@ -94,9 +94,9 @@ class Combat():
 		screen = cv2.imread('tmp_cpc.png')
 		try:
 			result = cv2.matchTemplate(screen, cpc, method)
-			fres = np.where(result >= 0.95)
+			fres = np.where(result >= 0.80)
 			if len(fres[0])>0 and len(fres[1])>0:
-				cord = (int((self.x+fres[1])+10), int((self.y+fres[0])+10))
+				cord = (int((self.x+fres[1][0])+10), int((self.y+fres[0][0])+10))
 				logger.info("Combat Page Cords: {}".format(cord))
 				#os.remove('tmp_cpc.png')
 				return cord
@@ -108,6 +108,19 @@ class Combat():
 			logger.critical("Combat images faulty, check input images")
 			#os.remove('tmp_cpc.png')
 			raise Exception("Combat images faulty, check input images")
+
+
+	def optimal_cords(self, img=combat_page_check_img, screen='tmp_cpc.png'):
+		cpc = cv2.imread(img)
+		screen = cv2.imread(screen)
+		threshold = 1.0
+		fres = [[1,2,3]]
+		while len(fres[0]) != 1:
+			result = cv2.matchTemplate(screen, cpc, method)
+			fres = np.where(result >= threshold)
+			print(threshold, fres)
+			threshold -= 0.01
+
 
 
 	def get_screen(self, fn='tmp.png', save=False):
@@ -292,7 +305,7 @@ class Legion():
 
 	def get_combat_page_cord(self):
 		cpc = cv2.imread(combat_page_check_img)
-		np.array(self.get_screen('tmp_cpc.png', True))
+		self.get_screen('tmp_cpc.png', True)
 		screen = cv2.imread('tmp_cpc.png')
 		try:
 			result = cv2.matchTemplate(screen, cpc, method)
@@ -310,6 +323,12 @@ class Legion():
 			logger.critical("Combat images faulty, check input images")
 			os.remove('tmp_cpc.png')
 			raise Exception("Combat images faulty, check input images")
+
+
+
+
+
+
 
 
 	def click_pac(self, combat_cord):
@@ -491,6 +510,7 @@ def strength():
 if __name__ == '__main__':
 	move_and_click((763, 42)) # Focus Chrome frame!
 	#cm = Combat()
+	#cm.optimal_cords()
 	#cm.get_screen('tmp_find.png', True)
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
