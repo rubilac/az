@@ -94,11 +94,13 @@ class Combat():
 		screen = cv2.imread('tmp_cpc.png')
 		try:
 			result = cv2.matchTemplate(screen, cpc, method)
-			fres = np.where(result >= 0.95)
+			fres = np.where(result >= 0.90)
 			print(fres)
 			if len(fres[0])>0 and len(fres[1])>0:
-				cord = (int((self.x+fres[1])+10), int((self.y+fres[0])+10))
-				logger.info("Combat Page Cords: {}".format(cord))
+				slots = zip(fres[0], fres[1])
+				slot_set = set(slots)
+				tmp = list(slot_set)[0]
+				cord = (int((self.x+tmp[1])+10), int((self.y+tmp[0])+10))
 				#os.remove('tmp_cpc.png')
 				return cord
 			else:
@@ -260,8 +262,8 @@ class Legion():
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
 		self.village_pos = (1376, 877)
-		self.strength_cords = (1275, 115, 1340, 130)
-		self.strength_threshold = 140
+		self.strength_cords = (1275, 115, 1310, 130)
+		self.strength_threshold = 80
 
 
 	def load_images_from_dir(self, dirname):
@@ -305,10 +307,12 @@ class Legion():
 		screen = cv2.imread('tmp_cpc.png')
 		try:
 			result = cv2.matchTemplate(screen, cpc, method)
-			fres = np.where(result >= 0.95)
+			fres = np.where(result >= 0.90)
 			if len(fres[0])>0 and len(fres[1])>0:
-				cord = (int((self.x+fres[1])+10), int((self.y+fres[0])+10))
-				logger.info("Combat Page Cords: {}".format(cord))
+				slots = zip(fres[0], fres[1])
+				slot_set = set(slots)
+				tmp = list(slot_set)[0]
+				cord = (int((self.x+tmp[1])+10), int((self.y+tmp[0])+10))
 				os.remove('tmp_cpc.png')
 				return cord
 			else:
@@ -394,7 +398,6 @@ class Legion():
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
 				cord = self.correct_cords(cord, 350, 200)
-				print(cord)
 				self.engage_attacker(cord)
 			else:
 				pass

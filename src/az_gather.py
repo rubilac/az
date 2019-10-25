@@ -16,6 +16,7 @@ from az_cord_helper import CordHelper
 import logging
 
 # chrome position - (134, 70, 1654, 891)
+# 0 134  138  1417 858
 
 # Logging #
 LOG_FORMAT = "%(asctime)s %(levelname)s - %(message)s"
@@ -29,9 +30,10 @@ trs_y = 100
 trs_w = 1470
 trs_h = 927
 
-wood_screen = (1425, 147, 1465, 163	)
-straw_screen = (1425, 176 , 1465, 188)
-stone_screen = (1425, 202 , 1465, 215)
+wood_screen = (1425, 148, 1465, 162	)
+wood_max_screen = (1445, 148, 1465, 162)
+straw_screen = (1425, 175 , 1465, 189)
+stone_screen = (1425, 202 , 1465, 216)
 food_screen = (1200, 116, 1238, 128)
 apple_img = '/opt/dev/az/templates/gather/apple_vm_fb.png'
 carrots_img = '/opt/dev/az/templates/gather/carrots_vm_fb.png'
@@ -45,7 +47,7 @@ class Gather():
 		#straw = self.get_stat(straw_screen, 'straw')
 		#food = self.get_stat(food_screen, 'food')
 		#self.wood = wood[0]
-		#self.wood_max = wood[1]
+		#self.wood_max = self.get_max(wood_max_screen, 'wood_max')
 		#self.stone = stone[0]
 		#self.stone_max = stone[1]
 		#self.straw =  straw[0]
@@ -54,17 +56,30 @@ class Gather():
 		#self.food_max = food[1]
 		pass
 
+
+	def get_max(self, screen, tag):
+		segment_grab_custom(screen, tag)
+		out = get_num_from_image('segment_{}.jpg'.format(tag))
+		print(out)
+		return out
+
 	def get_stat(self, screen, tag):
 		segment_grab_custom(screen, tag)
 		out = get_num_from_image('segment_{}.jpg'.format(tag))
-		#print(out)
 		try:
 			curr, maxx = out.split('/')
 			print("******** {} is : {} out of {}".format(tag, curr, maxx))
 			return (int(curr), int(maxx))
 		except:
-			print("Didn't find /")
-			return False
+			test = int(out)
+			if type(test) == int:
+				maxx = int(out.split()[0][-2:])
+				curr = int(out.split()[0][:-2])
+				print("******** {} is : {} out of {}".format(tag, curr, maxx))
+				return (curr, maxx)
+			else:
+				print("Didn't find /,  {}".format(out))
+				return False
 
 
 	def update_food(self):
@@ -86,7 +101,7 @@ class Gather():
 			print("reading failed")
 			return False
 
-	def img_exists(self, img, screen, method=cv2.TM_CCOEFF_NORMED, threshold=0.85):
+	def img_exists(self, img, screen, method=cv2.TM_CCOEFF_NORMED, threshold=0.80):
 		img = cv2.imread(img)
 		screen = cv2.imread(screen)
 		try:
@@ -185,7 +200,7 @@ class Gather():
 				print("Current straw: {} too high".format(self.straw))
 				return
 		except:
-			print("Couldn't get stats, try again later...")
+			print("Couldn't get straw, try again later...")
 			return
 
 
@@ -219,7 +234,7 @@ class Gather():
 			craft.craft_flax()
 			straw_tmp = self.straw
 			self.update_straw()
-			if self.straw <= straw_tmp:
+			if self.straw >= straw_tmp:
 				print("Couldn't craft flax, stopping")
 				return
 			else:
@@ -234,9 +249,10 @@ class Gather():
 
 
 	def gatherer(self):
+		self.gather_straw()
 		self.gather_apples()
 		self.gather_carrots()
-		self.gather_straw()
+		
 
 
 if __name__ == '__main__':

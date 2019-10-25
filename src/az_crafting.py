@@ -154,6 +154,28 @@ class Craft():
 			print("Stone Mason is busy, not crafting")
 
 
+	def craft_milestone(self):
+		""" Craft stone """
+		buy_dye = (1018, 563)
+		if self.building_state(stone_mason_pos) == 1:
+			move_and_click(stone_mason_pos, 1)
+			move_and_click(blank_spot, 1)
+			move_and_click(stone_mason_pos, 1)
+			move_and_click(stone_mason_build, 1) 
+			move_and_click(fourth_pos, 1)
+			move_and_click(buy_dye, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(buy_dye, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(buy_dye, 1)
+			move_and_click(craft_pos, 0.2)
+			move_and_click(close_pos, 0.2)
+			print("Crafting Stone Block")
+		else:
+			print("Stone Mason is busy, not crafting")
+
+
+
 	def craft_wood_plank(self):
 		""" Craft Planks """
 		if self.building_state(carpenter_pos) == 1:
@@ -344,11 +366,14 @@ class Craft():
 		template = cv2.imread(img_path) # Load our item we want to stock
 		try:
 			result = cv2.matchTemplate(screen, template, method) # Does it match?
-			fres = np.where(result >= 0.95)
+			fres = np.where(result >= 0.90)
 			if fres[0].size == 0:
 				print("Couldn't match {} in open slot".format(item_name))
 				return 1
-			cord = (int(fres[0]), int(fres[1]))
+			if fres[0].size > 1:
+				cord = (int(fres[0][0]), int(fres[1][0]))
+			else:
+				cord = (int(fres[0]), int(fres[1]))
 			click_cord = self.get_merch_slot(cord)[0]
 			print("Found {} @ {} in slot {}".format(item_name, cord, click_cord))
 			move_and_click(click_cord, 1)
@@ -394,10 +419,10 @@ class Craft():
 	def craft(self):
 		self.craft_stone() # Stone Mason
 		self.craft_wood_plank() # Carpenter
-		self.craft_iron_bar() # Blacksmith
-		self.craft_grease() # Leatherworker
-		self.craft_gaul_soup() # Butcher
-		self.craft_fish_soup() # Fish Market
+		self.craft_nails() # Blacksmith
+		self.craft_leather() # Leatherworker
+		#self.craft_gaul_soup() # Butcher
+		#self.craft_fish_soup() # Fish Market
 		self.craft_flax() # Tailor Market
 
 

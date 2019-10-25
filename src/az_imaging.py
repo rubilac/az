@@ -33,8 +33,17 @@ def fixup_images():
 		blackwhite.save(new_name)
 
 
+def fixup_image(image):
+	column = Image.open(image)
+	gray = column.convert('L')
+	blackwhite = gray.point(lambda x: 0 if x < 145 else 255, '1')
+	blackwhite.save(image)
+
+
 def get_num_from_image(image):
-	api = PyTessBaseAPI(path='/opt/dev/az/tessdata/.', lang='eng', psm=7)
+	#fixup_image(image)
+	api = PyTessBaseAPI(path='/opt/dev/az/tessdata/.', lang='eng', psm=7, oem=3)
+	api.SetVariable('tessedit_char_whitelist', '/0123456789')
 	api.SetImageFile(image)
 	#print(api.GetUTF8Text())
 	return api.GetUTF8Text()

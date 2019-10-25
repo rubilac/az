@@ -604,7 +604,7 @@ def fish_path():
     secure_click((1091, 791), anchor, 5) # bottom_left Start
     secure_click((1123, 771), anchor, 5) # Fish bottom_left left 1
     secure_click((1178, 635), anchor, 5) # Fish bottom_left left 2
-    secure_click((754, 386), anchor, 5) # Fish bottom_left left 3
+    secure_click((760, 380), anchor, 5) # Fish bottom_left left 3
     secure_click((796, 156), anchor, 5) # Fish bottom_left left 4 - Probably wrong
     
     refresh_checker()
