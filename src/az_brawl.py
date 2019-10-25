@@ -50,7 +50,8 @@ class Brawl():
 		elif config['brawl']['num_brawlers'] == 8:
 			self.squad_1 = [self.pointandclix, self.worker, self.baltix]
 			self.squad_2 = [self.edifis, self.ironix, self.democratix]
-			self.squad_list = [self.squad_1, self.squad_2]		
+			self.squad_list = [self.squad_1, self.squad_2]
+		self.squad_loser = [self.lunatix, self.lyrix, self.baltix]	
 		# Potions
 		self.first_pot_pos = (689, 478)
 
@@ -106,7 +107,7 @@ class Brawl():
 			if fres[0].size == 0:
 				print("Did not find Coal. Using first position")
 				move_and_click((653, 460), 1)
-				return 1
+				return False
 			elif fres[0].size > 1:
 				cord = (fres[1][0]+x, fres[0][0]+y)
 				print("Found Coal @ {}, {}. Placing Bet!".format(cord[0], cord[1]))
@@ -125,7 +126,11 @@ class Brawl():
 		for brawler in squad_name: # Click the brawlers
 			move_and_click(brawler, 2)
 		move_and_click(self.place_bet_pos, 1) # Click Bet Button
-		move_and_click(self.find_item(), 1) # Get and Click Coal
+		get_coal = self.find_item()
+		if get_coal == False:
+			pass
+		else:
+			move_and_click(get_coal, 1) # Get and Click Coal
 		move_and_click(self.first_pot_pos, 1) # Open first potion box
 		move_and_click(self.first_pot_pos, 1) # Select first potion in list
 		move_and_click(self.close_item_pos, 1) # Cursory potion box close in case no potions
@@ -149,10 +154,10 @@ class Brawl():
 	def test_fight(self):
 		refresh_checker()
 		self.open_ring()
-		self.squad_fight(self.squad_3)
+		self.squad_fight(self.squad_loser)
 		move_and_click(self.close_pos, 1)
 
 
 if __name__ == '__main__':
 	b = Brawl()
-	b.org_fight()
+	b.test_fight()
