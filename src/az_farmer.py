@@ -34,6 +34,9 @@ roman_helmets_close_pos = (1039, 361)# (936, 378)#
 legion_approaching_pos = (894, 387)#
 legion_defeat_pos = (715, 660)#
 achievements_pos = (1064, 326)
+credit_pos = (1008, 563)
+food_pos = (1045, 359)
+limit_pos = (902, 382)
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
@@ -45,7 +48,9 @@ roman_helmets_img = '/opt/dev/az/templates/popups/roman_helmets.png'
 legion_approaching_img = '/opt/dev/az/templates/popups/legion_approaching.png'
 legion_defeat_img = '/opt/dev/az/templates/popups/legion_defeat.png'
 achievements_img = '/opt/dev/az/templates/popups/achievements.png'
-
+credit_img = '/opt/dev/az/templates/popups/credit_or_debit.png'
+food_img = '/opt/dev/az/templates/popups/food.png'
+limit_img = '/opt/dev/az/templates/popups/limit_reached.png'
 
 template_path_boar = '/opt/dev/az/templates/boar/'
 load_boars = os.listdir(template_path_boar)
@@ -75,6 +80,9 @@ def refresh_checker():
     legion_approaching_check(screen)
     legion_defeated_check(screen)
     achievement_check(screen)
+    credit_check(screen)
+    food_check(screen)
+    limit_check(screen)
 
 def refresh_check():
     template = cv2.imread(refresh_img)
@@ -217,6 +225,46 @@ def achievement_check(screen):
         print("Achievement popup found, clicking X!")
         secure_click(achievements_pos, anchor, 1)
         time.sleep(1)
+    except:
+        pass
+
+
+def credit_check(screen):
+    template = cv2.imread(credit_img, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Credit Card found, clicking cancel!")
+        secure_click(credit_pos, anchor, 1)
+        time.sleep(2)
+        refresh_checker()
+    except:
+        pass
+
+
+def food_check(screen):
+    template = cv2.imread(food_img, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Food Popup found, clicking X!")
+        secure_click(food_pos, anchor, 1)
+        time.sleep(2)
+    except:
+        pass
+
+
+def limit_check(screen):
+    template = cv2.imread(limit_img, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Limit Reached Popup found, clicking X!")
+        secure_click(limit_pos, anchor, 1)
+        time.sleep(2)
     except:
         pass
 
@@ -694,9 +742,9 @@ def multi_window_run():
 if __name__ == '__main__':
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
-    #refresh_checker()
+    refresh_checker()
     #get_anchored_cursor(anchor)
-    multi_window_run()
+    #multi_window_run()
     #fish_path()
     #collect_path()
     #cycle()
