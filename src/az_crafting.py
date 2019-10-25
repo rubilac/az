@@ -12,6 +12,8 @@ from numpy import *
 from pynput.mouse import Controller
 from az_cord_helper import CordHelper
 import logging
+import toml
+config = toml.load('.config')
 
 mouse = pynput.mouse.Controller()
 
@@ -417,18 +419,85 @@ class Craft():
 
 
 	def craft(self):
-		self.craft_stone() # Stone Mason
-		self.craft_wood_plank() # Carpenter
-		self.craft_nails() # Blacksmith
-		self.craft_leather() # Leatherworker
-		#self.craft_gaul_soup() # Butcher
-		#self.craft_fish_soup() # Fish Market
-		self.craft_flax() # Tailor Market
+		ccfg = config['crafting']
+		print(ccfg)
+
+		#stone mason
+		if ccfg['stone_mason'] == 'stone':
+			self.craft_stone()
+		elif ccfg['stone_mason'] == 'milestone':
+			self.craft_milestone()
+		elif ccfg['stone_mason'] == 0:
+			print('Skipping stone_mason crafting')
+		else:
+			print('I dont know how to do that at the stone_mason')
+
+		#carpenter
+		if ccfg['carpenter'] == 'wooden_plank':
+			self.craft_wood_plank()
+		elif ccfg['carpenter'] == 0:
+			print('Skipping carpenter crafting')
+		else:
+			print('I dont know how to do that at the carpenter')
+
+		#blacksmith
+		if ccfg['blacksmith'] == 'nails':
+			self.craft_nails()
+		elif ccfg['blacksmith'] == 'iron_bar':
+			self.craft_iron_bar()
+		elif ccfg['blacksmith'] == 0:
+			print('Skipping blacksmith crafting')
+		else:
+			print('I dont know how to do that at the blacksmith')
+
+		#leatherworker
+		if ccfg['leatherworker'] == 'leather':
+			self.craft_leather()
+		elif ccfg['leatherworker'] == 'grease':
+			self.craft_grease()
+		elif ccfg['leatherworker'] == 0:
+			print('Skipping leatherworker crafting')
+		else:
+			print('I dont know how to do that at the leatherworker')
+
+		#tailor
+		if ccfg['tailor'] == 'flax':
+			self.craft_flax()
+		elif ccfg['tailor'] == 0:
+			print('Skipping tailor crafting')
+		else:
+			print('I dont know how to do that at the tailor')
+
+		#fish_market
+		if ccfg['fish_market'] == 'fish_soup':
+			self.craft_fish_soup()
+		elif ccfg['fish_market'] == 0:
+			print('Skipping fish_market crafting')
+		else:
+			print('I dont know how to do that at the fish_market')
+
+		#tailor
+		if ccfg['butcher'] == 'gaul_soup':
+			self.craft_gaul_soup()
+		elif ccfg['butcher'] == 0:
+			print('Skipping butcher crafting')
+		else:
+			print('I dont know how to do that at the butcher')
+
 
 
 	def restock(self):
-		self.restock_fish_market()
-		self.restock_butcher()
+		rcfg = config['restock']
+		if rcfg['fish_market']:
+			self.restock_fish_market()
+		else:
+			print('Not restocking fish_market')
+
+		if rcfg['butcher']:
+			self.restock_butcher()
+		else:
+			print('Not restocking butcher')
+
 
 
 
