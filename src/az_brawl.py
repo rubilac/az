@@ -42,12 +42,13 @@ class Brawl():
 		self.baltix = (658, 651)
 		self.lyrix = (738, 650)
 		# Squads
-		if config['brawl']['num_brawlers'] == 9:
+		self.num_b = config['brawl']['num_brawlers']
+		if self.num_b == 9:
 			self.squad_1 = [self.pointandclix, self.worker, self.lunatix]
 			self.squad_2 = [self.ekonomikrisis, self.ironix, self.lyrix]
 			self.squad_3 = [self.edifis, self.democratix, self.baltix]
 			self.squad_list = [self.squad_1, self.squad_2, self.squad_3]
-		elif config['brawl']['num_brawlers'] == 8:
+		elif self.num_b == 8:
 			self.squad_1 = [self.pointandclix, self.worker, self.baltix]
 			self.squad_2 = [self.edifis, self.ironix, self.democratix]
 			self.squad_list = [self.squad_1, self.squad_2]
@@ -79,7 +80,13 @@ class Brawl():
 		self.open_ring()
 		time.sleep(5)
 		self.get_image()
-		img = cv2.imread('../templates/brawl/all_available.png')
+		if self.num_b == 9:
+			img = cv2.imread('../templates/brawl/all_available.png')
+		elif self.num_b == 8:
+			img = cv2.imread('../templates/brawl/8_available.png')
+		else:
+			print("Which image?")
+			return
 		screen = cv2.imread('tmp_brawl.png')
 		try:
 			result = cv2.matchTemplate(screen, img, method) # Does it match?
@@ -145,7 +152,7 @@ class Brawl():
 		if self.all_available():
 			for squad in self.squad_list:
 				refresh_check()
-				self.squad_fight(self.squad)
+				self.squad_fight(squad)
 			move_and_click(self.close_pos, 1)
 		else:
 			print("Come back later, not everyone is available")
@@ -160,4 +167,4 @@ class Brawl():
 
 if __name__ == '__main__':
 	b = Brawl()
-	b.test_fight()
+	b.org_fight()
