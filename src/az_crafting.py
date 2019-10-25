@@ -372,7 +372,7 @@ class Craft():
 			if fres[0].size == 0:
 				print("Couldn't match {} in open slot".format(item_name))
 				return 1
-			if fres[0].size > 1:
+			elif fres[0].size > 1:
 				cord = (int(fres[0][0]), int(fres[1][0]))
 			else:
 				cord = (int(fres[0]), int(fres[1]))

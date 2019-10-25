@@ -390,7 +390,7 @@ if __name__ == '__main__':
 	inventory.delete_all_of_item('iron scraps')
 	refresh_checker()
 	#inventory.delete_all_of_item('beetroots')
-	#inventory.close()
+	inventory.close()
 	#inventory.delete_items_from_pane('fish')
 	#inventory.delete_items_from_pane('entrails')
 	#inventory.delete_items_from_pane('boar skins')
