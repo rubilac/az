@@ -141,10 +141,14 @@ class Brawl():
 		move_and_click(self.first_pot_pos, 1) # Open first potion box
 		move_and_click(self.first_pot_pos, 1) # Select first potion in list
 		move_and_click(self.close_item_pos, 1) # Cursory potion box close in case no potions
+		move_and_click((1090, 471), 1)
 		move_and_click(self.fight_pos, 1) # Fight
 		move_and_click(self.remove_shield, 1) # Remove shield
 		move_and_click(self.skip_pos, 1) # skip
 		move_and_click(self.skip_pos, 1) # Collect
+		move_and_click((894, 694), 1) # decline
+		move_and_click((866, 575), 1) #confirm decline
+		move_and_click((933, 400), 1) #click x
 		time.sleep(5)
 
 	def org_fight(self):
