@@ -1,5 +1,5 @@
 #!/bin/bash
-echo `date` + "Starting Runner.sh" >> runs.log
+echo `date` + " -- Starting Runner.sh" >> runs.log
 
 for (( ; ; ))
 do
