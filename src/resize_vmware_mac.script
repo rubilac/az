@@ -1,0 +1,29 @@
+tell application "System Events" to tell process "VMware Fusion"
+	#activate
+	# add 55 pixels to the height to accommediate the VMware interface
+	# set the bounds of the first window to {200, 200, 2000, 1400}
+	tell window "T"
+		set position to {0, 0}
+		set size to {1917, 982}
+	end tell
+end tell
+
+tell application "System Events" to tell process "VMware Fusion"
+	#activate
+	# add 55 pixels to the height to accommediate the VMware interface
+	# set the bounds of the first window to {200, 200, 2000, 1400}
+	tell window "U"
+		set position to {0, 0}
+		set size to {1917, 982}
+	end tell
+end tell
+
+tell application "System Events" to tell process "VMware Fusion"
+	#activate
+	# add 55 pixels to the height to accommediate the VMware interface
+	# set the bounds of the first window to {200, 200, 2000, 1400}
+	tell window "W"
+		set position to {0, 0}
+		set size to {1917, 982}
+	end tell
+end tell

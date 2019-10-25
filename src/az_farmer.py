@@ -742,9 +742,9 @@ def multi_window_run():
 if __name__ == '__main__':
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
-    refresh_checker()
+    #refresh_checker()
     #get_anchored_cursor(anchor)
-    #multi_window_run()
+    multi_window_run()
     #fish_path()
     #collect_path()
     #cycle()
