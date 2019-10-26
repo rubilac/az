@@ -16,27 +16,27 @@ from keyboard import *
 
 
 trs_x = 70
-trs_y = 100
-trs_w = 1470
-trs_h = 927
+trs_y = 160
+trs_w = 1488
+trs_h = 925
 method = cv2.TM_CCOEFF_NORMED
 threshold = 0.8
 
 # Anchor = (1324, 46)
 
 # Button positions
-refresh_button = (769, 571)# (666, 590)
-decline_special_offer = (-421, 598)#
-ok_pos = (826, 684) # (720, 703)  #
-complete_pos = (711, 681) # (638, 702) #
-sesterce_close_pos = (1040, 392) #
-roman_helmets_close_pos = (1039, 361)# (936, 378)#
-legion_approaching_pos = (894, 387)#
-legion_defeat_pos = (715, 660)#
-achievements_pos = (1064, 326)
-credit_pos = (1008, 563)
-food_pos = (1045, 359)
-limit_pos = (902, 382)
+refresh_button = (769, 571)
+decline_special_offer = (-421, 598) #
+ok_pos = (833, 712)
+complete_pos = (711, 731) #
+sesterce_close_pos = (1052, 420)
+roman_helmets_close_pos = (1050, 388)
+legion_approaching_pos = (904, 415)
+legion_defeat_pos = (715, 751) #
+achievements_pos = (1064, 376) #
+credit_pos = (1016, 607)
+food_pos = (1051, 390)
+limit_pos = (906, 418)
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
@@ -596,7 +596,7 @@ def cycle():
     refresh_checker()
     navy('top_left', 6)
     time.sleep(2)
-    move_and_click((449, 340), 10)
+    move_and_click((449, 540), 10)
     for i in range(n):
         print("Starting round {}".format(i))
         clear_segment_type(n)
@@ -641,28 +641,29 @@ def fish_path():
     print("Starting Fishing now!")
     refresh_checker()
     navy('top_left', 4)
-    secure_click((447, 340), anchor, 20) #Top left Start
-    secure_click((368, 292), anchor, 5) # Fish spot top left 1
-    secure_click((600, 316), anchor, 5) # Fish spot top left 2
-    secure_click((592, 666), anchor, 5) # Fish spot top left 3
-    secure_click((665, 861), anchor, 5) # Fish spot top left 4 - Probably wrong
+    secure_click((455, 402), anchor, 20) #Top left Start
+    secure_click((377, 346), anchor, 5) # Fish spot top left 1
+    secure_click((622, 361), anchor, 5) # Fish spot top left 2
+    secure_click((580, 719), anchor, 5) # Fish spot top left 3
+    secure_click((660, 920), anchor, 5) # Fish spot top left 4 - Probably wrong
 
     refresh_checker()
     navy('bottom_left', 4)
     secure_click((1091, 791), anchor, 5) # bottom_left Start
-    secure_click((1123, 771), anchor, 5) # Fish bottom_left left 1
+    secure_click((1125, 773), anchor, 5) # Fish bottom_left left 1
     secure_click((1178, 635), anchor, 5) # Fish bottom_left left 2
-    secure_click((760, 380), anchor, 5) # Fish bottom_left left 3
-    secure_click((796, 156), anchor, 5) # Fish bottom_left left 4 - Probably wrong
+    secure_click((757, 382), anchor, 5) # Fish bottom_left left 3
+    
     
     refresh_checker()
     navy('top_right', 4)
-    secure_click((261, 319), anchor, 5) # top_right Start
-    secure_click((154, 253), anchor, 4) # Fish top_right left 1
-    secure_click((324, 264), anchor, 4) # Fish top_right left 2
-    secure_click((536, 231), anchor, 4) # Fish top_right left 2
-    secure_click((723, 236), anchor, 4) # Fish top_right left 3
-    secure_click((1004, 224), anchor, 4) # Fish top_right left 4 - Probably wrong
+    secure_click((197, 530), anchor, 5) # top_right Start
+    secure_click((75, 523), anchor, 5) # Fish bottom_left left 4 - Probably wrong
+    secure_click((150, 308), anchor, 4) # Fish top_right left 1
+    secure_click((344, 323), anchor, 4) # Fish top_right left 2
+    secure_click((551, 288), anchor, 4) # Fish top_right left 2
+    secure_click((743, 293), anchor, 4) # Fish top_right left 3
+    secure_click((1015, 282), anchor, 4) # Fish top_right left 4 - Probably wrong
 
 
 def secure_click(cord, anchor='', delay=0.2):

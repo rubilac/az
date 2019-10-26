@@ -13,6 +13,8 @@ from pynput.mouse import Controller
 from az_cord_helper import CordHelper
 import logging
 from az_imaging import *
+import toml
+config = toml.load('.config')
 
 mouse = Controller()
 
@@ -40,10 +42,10 @@ attack_screen_dimensions = ()
 
 class Combat():
 	def __init__(self):
-		self.screen_w = 1470
-		self.screen_h = 927
+		self.screen_w = 1488
+		self.screen_h = 925
 		self.x = 70
-		self.y = 100
+		self.y = 160
 		self.ch = CordHelper()
 		self.enemies = self.load_images_from_dir('/opt/dev/az/templates/combat/enemies/')
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
@@ -254,16 +256,16 @@ class Combat():
 
 class Legion():
 	def __init__(self):
-		self.screen_w = 1470
-		self.screen_h = 927
+		self.screen_w = 1488
+		self.screen_h = 925
 		self.x = 70
-		self.y = 100
+		self.y = 160
 		self.ch = CordHelper()
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
 		self.village_pos = (1376, 877)
-		self.strength_cords = (1275, 115, 1310, 130)
-		self.strength_threshold = 80
+		self.strength_cords = (1288, 171, 1315, 190)
+		self.strength_threshold = config['general']['strength']
 
 
 	def load_images_from_dir(self, dirname):
@@ -453,7 +455,7 @@ class Legion():
 
 	def get_village_screen(self):
 		x_s = 350
-		y_s = 200
+		y_s = 250
 		village_screen = self.get_screen_segment('village.png',x_s, y_s, 300, 200)
 		return village_screen
 

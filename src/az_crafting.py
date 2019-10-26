@@ -26,55 +26,55 @@ logger = logging.getLogger()
 
 
 method =  cv2.TM_CCOEFF_NORMED
-craft_pos = (980, 686)
-blank_spot = (484, 371) #(341, 373)
-close_pos = (1072, 322)
+craft_pos = (990, 716)
+blank_spot = (517, 432) #(341, 373)
+close_pos = (1074, 355)
 
 # Crafting Positions
-first_pos = (635, 398) # (564, 415)
-second_pos = (648, 459) # (533, 477)
-third_pos = (665, 522) # (513, 544)
-fourth_pos = (653, 595) # (518, 610)
-fifth_pos = (662, 660) # (513, 678)
+first_pos = (629, 424) # (564, 415)
+second_pos = (629, 480) # (533, 477)
+third_pos = (629, 550) # (513, 544)
+fourth_pos = (629, 620) # (518, 610)
+fifth_pos = (629, 690) # (513, 678)
 
 # Stone Mason
-stone_mason_pos = (735, 399)
-stone_mason_build = (802, 392)
+stone_mason_pos = (751, 454)
+stone_mason_build = (821, 454)
 
 # Carpenter
-carpenter_pos = (907, 409)
-carpenter_build = (983, 411)
+carpenter_pos = (928, 465)
+carpenter_build = (1000, 470)
 
 # Blacksmith
-blacksmith_pos = (1012, 454)
-blacksmith_build = (1081, 463)
+blacksmith_pos = (1032, 510)
+blacksmith_build = (1100, 513)
 
 # Tailor
-tailor_pos = (611, 588)
-tailor_build = (677, 584) # TBD
+tailor_pos = (616, 642)
+tailor_build = (684, 645) # TBD
 
 #Leatherworker
-leatherworker_pos = (708, 538)
-leatherworker_build = (786, 538)
+leatherworker_pos = (721, 593)
+leatherworker_build = (794, 595)
 
 #Merchandise info
 merch_pos_1 = (836, 468)
 merch_pos_2 = (964, 460)
 merch_pos_3 = (828, 600)
-close_merch_pos = (1050, 371)
-close_merch_pos_2 = (983, 397)
+close_merch_pos = (1058, 401)
+close_merch_pos_2 = (913, 627)
 
 #Fish Market
-fish_market_pos = (837, 580)
-fish_market_build = (856, 636)
-fish_market_restock = (908, 569)
+fish_market_pos = (856, 632)
+fish_market_build = (864, 698)
+fish_market_restock = (913, 627)
 fish_market_img = '/opt/dev/az/templates/fish_soup_vm_fb.png'
 fish_soup_img = '/opt/dev/az/templates/inventory/items/fish_soup_single_2.png'
 
 #Butcher
-butcher_pos = (927, 629)
-butcher_build = (956, 699)
-butcher_restock = (1006, 630)
+butcher_pos = (941, 678)
+butcher_build = (964, 758)
+butcher_restock = (1014, 688)
 butcher_img = '/opt/dev/az/templates/gaul_soup_vm_fb.png'
 gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 
@@ -83,26 +83,13 @@ class Craft():
 	def __init__(self):
 		from az_farmer import town_grab, refresh_checker
 		self.town_x = 442
-		self.town_y = 200
+		self.town_y = 300
 		self.town_w = 800
 		self.town_h = 450
 		self.sell_cord_list = [(645, 460), (764, 460), (913, 460), (645, 600), (764, 600), (913, 600)]
 		print("Crafting Module Engaged!")
 		refresh_checker()
 		nav_to_town()
-
-
-	def collect(self, building):
-		""" Collect from building """
-		move_and_click(building, 1)
-
-
-	def collect_all(self):
-		move_and_click(stone_mason_pos, 1)
-		move_and_click(carpenter_pos, 1)
-		move_and_click(blacksmith_pos, 1)
-		move_and_click(tailor_pos, 1)
-		move_and_click(leatherworker_pos, 1)
 
 
 	def get_image(self, x=1, y=1, width=1250, length=920, save=True):
@@ -175,7 +162,6 @@ class Craft():
 			print("Crafting Stone Block")
 		else:
 			print("Stone Mason is busy, not crafting")
-
 
 
 	def craft_wood_plank(self):
@@ -296,6 +282,7 @@ class Craft():
 		else:
 			print("Leatherworker is busy, not crafting")
 
+
 	def craft_flax(self):
 		""" Craft Gaul Soup """
 		if self.building_state(tailor_pos) == 1:
@@ -311,7 +298,6 @@ class Craft():
 			print("Crafting Flax")
 		else:
 			print("Tailor is busy, not crafting")
-
 
 
 	def restock_state(self, building, img_path):
@@ -337,9 +323,9 @@ class Craft():
 			pos6 = (>1200, >1200)
 
 		"""
-		x1 = 650
-		x2 = 800
-		y = 500
+		x1 = 700
+		x2 = 840
+		y = 550
 		sell_buttons = self.sell_cord_list
 		if cord[0] < y and cord[1] < x1:
 			out = [self.sell_cord_list[0]]
@@ -485,7 +471,6 @@ class Craft():
 			print('I dont know how to do that at the butcher')
 
 
-
 	def restock(self):
 		rcfg = config['restock']
 		if rcfg['fish_market']:
@@ -503,7 +488,7 @@ class Craft():
 
 if __name__ == '__main__':
 	crafter = Craft()
-	crafter.craft()
+	#crafter.craft()
 	crafter.restock()
-	#crafter.town_grab()
+	#town_grab(crafter.town_x, crafter.town_y, crafter.town_w, crafter.town_h)
 
