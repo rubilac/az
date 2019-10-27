@@ -506,7 +506,8 @@ def strength():
 
 
 if __name__ == '__main__':
-	move_and_click((763, 42)) # Focus Chrome frame!
+	move_and_click((763, 42))
+	zoom_out() # Focus Chrome frame!
 	#cm = Combat()
 	#cm.get_screen('tmp_find.png',True)
 	#cord = (cm.get_combat_page_cord())

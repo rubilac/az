@@ -68,6 +68,14 @@ def get_time():
     print(current_time)
 
 
+def zoom_out():
+    n = 10
+    while n > 0:
+        move_and_click((1448, 915), 1)
+        n -= 1
+    print("Zoomed out!")
+
+
 def refresh_checker():
     popup_grab()
     screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
@@ -760,6 +768,7 @@ def multi_window_run():
 if __name__ == '__main__':
     #segment_grab(trs_x, trs_y, trs_w, trs_h, True)
     anchor = get_anchor()
+    zoom_out()
     #refresh_checker()
     #get_anchored_cursor(anchor)
     multi_window_run()

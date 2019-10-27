@@ -496,6 +496,7 @@ class Craft():
 
 
 if __name__ == '__main__':
+	zoom_out()
 	crafter = Craft()
 	crafter.craft()
 	crafter.restock()

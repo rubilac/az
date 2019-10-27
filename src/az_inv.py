@@ -304,6 +304,7 @@ class Inventory():
 			return first_cord, num_items
 		else:
 			print("Nothing to see here, move along!")
+			self.close()
 		
 
 	def delete_item(self, cord, num_sells):

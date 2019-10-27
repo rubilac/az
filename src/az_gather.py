@@ -258,5 +258,6 @@ class Gather():
 
 if __name__ == '__main__':
 	#segment_grab_color(trs_x, trs_y, trs_w, trs_h, True)
+	zoom_out()
 	g = Gather()
 	g.gatherer()

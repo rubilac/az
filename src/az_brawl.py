@@ -166,5 +166,6 @@ class Brawl():
 
 
 if __name__ == '__main__':
+	zoom_out()
 	b = Brawl()
 	b.org_fight()
