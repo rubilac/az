@@ -66,7 +66,6 @@ class Inventory():
 		 - TODO: Generate the delete list from ../fixtures/items.json
 		 - This class is anchor aware and coordinates are related to the point of the anchor
 	"""
-
 	def __init__(self):
 		# Store anchor point
 		# Store Inventory points
@@ -74,22 +73,16 @@ class Inventory():
 		self.method = cv2.TM_CCOEFF_NORMED
 		self.threshold = 0.90
 		self.screen_x = 70
-		self.screen_y = 100
-		self.screen_w = 1470
-		self.screen_h = 927
-		self.end_of_bag = [32705332, 21902624]
-		self.del_list_3 = ['boar bones', 'boar_skins', 'boar_tooth', 'crabs', 'egyptian fish', 'gold ore', 'iron ore', 'lobsters', 'mushrooms', 'oats', 'oysters', 'smelly fish', 'stone blocks']
-		self.del_list_2 = []
-		self.del_list_1	= []
-		self.del_list_0	= ['fish', 'entrails', 'sand']
-		self.search_pos = (460, 363)
-		self.search_clear = (534, 367)
-		self.search_result_pos = (-888, 340)
+		self.screen_y = 160
+		self.screen_w = 1488
+		self.screen_h = 925
+		self.search_pos = (466, 395)
+		self.search_clear = (542, 394)
 		self.anchor = get_anchor()
 		self.img_path = '/opt/dev/az/templates/inventory/items/'
-		self.sell_cord_list = [(672, 492), (803, 489), (937, 493), (673, 634), (804, 634), (934, 634)]
-		self.sell_cord_sell = (772, 612)
-		self.sell_cord_minus = (700, 564)
+		self.sell_cord_list = [(687, 519), (815, 518), (939, 518), (679, 663), (813, 663), (943, 664)]
+		self.sell_cord_sell = (781, 639)
+		self.sell_cord_minus = (712, 592)
 
 
 	def open_bag_deprecate(self, seg='', threshold=0.88):
@@ -126,7 +119,7 @@ class Inventory():
 
 
 	def open_bag(self):
-		cord = (1412, 817)
+		cord = (1433, 822)
 		move_and_click(cord, 1)
 
 
@@ -170,7 +163,7 @@ class Inventory():
 			self.open_bag()
 
 
-	def get_image(self, x=70, y=100, width=1470, length=927, tag="default", save=True):
+	def get_image(self, x=70, y=160, width=1488, length=925, tag="default", save=True):
 		"""
 			Given x, y cords and width and length size, take a grayscale image and return the
 			summed value.
@@ -191,7 +184,7 @@ class Inventory():
 		return int(a)
 
 
-	def get_color_image(self,  x=70, y=100, width=1470, length=927, tag="default", save=False):
+	def get_color_image(self,  x=70, y=160, width=1488, length=925, tag="default", save=True):
 		"""
 			Given x, y cords and width and length size, take a color image and return the summed value
 			of all 3 rgb ints.
@@ -199,9 +192,8 @@ class Inventory():
 		"""
 		box = (x, y, width, length)
 		im = ImageGrab.grab(box)
-		ts = int(time.time())
 		if save:
-			fn = "colorimg{}-{}.png".format(tag, ts)
+			fn = "colorimg-{}.png".format(tag)
 			im.save(fn,'PNG')
 			logger.info("Saved image: {}".format(fn))
 		arr = np.asarray(im)
@@ -238,7 +230,7 @@ class Inventory():
 		""" 
 			Function to navigate the inventory widget right based on anchor
 		"""
-		left_cord = (553, 521)
+		left_cord = (566, 551)
 		move_and_click(left_cord)
 		logger.info("Navigating inventory left")
 
@@ -247,7 +239,7 @@ class Inventory():
 		""" 
 			Function to navigate the inventory widget right based on anchor 
 		"""
-		right_cord = (982, 520)
+		right_cord = (986, 551)
 		move_and_click(right_cord)
 		logger.info("Navigating inventory right")
 
@@ -260,8 +252,8 @@ class Inventory():
 		slot_list = []
 		self.search_item(item_name) # Filter to item in inventory
 		item = self.load_image(item_name)
-		self.get_image() # Load item template
-		screen = cv2.imread('gray-default.png')
+		self.get_color_image() # Load item template
+		screen = cv2.imread('colorimg-default.png')
 		try:
 			result = cv2.matchTemplate(screen, item, method) # Load current screen
 			fres = np.where(result >= 0.95)
@@ -335,9 +327,9 @@ class Inventory():
 
 		"""
 		cord = (cord[0]+self.screen_y, cord[1]+self.screen_x)
-		x1= 650
-		x2= 750
-		y= 500
+		x1= 700
+		x2= 840
+		y= 530
 		print("Item found @ {}".format(cord))
 		sell_buttons = self.sell_cord_list
 		if cord[0] < y and cord[1] < x1:
@@ -361,13 +353,7 @@ class Inventory():
 
 
 	def close(self):
-		secure_click((984, 346), self.anchor, 1)
-
-
-	def delete_keep_n(self, cord, num_sells,  n):
-		pass
-
-
+		secure_click((992, 374), self.anchor, 1)
 
 
 if __name__ == '__main__':
@@ -377,20 +363,9 @@ if __name__ == '__main__':
 	refresh_checker()
 	inventory.delete_all_of_item('boar skins')
 	refresh_checker()
-	#inventory.delete_all_of_item('oyster')
-	#refresh_checker()
 	inventory.delete_all_of_item('entrails')
 	refresh_checker()
 	inventory.delete_all_of_item('fish')
-	refresh_checker()
-	inventory.delete_all_of_item('oats')
 	#refresh_checker()
-	#inventory.delete_all_of_item('lobster')
-	refresh_checker()
-	inventory.delete_all_of_item('iron scraps')
-	refresh_checker()
-	#inventory.delete_all_of_item('beetroots')
+	#inventory.delete_all_of_item('iron scraps')
 	inventory.close()
-	#inventory.delete_items_from_pane('fish')
-	#inventory.delete_items_from_pane('entrails')
-	#inventory.delete_items_from_pane('boar skins')

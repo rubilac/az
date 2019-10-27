@@ -363,6 +363,7 @@ class Legion():
 		time.sleep(0.2)
 		move_and_click(attack_button_pos)
 		time.sleep(10)
+		refresh_checker()
 		move_and_click(self.village_pos)
 
 
@@ -501,6 +502,7 @@ def strength():
 	#lg.get_strength()
 	#lg.get_screen()
 	lg.ready_to_attack()
+
 
 
 if __name__ == '__main__':

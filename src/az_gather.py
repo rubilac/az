@@ -26,15 +26,15 @@ logging.basicConfig(filename = "/opt/dev/az/log/gather.log",
 logger = logging.getLogger()
 
 trs_x = 70
-trs_y = 100
-trs_w = 1470
-trs_h = 927
+trs_y = 160
+trs_w = 1488
+trs_h = 925
 
-wood_screen = (1425, 148, 1465, 162	)
+wood_screen = (1440, 148, 1465, 162	)
 wood_max_screen = (1445, 148, 1465, 162)
-straw_screen = (1425, 175 , 1465, 189)
-stone_screen = (1425, 202 , 1465, 216)
-food_screen = (1200, 116, 1238, 128)
+straw_screen = (1440, 235 , 1475, 250)
+stone_screen = (1440, 202 , 1465, 216)
+food_screen = (1211, 175, 1248, 188)
 apple_img = '/opt/dev/az/templates/gather/apple_vm_fb.png'
 carrots_img = '/opt/dev/az/templates/gather/carrots_vm_fb.png'
 straw_img = '/opt/dev/az/templates/gather/straw_vm_fb.png'
@@ -45,7 +45,7 @@ class Gather():
 		#wood = self.get_stat(wood_screen, 'wood')
 		#stone = self.get_stat(stone_screen, 'stone')
 		#straw = self.get_stat(straw_screen, 'straw')
-		#food = self.get_stat(food_screen, 'food')
+		food = self.get_stat(food_screen, 'food')
 		#self.wood = wood[0]
 		#self.wood_max = self.get_max(wood_max_screen, 'wood_max')
 		#self.stone = stone[0]
@@ -132,6 +132,7 @@ class Gather():
 					move_and_click((cord[0], cord[1]), 1)
 					move_and_click((cord[0], cord[1]), 1)
 					move_and_click((cord[0], cord[1]), 1)
+					time.sleep(15)
 					print("Cleared Apple Tree!")
 					refresh_checker()
 					self.get_apples(zone)
@@ -161,7 +162,7 @@ class Gather():
 					move_and_click((cord[0], cord[1]), 1)
 					move_and_click((cord[0], cord[1]), 1)
 					move_and_click((cord[0], cord[1]), 1)
-					time.sleep(2)
+					time.sleep(15)
 					print("Cleared Carrots Field!")
 					refresh_checker()
 					self.get_carrots(zone)
@@ -188,7 +189,7 @@ class Gather():
 					while n > 0:
 						move_and_click((cord[0], cord[1]), 1)
 						n -= 1
-					time.sleep(2)
+					time.sleep(15)
 					print("Cleared Straw Patch!")
 					refresh_checker()
 					self.get_straw(zone)
