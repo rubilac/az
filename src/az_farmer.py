@@ -235,6 +235,7 @@ def legion_defeated_check(screen):
         test = fres[0][0] > 0
         print("Legion defeated popup found, clicking X!")
         secure_click(legion_defeat_pos, anchor, 1)
+        secure_click(legion_defeat_pos, anchor, 1)
         time.sleep(1)
     except:
         pass
