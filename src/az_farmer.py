@@ -676,7 +676,7 @@ def fish_path():
     navy('top_right', 4)
     secure_click((197, 530), anchor, 5) # top_right Start
     secure_click((75, 523), anchor, 5) # Fish bottom_left left 4 - Probably wrong
-    secure_click((173, 311), anchor, 4) # Fish top_right left 1
+    secure_click((166, 307), anchor, 4) # Fish top_right left 1
     secure_click((344, 323), anchor, 4) # Fish top_right left 2
     secure_click((551, 288), anchor, 4) # Fish top_right left 2
     secure_click((743, 293), anchor, 4) # Fish top_right left 3

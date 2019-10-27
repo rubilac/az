@@ -78,6 +78,9 @@ butcher_restock = (1014, 688)
 butcher_img = '/opt/dev/az/templates/gaul_soup_vm_fb.png'
 gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 
+#Tavern
+tavern_pos = (792, 703)
+
 
 class Craft():
 	def __init__(self):
@@ -363,7 +366,7 @@ class Craft():
 			else:
 				cord = (int(fres[0]), int(fres[1]))
 			click_cord = self.get_merch_slot(cord)[0]
-			print("Found {} @ {} in slot {}".format(item_name, cord, click_cord))
+			#print("Found {} @ {} in slot {}".format(item_name, cord, click_cord))
 			move_and_click(click_cord, 1)
 			print("Loading {} in slot {}".format(item_name, pos))
 		except:
@@ -389,6 +392,7 @@ class Craft():
 			move_and_click(close_merch_pos, 1)
 		else:
 			print("Fish market full!")
+			move_and_click(fish_market_pos, 1)
 
 
 	def restock_butcher(self):
@@ -402,7 +406,11 @@ class Craft():
 			move_and_click(close_merch_pos, 1)
 		else:
 			print("Butcher full!")
+			move_and_click(butcher_pos, 1)
 
+
+	def collect_tavern(self):
+		move_and_click(tavern_pos, 1)
 
 	def craft(self):
 		ccfg = config['crafting']
@@ -483,12 +491,13 @@ class Craft():
 		else:
 			print('Not restocking butcher')
 
+		self.collect_tavern()
 
 
 
 if __name__ == '__main__':
 	crafter = Craft()
-	#crafter.craft()
+	crafter.craft()
 	crafter.restock()
 	#town_grab(crafter.town_x, crafter.town_y, crafter.town_w, crafter.town_h)
 
