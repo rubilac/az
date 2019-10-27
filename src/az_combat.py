@@ -263,7 +263,7 @@ class Legion():
 		self.ch = CordHelper()
 		self.team = self.load_images_from_dir('/opt/dev/az/templates/combat/team/')
 		self.attackers = self.load_images_from_dir('/opt/dev/az/templates/combat/legion/')
-		self.village_pos = (1376, 877)
+		self.village_pos = (1396, 880)
 		self.strength_cords = (1288, 171, 1315, 190)
 		self.strength_threshold = config['general']['strength']
 
@@ -399,7 +399,7 @@ class Legion():
 		if strength >= self.strength_threshold:
 			cord = self.find_attackers_from_template(self.attackers)
 			if cord != False:
-				cord = self.correct_cords(cord, 350, 200)
+				cord = self.correct_cords(cord, 350, 250)
 				self.engage_attacker(cord)
 			else:
 				pass
