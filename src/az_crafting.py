@@ -148,7 +148,7 @@ class Craft():
 
 	def craft_milestone(self):
 		""" Craft stone """
-		buy_dye = (1018, 563)
+		buy_dye = (1018, 598)
 		if self.building_state(stone_mason_pos) == 1:
 			move_and_click(stone_mason_pos, 1)
 			move_and_click(blank_spot, 1)
