@@ -37,6 +37,7 @@ achievements_pos = (1064, 376) #
 credit_pos = (1016, 607)
 food_pos = (1051, 390)
 limit_pos = (906, 418)
+daily_bonus_pos = (781, 691)
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
@@ -51,6 +52,7 @@ achievements_img = '/opt/dev/az/templates/popups/achievements.png'
 credit_img = '/opt/dev/az/templates/popups/credit_or_debit.png'
 food_img = '/opt/dev/az/templates/popups/food.png'
 limit_img = '/opt/dev/az/templates/popups/limit_reached.png'
+daily_bonus_img = '/opt/dev/az/templates/popups/daily_bonus.png'
 
 template_path_boar = '/opt/dev/az/templates/boar/'
 load_boars = os.listdir(template_path_boar)
@@ -78,6 +80,7 @@ def refresh_checker():
     get_more_sesterce_check(screen)
     get_more_roman_helmets_check(screen)
     legion_approaching_check(screen)
+    daily_bonus_check(screen)
     legion_defeated_check(screen)
     achievement_check(screen)
     credit_check(screen)
@@ -196,6 +199,20 @@ def legion_approaching_check(screen):
         test = fres[0][0] > 0
         print("Legion Approaching popup found, clicking X!")
         move_and_click(legion_approaching_pos)
+        time.sleep(1)
+    except:
+        pass
+
+
+def daily_bonus_check(screen):
+    template = cv2.imread(daily_bonus_img, cv2.IMREAD_GRAYSCALE)
+    #screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Daily Bonus popup found, clicking Collect!")
+        move_and_click(daily_bonus_pos)
         time.sleep(1)
     except:
         pass
