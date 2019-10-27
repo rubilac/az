@@ -659,8 +659,8 @@ def fish_path():
     refresh_checker()
     navy('top_left', 4)
     secure_click((455, 402), anchor, 20) #Top left Start
-    secure_click((377, 346), anchor, 5) # Fish spot top left 1
-    secure_click((622, 361), anchor, 5) # Fish spot top left 2
+    secure_click((368, 358), anchor, 5) # Fish spot top left 1
+    secure_click((607, 380), anchor, 5) # Fish spot top left 2
     secure_click((580, 719), anchor, 5) # Fish spot top left 3
     secure_click((660, 920), anchor, 5) # Fish spot top left 4 - Probably wrong
 
@@ -676,7 +676,7 @@ def fish_path():
     navy('top_right', 4)
     secure_click((197, 530), anchor, 5) # top_right Start
     secure_click((75, 523), anchor, 5) # Fish bottom_left left 4 - Probably wrong
-    secure_click((150, 308), anchor, 4) # Fish top_right left 1
+    secure_click((173, 311), anchor, 4) # Fish top_right left 1
     secure_click((344, 323), anchor, 4) # Fish top_right left 2
     secure_click((551, 288), anchor, 4) # Fish top_right left 2
     secure_click((743, 293), anchor, 4) # Fish top_right left 3
@@ -766,4 +766,3 @@ if __name__ == '__main__':
     #fish_path()
     #collect_path()
     #cycle()
-    
