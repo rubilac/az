@@ -295,8 +295,6 @@ class Craft():
 			move_and_click(tailor_build, 1) 
 			move_and_click(fifth_pos, 1)
 			move_and_click(craft_pos, 0.2)
-			move_and_click(craft_pos, 0.2)
-			move_and_click(craft_pos, 0.2)
 			move_and_click(close_pos, 0.2)
 			print("Crafting Flax")
 		else:
