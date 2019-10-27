@@ -54,6 +54,8 @@ class Gather():
 		#self.straw_max = straw[1]
 		#self.food = food[0]
 		#self.food_max = food[1]
+		self.straw = 0
+		self.straw_max = 0
 		pass
 
 
