@@ -436,6 +436,8 @@ class Craft():
 			self.craft_stone()
 		elif ccfg['stone_mason'] == 'milestone':
 			self.craft_milestone()
+		elif ccfg['stone_mason'] == 'flagstone':
+			self.craft_flagstone()
 		elif ccfg['stone_mason'] == 0:
 			print('Skipping stone_mason crafting')
 		else:
