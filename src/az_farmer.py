@@ -25,7 +25,7 @@ threshold = 0.8
 # Anchor = (1324, 46)
 
 # Button positions
-refresh_button = (769, 620)
+refresh_button = (769, 600)
 decline_special_offer = (-421, 598) #
 ok_pos = (833, 712)
 complete_pos = (711, 731) #
