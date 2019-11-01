@@ -35,7 +35,7 @@ legion_approaching_pos = (904, 415)
 legion_defeat_pos = (713, 693) #
 achievements_pos = (1064, 376) #
 credit_pos = (1016, 607)
-food_pos = (1051, 390)
+food_pos = (1049, 420)
 limit_pos = (906, 418)
 daily_bonus_pos = (781, 691)
 
@@ -126,7 +126,7 @@ def special_offer_check(screen):
     try:
         test = fres[0][0] > 0
         print("Special offer popup found, clicking decline!")
-        secure_click(decline_special_offer, anchor, 1)
+        move_and_click(decline_special_offer, 1)
         time.sleep(1)
         secure_click((-417, 543), anchor, 1) #change
     except:
@@ -141,7 +141,7 @@ def ok_check(screen):
     try:
         test = fres[0][0] > 0
         print("Ok button found, clicking ok!")
-        secure_click(ok_pos, anchor, 1)
+        move_and_click(ok_pos, 1)
         time.sleep(1)
     except:
         pass
@@ -155,10 +155,10 @@ def quest_complete_check(screen):
     try:
         test = fres[0][0] > 0
         print("Complete Quest popup found, clicking complete!")
-        secure_click(complete_pos, anchor, 1)
-        secure_click((769, 653), anchor, 1)
+        move_and_click(complete_pos, 1)
+        move_and_click((769, 653), 1)
         print("Clicking OK")
-        secure_click(ok_pos, anchor, 1)
+        move_and_click(ok_pos, 1)
         time.sleep(1)
     except:
         pass
@@ -172,7 +172,7 @@ def get_more_sesterce_check(screen):
     try:
         test = fres[0][0] > 0
         print("Sesterce popup found, clicking X!")
-        secure_click(sesterce_close_pos, anchor, 1)
+        move_and_click(sesterce_close_pos, 1)
         time.sleep(1)
         print("Clicking OK")
         #secure_click(sester)
@@ -188,7 +188,7 @@ def get_more_roman_helmets_check(screen):
     try:
         test = fres[0][0] > 0
         print("Roman helmets popup found, clicking X!")
-        secure_click(roman_helmets_close_pos, anchor, 1)
+        move_and_click(roman_helmets_close_pos, 1)
         time.sleep(1)
         print("Doing a cautionary sesterce check")
         popup_grab()
@@ -234,8 +234,8 @@ def legion_defeated_check(screen):
     try:
         test = fres[0][0] > 0
         print("Legion defeated popup found, clicking X!")
-        secure_click(legion_defeat_pos, anchor, 1)
-        secure_click(legion_defeat_pos, anchor, 1)
+        move_and_click(legion_defeat_pos, 1)
+        move_and_click(legion_defeat_pos, 1)
         time.sleep(1)
     except:
         pass
@@ -249,7 +249,7 @@ def achievement_check(screen):
     try:
         test = fres[0][0] > 0
         print("Achievement popup found, clicking X!")
-        secure_click(achievements_pos, anchor, 1)
+        move_and_click(achievements_pos, 1)
         time.sleep(1)
     except:
         pass
@@ -262,7 +262,7 @@ def credit_check(screen):
     try:
         test = fres[0][0] > 0
         print("Credit Card found, clicking cancel!")
-        secure_click(credit_pos, anchor, 1)
+        move_and_click(credit_pos, 1)
         time.sleep(2)
         refresh_checker()
     except:
@@ -276,7 +276,7 @@ def food_check(screen):
     try:
         test = fres[0][0] > 0
         print("Food Popup found, clicking X!")
-        secure_click(food_pos, anchor, 1)
+        move_and_click(food_pos, 1)
         time.sleep(2)
     except:
         pass
@@ -289,7 +289,7 @@ def limit_check(screen):
     try:
         test = fres[0][0] > 0
         print("Limit Reached Popup found, clicking X!")
-        secure_click(limit_pos, anchor, 1)
+        move_and_click(limit_pos, 1)
         time.sleep(2)
     except:
         pass
