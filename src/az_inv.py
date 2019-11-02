@@ -16,6 +16,8 @@ import numpy as np
 import cv2
 import shutil
 import logging
+import toml
+config = toml.load('.config')
 
 # Globals #
 pwd = os.path.realpath('..')
@@ -34,6 +36,11 @@ logger = logging.getLogger()
 # Keyboard and Mouse Interacters #
 mouse = ms.Controller()
 key = kb.Controller()
+
+boar_skin_img_loc = config['inventory']['boar_skins']
+entrails_img_loc = config['inventory']['entrails']
+fish_img_loc = config['inventory']['fish']
+iron_scraps_img_loc = config['inventory']['iron_scraps']
 
 
 def read_image(image, img_type):
@@ -83,39 +90,6 @@ class Inventory():
 		self.sell_cord_list = [(687, 519), (815, 518), (939, 518), (679, 663), (813, 663), (943, 664)]
 		self.sell_cord_sell = (781, 639)
 		self.sell_cord_minus = (712, 592)
-
-
-	def open_bag_deprecate(self, seg='', threshold=0.88):
-		"""
-			Take a screen grab and locate the inventory icon. If it is found: click it
-			If not quit
-		"""
-		template = read_image(inv_icon_img, cv2.IMREAD_GRAYSCALE)
-		if seg == '':
-			segment = ImageOps.grayscale(ImageGrab.grab(bbox=(self.screen_x, self.screen_y, self.screen_w, self.screen_h)))
-			#self.get_image(1, 1, self.screen_w, self.screen_h,"default", True)
-			ps = np.array(segment.getdata(), dtype='uint8').reshape((segment.size[0], segment.size[1],-1))
-		else:
-			try:
-				ps = read_image(seg, cv2.IMREAD_GRAYSCALE)
-			except:
-				raise Exception("Could not read image: {}".format(seg))
-		try:
-			fres = get_match_result(ps, template, self.method, threshold)
-		except Exception as e:
-			logger.critical("Caught Exception as {}".format(e))
-			raise Exception("Caught Exception as {}".format(e))
-
-		logger.debug("Opening Bag Fres: {}".format(fres))
-		try:
-			cord = (int(fres[1]+5), int(fres[0]+5))
-			logger.info("Found Inventory Button @ {}, openning inventory".format(cord))
-			move_and_click(cord)
-			move_and_click(cord)
-			return cord
-		except TypeError:
-			logger.critical("Cannot find inventory button, quitting...")
-			raise Exception("Cannot find inventory button, quitting...")
 
 
 	def open_bag(self):
@@ -244,18 +218,18 @@ class Inventory():
 		logger.info("Navigating inventory right")
 
 
-	def item_in_inventory(self, item_name):
+	def item_in_inventory(self, item_path, item_name):
 		"""
 			Given an item name and stacks to keep (int)
 			TODO: What if I dont have any?
 		"""
 		slot_list = []
 		self.search_item(item_name) # Filter to item in inventory
-		item = self.load_image(item_name)
+		item = cv2.imread(item_path)
 		self.get_color_image() # Load item template
 		screen = cv2.imread('colorimg-default.png')
 		try:
-			result = cv2.matchTemplate(screen, item, method) # Load current screen
+			result = cv2.matchTemplate(screen, item, self.method) # Load current screen
 			fres = np.where(result >= 0.95)
 			slots = zip(fres[0], fres[1])
 			slot_set = set(slots)
@@ -274,25 +248,24 @@ class Inventory():
 			return 2 # if I dont find anythin, just return 1
 
 
-	def delete_items_from_pane(self, item_name):
-		first_cord = self.get_first_pos(item_name)
+	def delete_items_from_pane(self, item_path, item_name):
+		first_cord = self.get_first_pos(item_path, item_name)
 		print("+++++++++Deleting {} - {} time(s)".format(item_name, first_cord[1]))
 		self.delete_item(first_cord[0][1], first_cord[1])
 
 
-	def delete_all_of_item(self, item_name):
-		item_exists = self.item_in_inventory(item_name)
-		#self.delete_items_from_pane(item_name)
+	def delete_all_of_item(self, item_path, item_name):
+		item_exists = self.item_in_inventory(item_path, item_name)
 		while item_exists != 1:
-			self.delete_items_from_pane(item_name)
+			self.delete_items_from_pane(item_path, item_name)
 			refresh_checker()
 			time.sleep(5)
 			self.open_bag()
-			item_exists = self.item_in_inventory(item_name)
+			item_exists = self.item_in_inventory(item_path, item_name)
 
 
-	def get_first_pos(self, item_name):
-		tmp = self.item_in_inventory(item_name)
+	def get_first_pos(self, item_path, item_name):
+		tmp = self.item_in_inventory(item_path, item_name)
 		if tmp != 1:
 			cord_list = tmp[0]
 			num_items = tmp[1]
@@ -310,9 +283,9 @@ class Inventory():
 	def delete_item(self, cord, num_sells):
 		#print("Deleting Item {} times".format(num_sells))
 		while num_sells > 0:
-			secure_click(cord, self.anchor, 1)
-			secure_click(self.sell_cord_minus, self.anchor, 1)
-			secure_click(self.sell_cord_sell, self.anchor, 1)
+			secure_click(cord, self.anchor, 0.5)
+			secure_click(self.sell_cord_minus, self.anchor, 0.5)
+			secure_click(self.sell_cord_sell, self.anchor, 0.5)
 			num_sells -= 1
 
 
@@ -360,13 +333,13 @@ class Inventory():
 if __name__ == '__main__':
 	move_and_click((763, 72))
 	inventory = Inventory()
-	#inventory.get_image()
+	#inventory.get_color_image()
 	refresh_checker()
-	inventory.delete_all_of_item('boar skins')
+	inventory.delete_all_of_item(boar_skin_img_loc, 'boar skins')
 	refresh_checker()
-	inventory.delete_all_of_item('entrails')
+	inventory.delete_all_of_item(entrails_img_loc, 'entrails')
 	refresh_checker()
-	inventory.delete_all_of_item('fish')
-	#refresh_checker()
-	#inventory.delete_all_of_item('iron scraps')
+	inventory.delete_all_of_item(fish_img_loc, 'fish')
+	refresh_checker()
+	inventory.delete_all_of_item(iron_scraps_img_loc, 'iron scraps')
 	inventory.close()

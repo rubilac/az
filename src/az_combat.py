@@ -38,7 +38,9 @@ for enemy in load_enemies:
 
 attack_screen_dimensions = ()
 
-
+in_village_img_path = config['zones']['in_village_img_path']
+out_village_img_path = config['zones']['out_village_img_path']
+egypt_img_path = config['zones']['egypt_img_path']
 
 class Combat():
 	def __init__(self):
@@ -441,6 +443,12 @@ class Legion():
 		return img_tmp
 
 
+	def match_template(self, screen, img, threshold=0.95, method=cv2.TM_CCOEFF_NORMED):
+		result = cv2.matchTemplate(screen, img, method)
+		fres = np.where(result >= threshold)
+		return fres
+
+
 	def get_screen(self, fn='tmp.png', save=True):
 		segment = ImageGrab.grab(bbox=(self.x, self.y, self.x+self.screen_w, self.y+self.screen_h))
 		if save:
@@ -459,6 +467,36 @@ class Legion():
 		y_s = 250
 		village_screen = self.get_screen_segment('village.png',x_s, y_s, 300, 200)
 		return village_screen
+
+
+	def where_am_i(self):
+		""" 
+			returns:
+			1 - In Village
+			2 - Out Village
+			3 - Egypt
+			4 - Error
+		"""
+		refresh_checker() # refresh_checker - Get rid of any popups
+		nav_top_l(3) # reset position to top left
+		self.get_screen() # full screen grab
+		screen = cv2.imread('tmp.png')
+		in_village = self.match_template(screen, cv2.imread(in_village_img_path))
+		out_village = self.match_template(screen, cv2.imread(out_village_img_path))
+		egypt = self.match_template(screen, cv2.imread(egypt_img_path))
+		if len(in_village[0]) != 0:
+			#print("We are inside the village")
+			return 1
+		elif len(out_village[0]) != 0:
+			#print("We are outside the village")
+			return 2
+		elif len(egypt[0]) != 0:
+			#print("We are in Egypt")
+			return 3
+		else:
+			print("Where the fuck are we?!")
+			return 4
+
 
 
 def clear_segment():
@@ -499,17 +537,19 @@ def clear_all_enemies():
 
 def strength():
 	lg = Legion()
-	#lg.get_strength()
-	#lg.get_screen()
 	lg.ready_to_attack()
-
-
+	zone = lg.where_am_i()
+	while zone != 1:
+		refresh_checker()
+		move_and_click(lg.village_pos)
+		zone = lg.where_am_i()
 
 if __name__ == '__main__':
 	move_and_click((763, 42))
-	zoom_out() # Focus Chrome frame!
-	#cm = Combat()
+	#zoom_out() # Focus Chrome frame!
+	#cm = Legion()
 	#cm.get_screen('tmp_find.png',True)
+	#cm.where_am_i()
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
 	clear_all_enemies()
