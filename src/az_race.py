@@ -89,6 +89,7 @@ class Race():
 		self.task_3 = (968, 560)
 		self.go_pos = (926, 687)
 		self.dbl_miles_pos = (670, 609)
+		self.double_close_pos = (992, 393)
 		self.single_miles_pos = (883, 607)
 		self.close = (1022, 381)
 		self.close_events = (1053, 371)
@@ -174,6 +175,7 @@ class Race():
 			move_and_click(self.dbl_miles_pos, 1)
 		else:
 			print("Not enough carrots or apples, farm more!")
+			move_and_click(self.double_close_pos, 1)
 			return
 
 
