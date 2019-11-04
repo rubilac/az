@@ -4,10 +4,13 @@ import time
 import json
 import datetime
 from pynput.mouse import Button, Controller 
+from pynput.keyboard import Key, Controller
+
 import pynput.mouse
 from PIL import ImageOps
 
 mouse = pynput.mouse.Controller()
+key = pynput.keyboard.Controller()
 
 x_pad = 70
 y_pad = 100
@@ -50,6 +53,29 @@ def get_cords():
     print((x,y))
     return x, y
 
+
+def zoom_out_browser():
+    #key.press(Key.ctrl)
+    #key.press(Key.)
+    #key.release(Key.ctrl)
+    with key.pressed(Key.ctrl):
+        key.press('0')
+        key.release('0')
+        key.press('-')
+        key.release('-')
+        key.press('-')
+        key.release('-')
+
+def zoom_out_max():
+    move_and_click((497, 186), 1)
+    zoom_out_browser()
+    mouse.scroll(0, -10)
+    time.sleep(0.5)
+    mouse.scroll(0, -10)
+    time.sleep(0.5)
+    mouse.scroll(0, -10)
+    time.sleep(0.5)
+    mouse.scroll(0, -10)
 
 def get_relative_cords():
     x,y = get_cords()
@@ -185,5 +211,6 @@ if __name__ == '__main__':
     #screenGrab()
     #nav_to_town()
     get_cords()
+    #zoom_out_max()
     #get_test_images()
     #nav_to_town()

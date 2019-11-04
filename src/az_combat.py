@@ -469,6 +469,27 @@ class Legion():
 		return village_screen
 
 
+class Zone():
+	def __init__(self):
+		self.screen_w = 1488
+		self.screen_h = 925
+		self.x = 70
+		self.y = 160
+
+
+	def match_template(self, screen, img, threshold=0.95, method=cv2.TM_CCOEFF_NORMED):
+		result = cv2.matchTemplate(screen, img, method)
+		fres = np.where(result >= threshold)
+		return fres
+
+
+	def get_screen(self, fn='tmp.png', save=True):
+		segment = ImageGrab.grab(bbox=(self.x, self.y, self.x+self.screen_w, self.y+self.screen_h))
+		if save:
+			segment.save(fn, 'PNG')
+		return segment
+
+
 	def where_am_i(self):
 		""" 
 			returns:
@@ -479,6 +500,7 @@ class Legion():
 		"""
 		refresh_checker() # refresh_checker - Get rid of any popups
 		nav_top_l(3) # reset position to top left
+		zoom_out_max()
 		self.get_screen() # full screen grab
 		screen = cv2.imread('tmp.png')
 		in_village = self.match_template(screen, cv2.imread(in_village_img_path))
@@ -494,6 +516,7 @@ class Legion():
 			#print("We are in Egypt")
 			return 3
 		else:
+			zoom_out_max()
 			print("Where the fuck are we?!")
 			return 4
 
@@ -538,20 +561,28 @@ def clear_all_enemies():
 def strength():
 	lg = Legion()
 	lg.ready_to_attack()
-	zone = lg.where_am_i()
+	cz = Zone()
+	zone = cz.where_am_i()
 	while zone != 1:
 		refresh_checker()
+		zoom_out_max()
 		move_and_click(lg.village_pos)
-		zone = lg.where_am_i()
+		zone = cz.where_am_i()
+
+def get_zone():
+	cz = Zone()
+	zone = cz.where_am_i()
+	print(zone)
+
 
 if __name__ == '__main__':
 	move_and_click((763, 42))
+	clear_all_enemies()
+	strength()
+	#get_zone()
 	#zoom_out() # Focus Chrome frame!
 	#cm = Legion()
 	#cm.get_screen('tmp_find.png',True)
 	#cm.where_am_i()
 	#cord = (cm.get_combat_page_cord())
 	#cm.get_atk_screen(cord)
-	clear_all_enemies()
-	strength()
-
