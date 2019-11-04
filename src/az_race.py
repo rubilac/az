@@ -74,7 +74,7 @@ class Race():
 		print("Race Module engaged!")
 		#self.get_image()
 		self.method = cv2.TM_CCOEFF_NORMED
-		self.threshold = 0.95
+		self.threshold = 0.90
 		self.screen_x = 70
 		self.screen_y = 160
 		self.screen_w = 1488
@@ -149,7 +149,7 @@ class Race():
 		im=np.array(Image.open("race_colour_default.png").convert('RGB'))
 		sought = [179, 236, 139]
 		fres = np.where(np.all(im==sought,axis=2))
-		slots = list(set(zip(fres[1]+x, fres[0]+y)))
+		slots = list(zip(fres[1]+x, fres[0]+y))
 		for slot_x, slot_y in slots:
 			if slot_x < slot_1 and slot_1_holder == 0:
 				slot_1_holder = 1
@@ -160,6 +160,7 @@ class Race():
 			else:
 				pass
 		out_list = [slot_1_holder, slot_2_holder, slot_3_holder] # return array with 0 or 1 if task is acceptable
+		print(out_list)
 		self.get_miles("race_colour_default.png", out_list)
 
 
@@ -188,21 +189,38 @@ class Race():
 		for i in miles_list:
 			result = cv2.matchTemplate(screen, cv2.imread(i), self.method)
 			fres = np.where(result >= self.threshold)
-			if len(fres[0]) > 0:
-				out_x = fres[1]+475
+			try:
+				fres = list(zip(fres[0], fres[1]))
+			except:
+				print('Nothing found - {}'.format(i.split('/')[-1]))
+				continue
+			if len(fres) == 1:
+				out_x = fres[0][1]+475
 				miles = int(i.split('/')[-1].split('_')[0])
 				if out_x < slot_1:
-					slot_1_holder = 5
+					slot_1_holder = miles
 				elif slot_1 < out_x < slot_2:
-					slot_2_holder = 10
+					slot_2_holder = miles
 				elif slot_2 < out_x:
-					slot_3_holder = 20
+					slot_3_holder = miles
 				else:
 					print("sad")
-			else:
-				pass
+			elif len(fres) > 1:
+				miles = int(i.split('/')[-1].split('_')[0])
+				for x in fres:
+					out_x = x[1]+475
+					if out_x < slot_1:
+						slot_1_holder = miles
+					elif slot_1 < out_x < slot_2:
+						slot_2_holder = miles
+					elif slot_2 < out_x:
+						slot_3_holder = miles
+					else:
+						print("sad")
 		out = [slot_1_holder, slot_2_holder, slot_3_holder]
+		print(out)
 		self.get_best_task(at_list, out)
+
 
 
 	def get_best_task(self, at_list, mile_list):
@@ -210,7 +228,7 @@ class Race():
 		tsl_2 = (774, 537)
 		tsl_3 = (952, 542)
 		tsl = [tsl_1, tsl_2, tsl_3]
-		in_l = list(set(zip(at_list, mile_list)))
+		in_l = list(zip(at_list, mile_list))
 		index = 0
 		best_slot = (0, 0)
 		for x, y in in_l:
