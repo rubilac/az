@@ -3,10 +3,11 @@ import sys
 import time
 import json
 import datetime
-from az_code_mac import *
-from az_farmer_mac import *
-from PIL import ImageGrab
+from az_code import *
+from az_farmer import *
+import pyscreenshot as ImageGrab
 from PIL import ImageOps
+from PIL import Image
 from numpy import *
 import pynput.mouse as ms
 import pynput.keyboard as kb
@@ -16,6 +17,9 @@ import numpy as np
 import cv2
 import shutil
 import logging
+import toml
+config = toml.load('.config')
+
 
 # Globals #
 pwd = os.path.realpath('..')
@@ -34,6 +38,13 @@ logger = logging.getLogger()
 # Keyboard and Mouse Interacters #
 mouse = ms.Controller()
 key = kb.Controller()
+
+
+race_icon = config['race']['race_img']
+five_mile_img = config['race']['five_mile_img']
+ten_mile_img = config['race']['ten_mile_img']
+twenty_mile_img = config['race']['twenty_mile_img']
+miles_list = [five_mile_img, ten_mile_img, twenty_mile_img]
 
 def get_match_result(ps, template, method, threshold):
 	result = cv2.matchTemplate(ps, template, method)
@@ -61,135 +72,162 @@ class Race():
 		# Store Inventory points
 		# Store Sell points
 		print("Race Module engaged!")
-		self.get_image()
+		#self.get_image()
 		self.method = cv2.TM_CCOEFF_NORMED
 		self.threshold = 0.95
-		self.screen_x = 1
-		self.screen_y = 1
-		self.screen_w = 2400
-		self.screen_h = 2400
-		self.anchor = get_anchor()
+		self.screen_x = 70
+		self.screen_y = 160
+		self.screen_w = 1488
+		self.screen_h = 925
 		self.img_path = '/opt/dev/az/templates/race/'
 		self.race_box = '/opt/dev/az/templates/race_box.png'
-		self.race_box_pos = (-1055, 169)
-		self.race_pos = (-338, 459)
-		self.new_task_pos = (-510, 634)
-		self.go_pos = (-326, 629)
-		self.close = (-205, 244)
+		self.race_box_pos = (117, 342)
+		self.race_pos = (920, 552)
+		self.new_task_pos = (775, 691)
+		self.task_1 = (602, 560)
+		self.task_2 = (778, 560)
+		self.task_3 = (968, 560)
+		self.go_pos = (926, 687)
+		self.dbl_miles_pos = (670, 609)
+		self.single_miles_pos = (883, 607)
+		self.close = (1022, 381)
+		self.close_events = (1053, 371)
 
 
-	def get_image(self, x=1, y=1, width=2400, length=2400, tag="default", save=False):
-		"""
-			Given x, y cords and width and length size, take a grayscale image and return the
-			summed value.
-			Option to save the image is off by default.
-		"""
-		box = (x, y, width, length)
-		im = ImageOps.grayscale(ImageGrab.grab(box))
-		#ts = int(time.time())
-		if save:
-			fn = "tmp_race-{}.png".format(tag)
-			im.save(fn,'PNG')
-			params = ['mogrify', fn, fn]
-			subprocess.check_call(params, stderr=open(os.devnull, 'wb'))
-			logger.info("Saved image: {}".format(fn))
-		a = array(im.getcolors())
-		a = a.sum()
-		logger.info("Got grayscale image: {}".format(a))
-		return int(a)
-
-
-	def get_color_image(self, x, y, width, length, tag="default", save=False):
+	def get_color_image(self, x, y, width, length, tag="default", save=True):
 		"""
 			Given x, y cords and width and length size, take a color image and return the summed value
 			of all 3 rgb ints.
 			Option to save the image is off by default.
 		"""
-		box = (x, y, width, length)
+		box = (x, y, x+width, y+length)
 		im = ImageGrab.grab(box)
-		ts = int(time.time())
-		if save:
-			fn = "colorimg{}-{}.png".format(tag, ts)
-			im.save(fn,'PNG')
-			logger.info("Saved image: {}".format(fn))
-		arr = np.asarray(im)
-		tot = arr.sum(0).sum(0)
-		result = tot.sum()
-		logger.info("Got color image: {}".format(result))
-		return int(result)
+		fn = "race_colour_{}.png".format(tag)
+		im.save(fn,'PNG')
+		logger.info("Saved image: {}".format(fn))
 
 
-	def load_image(self, img_path, img_name):
-		img_full_path = '{}{}.png'.format(img_path, img_name) 
-		img_tmp = cv2.imread(img_full_path)
-		return img_tmp
-
-
-	def race_quest_active(self):
+	def is_race_ready(self):
 		""" 
 			return False if we find race_box.png
 		"""
-		template = self.load_image('/opt/dev/az/templates/','race_box.png')
-		self.get_image(True)
-		screen = self.load_image('','tmp_race-default.png')
+		template = cv2.imread(race_icon)
+		self.get_color_image(70, 290, 100, 100, 'icon', True)
+		screen = cv2.imread('race_colour_icon.png')
 		try:
 			result = cv2.matchTemplate(screen, template, self.method)
 			fres = np.where(result >= self.threshold)
 			if len(fres[0]) >= 1:
-				print("Race not active!")
-				return False
+				print("Race Active!")
+				return True
 		except:
-			print("Race is available!")
-			return True
+			print("Race is not Available! Try again later")
+			return False
 
 
 	def race(self):
-		race = self.race_quest_active()
+		race = self.is_race_ready()
 		if race:
 			print("Clicking Race box")
-			secure_click(self.race_box_pos, self.anchor, 1)
-			secure_click(self.race_pos, self.anchor, 1)
-			secure_click(self.new_task_pos, self.anchor, 1)
-			best_match = self.find_best_match()
+			move_and_click(self.race_box_pos, 1)
+			move_and_click(self.race_pos, 1)
+			move_and_click(self.new_task_pos, 1)
+			at = self.available_tasks()
+		else:
+			print("No race available.")
 
 
-	def find_best_match(self):
-		pass
+	def available_tasks(self):
+		#[(607, 486), (787, 489), (785, 486), (603, 494), (966, 494), (960, 493), (960, 492), (605, 494), (960, 491), (786, 486), (604, 494), (608, 489), (784, 494), (783, 494), (606, 486)]
+		slot_1 = 680
+		slot_2 = 860
+		slot_1_holder = 0
+		slot_2_holder = 0
+		slot_3_holder = 0
+		x, y, h, w = (475, 365, 600, 350)
+		screen = self.get_color_image(x, y, h, w, 'default')
+		im=np.array(Image.open("race_colour_default.png").convert('RGB'))
+		sought = [179, 236, 139]
+		fres = np.where(np.all(im==sought,axis=2))
+		slots = list(set(zip(fres[1]+x, fres[0]+y)))
+		for slot_x, slot_y in slots:
+			if slot_x < slot_1 and slot_1_holder == 0:
+				slot_1_holder = 1
+			elif slot_1 < slot_x < slot_2 and slot_2_holder == 0:
+				slot_2_holder = 1
+			elif slot_2 < slot_x and slot_3_holder == 0:
+				slot_3_holder = 1
+			else:
+				pass
+		out_list = [slot_1_holder, slot_2_holder, slot_3_holder] # return array with 0 or 1 if task is acceptable
+		self.get_miles("race_colour_default.png", out_list)
 
-	def get_sell_button(self, cord):
-		""" 
-			cord = (1000, 2000) 
-			pos1 = (<1200, <800)
-			pos2 = (<1200, >800<1200)
-			pos3 = (<1200, >1200)
-			pos4 = (>1200, <800)
-			pos5 = (>1200, >800<1200)
-			pos6 = (>1200, >1200)
 
-		"""
-		sell_buttons = self.sell_cord_list
-		if cord[0] < 1200 and cord[1] < 800:
-			out = [1, self.sell_cord_list[0]]
-			return out
-		if cord[0] < 1200 and 800 < cord[1] < 1200:
-			out = [2, self.sell_cord_list[1]]
-			return out
-		if cord[0] < 1200 and cord[1] > 1200:
-			out = [3, self.sell_cord_list[2]]
-			return out
-		if cord[0] > 1200 and cord[1] < 800:
-			out = [4, self.sell_cord_list[3]]
-			return out
-		if cord[0] > 1200 and 800 < cord[1] < 1200:
-			out = [5, self.sell_cord_list[4]]
-			return out
-		if cord[0] > 1200 and cord[1] > 1200:
-			out = [6, self.sell_cord_list[5]]
-			return out
+	def bonus_miles(self):
+		x, y, h, w = (699, 502, 40, 20)
+		screen = self.get_color_image(x, y, h, w, 'bonus_miles')
+		im=np.array(Image.open("race_colour_bonus_miles.png").convert('RGB'))
+		sought = [179, 236, 139]
+		fres = np.where(np.all(im==sought,axis=2))
+		if len(fres[0]) > 0:
+			move_and_click(self.dbl_miles_pos, 1)
+		else:
+			print("Not enough carrots or apples, farm more!")
+			return
+
+
+	def get_miles(self, screen, at_list):
+		# at_list = [1, 0, 1]
+		slot_1 = 680
+		slot_2 = 860
+		slot_1_holder = 0
+		slot_2_holder = 0
+		slot_3_holder = 0
+		screen = cv2.imread(screen)
+		out = []
+		for i in miles_list:
+			result = cv2.matchTemplate(screen, cv2.imread(i), self.method)
+			fres = np.where(result >= self.threshold)
+			if len(fres[0]) > 0:
+				out_x = fres[1]+475
+				miles = int(i.split('/')[-1].split('_')[0])
+				if out_x < slot_1:
+					slot_1_holder = 5
+				elif slot_1 < out_x < slot_2:
+					slot_2_holder = 10
+				elif slot_2 < out_x:
+					slot_3_holder = 20
+				else:
+					print("sad")
+			else:
+				pass
+		out = [slot_1_holder, slot_2_holder, slot_3_holder]
+		self.get_best_task(at_list, out)
+
+
+	def get_best_task(self, at_list, mile_list):
+		tsl_1 = (609, 546)
+		tsl_2 = (774, 537)
+		tsl_3 = (952, 542)
+		tsl = [tsl_1, tsl_2, tsl_3]
+		in_l = list(set(zip(at_list, mile_list)))
+		index = 0
+		best_slot = (0, 0)
+		for x, y in in_l:
+			if x == 1 and y > best_slot[1]:
+				best_slot = (index, y)
+			index += 1
+		print(best_slot)
+		move_and_click(tsl[best_slot[0]], 1)
+		move_and_click(self.go_pos, 1)
+		self.bonus_miles()
+		move_and_click(self.close, 1)
+		move_and_click(self.close_events, 1)
+
+
 
 
 
 if __name__ == '__main__':
-	segment_grab(trs_x, trs_y, trs_w, trs_h, True)
 	race = Race()
 	race.race()
