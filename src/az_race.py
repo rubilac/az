@@ -92,6 +92,7 @@ class Race():
 		self.double_close_pos = (992, 393)
 		self.single_miles_pos = (883, 607)
 		self.close = (1022, 381)
+		self.close_race = (1045, 402)
 		self.close_events = (1053, 371)
 
 
@@ -165,16 +166,27 @@ class Race():
 		self.get_miles("race_colour_default.png", out_list)
 
 
+	def get_colour_of_image(self):
+		im=np.array(Image.open("tmp_colour.png").convert('RGB'))
+		print(im)
+
 	def bonus_miles(self):
-		x, y, h, w = (699, 502, 40, 20)
+		x, y, h, w = (690, 502, 40, 20)
 		screen = self.get_color_image(x, y, h, w, 'bonus_miles')
 		im=np.array(Image.open("race_colour_bonus_miles.png").convert('RGB'))
-		sought = [179, 236, 139]
-		fres = np.where(np.all(im==sought,axis=2))
-		if len(fres[0]) > 0:
-			move_and_click(self.dbl_miles_pos, 1)
-		else:
-			print("Not enough carrots or apples, farm more!")
+		sought = [[179, 236, 139], [179, 234, 137]]
+		try:
+			for s in sought:
+				fres = np.where(np.all(im==s ,axis=2))
+				if len(fres[0]) > 0:
+					move_and_click(self.dbl_miles_pos, 1)
+					return
+				else:
+					print("Trying next colour")
+			print("Not enough carrots/apples, farm more!")
+			move_and_click(self.double_close_pos, 1)
+		except:
+			print("Something is wrong")
 			move_and_click(self.double_close_pos, 1)
 			return
 
@@ -238,13 +250,17 @@ class Race():
 				best_slot = (index, y)
 			index += 1
 		print(best_slot)
-		move_and_click(tsl[best_slot[0]], 1)
-		move_and_click(self.go_pos, 1)
-		self.bonus_miles()
-		move_and_click(self.close, 1)
-		move_and_click(self.close_events, 1)
-
-
+		if best_slot == (0, 0):
+			print("Its bad, dont have mats, closing...")
+			move_and_click(self.close_race, 1)
+			move_and_click(self.close, 1)
+			move_and_click(self.close_events, 1)
+		else:
+			move_and_click(tsl[best_slot[0]], 1)
+			move_and_click(self.go_pos, 1)
+			self.bonus_miles()
+			move_and_click(self.close, 1)
+			move_and_click(self.close_events, 1)
 
 
 
