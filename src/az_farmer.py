@@ -543,9 +543,13 @@ def clear_segment_type(n):
     c_l = remove_bounded_entries(data, 100, 40)
     write_cords_to_file('segment.png', c_l, n)
     for c in c_l:
-        print("Going to boar @: {}".format(c))
-        time.sleep(1)
-        go_to_boar(c, 10)
+        if c[1] > 50:
+            print("Going to boar @: {}".format(c))
+            time.sleep(1)
+            go_to_boar(c, 10)
+        else:
+            print("skipping contact because too high, probably sesterce.")
+            pass
     data = []
     c_l = []
 
