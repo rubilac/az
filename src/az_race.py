@@ -41,6 +41,7 @@ key = kb.Controller()
 
 
 race_icon = config['race']['race_img']
+new_task_img = config['race']['new_task_img']
 five_mile_img = config['race']['five_mile_img']
 ten_mile_img = config['race']['ten_mile_img']
 twenty_mile_img = config['race']['twenty_mile_img']
@@ -58,30 +59,15 @@ def get_match_result(ps, template, method, threshold):
 
 
 class Race():
-	"""
-		This class manages the inventory of a player and can:
-		 - Output the inventory values to a json file
-		 - Clean up the inventory from a list of unwanted items
-		 - TODO: Update the database with current values
-		 - TODO: Generate the delete list from ../fixtures/items.json
-		 - This class is anchor aware and coordinates are related to the point of the anchor
-	"""
-
 	def __init__(self):
-		# Store anchor point
-		# Store Inventory points
-		# Store Sell points
 		print("Race Module engaged!")
-		#self.get_image()
 		self.method = cv2.TM_CCOEFF_NORMED
 		self.threshold = 0.90
 		self.screen_x = 70
 		self.screen_y = 160
 		self.screen_w = 1488
 		self.screen_h = 925
-		self.img_path = '/opt/dev/az/templates/race/'
-		self.race_box = '/opt/dev/az/templates/race_box.png'
-		self.race_box_pos = (117, 342)
+		self.race_box_pos = (116, 342)
 		self.race_pos = (920, 552)
 		self.new_task_pos = (775, 691)
 		self.task_1 = (602, 560)
@@ -113,30 +99,40 @@ class Race():
 		""" 
 			return False if we find race_box.png
 		"""
-		template = cv2.imread(race_icon)
-		self.get_color_image(70, 290, 100, 100, 'icon', True)
+		move_and_click(self.race_box_pos, 1)
+		move_and_click(self.race_pos, 1)
+		template_cd = cv2.imread(race_icon)
+		template_nt = cv2.imread(new_task_img)
+		self.get_color_image(505, 360, 530, 370, 'icon', True)
 		screen = cv2.imread('race_colour_icon.png')
 		try:
-			result = cv2.matchTemplate(screen, template, self.method)
-			fres = np.where(result >= self.threshold)
-			if len(fres[0]) >= 1:
-				print("Race Active!")
+			result_cd = cv2.matchTemplate(screen, template_cd, self.method)
+			result_nt = cv2.matchTemplate(screen, template_nt, self.method)
+			fres_cd = np.where(result_cd >= self.threshold)
+			fres_nt = np.where(result_nt >= self.threshold)
+			if len(fres_cd[0]) >= 1:
+				print("0000000 - Race is not Available! Try again later")
+				return False
+			elif len(fres_nt[0]) >= 1:
+				print("0000000 - New Task Available!")
 				return True
+			else:
+				print("0000000 - Task already selected, no carrots/apples prolly!")
+				return False
 		except:
-			print("Race is not Available! Try again later")
+			print("Uh oh, help!")
 			return False
 
 
 	def race(self):
 		race = self.is_race_ready()
 		if race:
-			print("Clicking Race box")
-			move_and_click(self.race_box_pos, 1)
-			move_and_click(self.race_pos, 1)
 			move_and_click(self.new_task_pos, 1)
 			at = self.available_tasks()
 		else:
-			print("No race available.")
+			move_and_click(self.close, 1)
+			move_and_click(self.close_events, 1)
+			print("0000000 - No race available or no bonus juice!")
 
 
 	def available_tasks(self):
@@ -169,6 +165,7 @@ class Race():
 	def get_colour_of_image(self):
 		im=np.array(Image.open("tmp_colour.png").convert('RGB'))
 		print(im)
+
 
 	def bonus_miles(self):
 		x, y, h, w = (690, 502, 40, 20)
@@ -236,7 +233,6 @@ class Race():
 		self.get_best_task(at_list, out)
 
 
-
 	def get_best_task(self, at_list, mile_list):
 		tsl_1 = (609, 546)
 		tsl_2 = (774, 537)
@@ -261,7 +257,6 @@ class Race():
 			self.bonus_miles()
 			move_and_click(self.close, 1)
 			move_and_click(self.close_events, 1)
-
 
 
 if __name__ == '__main__':
