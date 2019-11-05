@@ -174,7 +174,7 @@ class Race():
 		x, y, h, w = (690, 502, 40, 20)
 		screen = self.get_color_image(x, y, h, w, 'bonus_miles')
 		im=np.array(Image.open("race_colour_bonus_miles.png").convert('RGB'))
-		sought = [[179, 236, 139], [179, 234, 137]]
+		sought = [[179, 236, 139], [179, 234, 137], [178, 231, 134]]
 		try:
 			for s in sought:
 				fres = np.where(np.all(im==s ,axis=2))
