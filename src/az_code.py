@@ -61,8 +61,10 @@ def zoom_out_browser():
     with key.pressed(Key.ctrl):
         key.press('0')
         key.release('0')
+        time.sleep(1)
         key.press('-')
         key.release('-')
+        time.sleep(1)
         key.press('-')
         key.release('-')
 

@@ -507,13 +507,13 @@ class Zone():
 		out_village = self.match_template(screen, cv2.imread(out_village_img_path))
 		egypt = self.match_template(screen, cv2.imread(egypt_img_path))
 		if len(in_village[0]) != 0:
-			#print("We are inside the village")
+			print("We are inside the village")
 			return 1
 		elif len(out_village[0]) != 0:
-			#print("We are outside the village")
+			print("We are outside the village")
 			return 2
 		elif len(egypt[0]) != 0:
-			#print("We are in Egypt")
+			print("We are in Egypt")
 			return 3
 		else:
 			zoom_out_max()
