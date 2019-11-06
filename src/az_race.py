@@ -45,6 +45,7 @@ new_task_img = config['race']['new_task_img']
 five_mile_img = config['race']['five_mile_img']
 ten_mile_img = config['race']['ten_mile_img']
 twenty_mile_img = config['race']['twenty_mile_img']
+supply_chariot_img = config['race']['supply_chariot_img']
 miles_list = [five_mile_img, ten_mile_img, twenty_mile_img]
 
 def get_match_result(ps, template, method, threshold):
@@ -80,6 +81,7 @@ class Race():
 		self.close = (1022, 381)
 		self.close_race = (1045, 402)
 		self.close_events = (1053, 371)
+		self.supply_chariot_pos = (783, 649)
 
 
 	def get_color_image(self, x, y, width, length, tag="default", save=True):
@@ -95,12 +97,31 @@ class Race():
 		logger.info("Saved image: {}".format(fn))
 
 
+	def supply_chariot(self):
+		time.sleep(5)
+		self.get_color_image(505, 360, 530, 370, 'supply', True)
+		try:
+			result = cv2.matchTemplate(cv2.imread('race_colour_supply.png'), cv2.imread(supply_chariot_img), self.method)
+			fres = np.where(result >= self.threshold)
+			if len(fres[0]) >= 1:
+				move_and_click(self.supply_chariot_pos, 1)
+				move_and_click(self.supply_chariot_pos, 1)
+				time.sleep(2)
+				print("0000000 - Found a supply chariot!")
+				return
+			else:
+				print("0000000 - No Chest")
+				return
+		except:
+			return
+
 	def is_race_ready(self):
 		""" 
 			return False if we find race_box.png
 		"""
 		move_and_click(self.race_box_pos, 1)
 		move_and_click(self.race_pos, 1)
+		self.supply_chariot()
 		template_cd = cv2.imread(race_icon)
 		template_nt = cv2.imread(new_task_img)
 		self.get_color_image(505, 360, 530, 370, 'icon', True)
@@ -179,8 +200,8 @@ class Race():
 					move_and_click(self.dbl_miles_pos, 1)
 					return
 				else:
-					print("Trying next colour")
-			print("Not enough carrots/apples, farm more!")
+					print("0000000 - Trying next colour")
+			print("0000000 - Not enough carrots/apples, farm more!")
 			move_and_click(self.double_close_pos, 1)
 		except:
 			print("Something is wrong")
@@ -247,7 +268,7 @@ class Race():
 			index += 1
 		print(best_slot)
 		if best_slot == (0, 0):
-			print("Its bad, dont have mats, closing...")
+			print("0000000 - Its bad, dont have mats, closing...")
 			move_and_click(self.close_race, 1)
 			move_and_click(self.close, 1)
 			move_and_click(self.close_events, 1)
