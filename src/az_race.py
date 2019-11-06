@@ -46,6 +46,7 @@ five_mile_img = config['race']['five_mile_img']
 ten_mile_img = config['race']['ten_mile_img']
 twenty_mile_img = config['race']['twenty_mile_img']
 supply_chariot_img = config['race']['supply_chariot_img']
+so_img = config['race']['so_img']
 miles_list = [five_mile_img, ten_mile_img, twenty_mile_img]
 
 def get_match_result(ps, template, method, threshold):
@@ -82,6 +83,8 @@ class Race():
 		self.close_race = (1045, 402)
 		self.close_events = (1053, 371)
 		self.supply_chariot_pos = (783, 649)
+		self.so_decline = (852, 717)
+		self.so_confirm = (855, 614)
 
 
 	def get_color_image(self, x, y, width, length, tag="default", save=True):
@@ -192,7 +195,7 @@ class Race():
 		x, y, h, w = (690, 502, 40, 20)
 		screen = self.get_color_image(x, y, h, w, 'bonus_miles')
 		im=np.array(Image.open("race_colour_bonus_miles.png").convert('RGB'))
-		sought = [[179, 236, 139], [179, 234, 137], [178, 231, 134]]
+		sought = [[179, 236, 139], [179, 234, 137], [179, 234, 136], [178, 231, 134]]
 		try:
 			for s in sought:
 				fres = np.where(np.all(im==s ,axis=2))
@@ -276,6 +279,9 @@ class Race():
 			move_and_click(tsl[best_slot[0]], 1)
 			move_and_click(self.go_pos, 1)
 			self.bonus_miles()
+			time.sleep(5)
+			move_and_click(self.so_decline, 1)
+			move_and_click(self.so_confirm, 1)
 			move_and_click(self.close, 1)
 			move_and_click(self.close_events, 1)
 
