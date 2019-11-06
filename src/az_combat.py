@@ -41,6 +41,8 @@ attack_screen_dimensions = ()
 in_village_img_path = config['zones']['in_village_img_path']
 out_village_img_path = config['zones']['out_village_img_path']
 egypt_img_path = config['zones']['egypt_img_path']
+zoomed_in_img = config['zones']['zoomed_in_img']
+
 
 class Combat():
 	def __init__(self):
@@ -215,7 +217,9 @@ class Combat():
 		move_and_click(attack_button_pos)
 		time.sleep(0.2)
 		move_and_click(attack_button_pos)
-		time.sleep(0.2)
+		time.sleep(2)
+		refresh_checker()
+
 
 
 	def get_ctw(self, cord):
@@ -471,8 +475,8 @@ class Legion():
 
 class Zone():
 	def __init__(self):
-		self.screen_w = 1488
-		self.screen_h = 925
+		self.screen_w = 1418
+		self.screen_h = 765
 		self.x = 70
 		self.y = 160
 
@@ -498,26 +502,37 @@ class Zone():
 			3 - Egypt
 			4 - Error
 		"""
+		# Get to a known state
 		refresh_checker() # refresh_checker - Get rid of any popups
-		nav_top_l(3) # reset position to top left
-		zoom_out_max()
+		nav_top_l(3)
+		move_and_click((1028, 411), 1)
 		self.get_screen() # full screen grab
 		screen = cv2.imread('tmp.png')
+		
+		# Check Zoom state, only zoom out if needed.
+		zoomed_in_result = self.match_template(screen, cv2.imread(zoomed_in_img))
+		if len(zoomed_in_result[0]) == 0:
+			print("ZZZZZZZ - Not zoomed out fully! Zooming out!")
+			zoom_out_max()
+			self.where_am_i()
+		else:
+			print("ZZZZZZZ - Zoom looks good, carry on!")
+
+		# Iterate through the village states
 		in_village = self.match_template(screen, cv2.imread(in_village_img_path))
 		out_village = self.match_template(screen, cv2.imread(out_village_img_path))
 		egypt = self.match_template(screen, cv2.imread(egypt_img_path))
 		if len(in_village[0]) != 0:
-			print("We are inside the village")
+			print("ZZZZZZZ - We are inside the village")
 			return 1
 		elif len(out_village[0]) != 0:
-			print("We are outside the village")
+			print("ZZZZZZZ - We are outside the village")
 			return 2
 		elif len(egypt[0]) != 0:
-			print("We are in Egypt")
+			print("ZZZZZZZ - We are in Egypt")
 			return 3
 		else:
-			zoom_out_max()
-			print("Where the fuck are we?!")
+			print("ZZZZZZZ - Where the fuck are we?!")
 			return 4
 
 
@@ -563,11 +578,12 @@ def strength():
 	lg.ready_to_attack()
 	cz = Zone()
 	zone = cz.where_am_i()
-	while zone != 1:
-		refresh_checker()
-		zoom_out_max()
+	if zone == 2:
 		move_and_click(lg.village_pos)
 		zone = cz.where_am_i()
+	elif zone == 4:
+		zone = cz.where_am_i()
+
 
 def get_zone():
 	cz = Zone()

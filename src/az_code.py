@@ -55,9 +55,6 @@ def get_cords():
 
 
 def zoom_out_browser():
-    #key.press(Key.ctrl)
-    #key.press(Key.)
-    #key.release(Key.ctrl)
     with key.pressed(Key.ctrl):
         key.press('0')
         key.release('0')
@@ -69,8 +66,8 @@ def zoom_out_browser():
         key.release('-')
 
 def zoom_out_max():
-    move_and_click((497, 186), 1)
-    zoom_out_browser()
+    
+    #zoom_out_browser()
     mouse.scroll(0, -10)
     time.sleep(0.5)
     mouse.scroll(0, -10)
