@@ -5,6 +5,7 @@ import json
 import datetime
 from az_code import *
 from az_farmer import *
+from az_imaging import *
 import pyscreenshot as ImageGrab
 from PIL import ImageOps
 from numpy import *
@@ -85,7 +86,7 @@ class Inventory():
 		self.screen_h = 925
 		self.search_pos = (466, 395)
 		self.search_clear = (542, 394)
-		self.anchor = get_anchor()
+		#self.anchor = get_anchor()
 		self.img_path = '/opt/dev/az/templates/inventory/items/'
 		self.sell_cord_list = [(687, 519), (815, 518), (939, 518), (679, 663), (813, 663), (943, 664)]
 		self.sell_cord_sell = (781, 639)
@@ -187,7 +188,7 @@ class Inventory():
 		""" given and item name, we will search for it """
 		self.open_bag_force()
 		self.search_clear_bar()
-		secure_click(self.search_pos, self.anchor, 0.5)
+		move_and_click(self.search_pos, 0.5)
 		key.type(item_name)
 		key.press(Key.enter)
 		key.release(Key.enter)
@@ -196,8 +197,8 @@ class Inventory():
 
 	def search_clear_bar(self):
 		""" Clear Search bar """
-		secure_click(self.search_clear, self.anchor, 1)
-		secure_click(self.search_clear, self.anchor, 1)
+		move_and_click(self.search_clear, 1)
+		move_and_click(self.search_clear, 1)
 
 
 	def inv_nav_left(self, bag_cord):
@@ -209,7 +210,7 @@ class Inventory():
 		logger.info("Navigating inventory left")
 
 
-	def inv_nav_right(self, bag_cord):
+	def inv_nav_right(self):
 		""" 
 			Function to navigate the inventory widget right based on anchor 
 		"""
@@ -283,9 +284,9 @@ class Inventory():
 	def delete_item(self, cord, num_sells):
 		#print("Deleting Item {} times".format(num_sells))
 		while num_sells > 0:
-			secure_click(cord, self.anchor, 0.5)
-			secure_click(self.sell_cord_minus, self.anchor, 0.5)
-			secure_click(self.sell_cord_sell, self.anchor, 0.5)
+			move_and_click(cord, 0.5)
+			move_and_click(self.sell_cord_minus, 0.5)
+			move_and_click(self.sell_cord_sell, 0.5)
 			num_sells -= 1
 
 
@@ -327,11 +328,104 @@ class Inventory():
 
 
 	def close(self):
-		secure_click((992, 374), self.anchor, 1)
+		move_and_click((992, 374), 1)
 
 
-if __name__ == '__main__':
-	move_and_click((763, 72))
+class Stock():
+	def __init__(self):
+		self.il = ImageLoader()
+		self.inv = Inventory()
+		self.inv.open_bag_force()
+		self.method = cv2.TM_CCOEFF_NORMED
+		self.threshold = 0.98
+		self.x = 430
+		self.y = 340
+		self.w = 1000
+		self.h = 730
+		self.slot_1 = ()
+		self.slot_2 = ()
+		self.slot_3 = ()
+		self.slot_4 = ()
+		self.slot_5 = ()
+		self.slot_6 = ()
+
+
+	def count_page(self, item_name, dir_path):
+		self.inv.get_color_image(self.x, self.y, self.w, self.h, 'stock')
+		template_list = self.il.load_images_from_dir(dir_path)
+		screen = cv2.imread('colorimg-stock.png')
+		unflattened = []
+		for template in template_list:
+			result = cv2.matchTemplate(screen, template, self.method)
+			fres = np.where(result >= self.threshold)
+			slot_cords = list(zip(fres[1]+self.x, fres[0]+self.y))
+			out = []
+			for entry in slot_cords:
+				out.append(self.get_inv_slot(entry))
+			unflattened.append(out)
+		flattened = []
+		for i in unflattened:
+			flattened = flattened + i
+		out = sorted(np.unique(flattened))
+		return out
+
+
+	def count_item(self, item_name, dir_path, stack_size):
+		self.inv.search_item(item_name)
+		first = self.count_page(item_name, dir_path)
+		count = len(first)
+		while 6 in first:
+			self.inv.inv_nav_right()
+			first = self.count_page(item_name, dir_path)
+			count += len(self.count_page(item_name, dir_path))
+		count = (count - 1)*stack_size
+		print("{}-{} {}".format(count, count+stack_size, item_name))
+		self.inv.close()
+		return count
+
+
+	def get_item(self, item_name):
+		self.inv.search_item(item_name)
+		self.inv.get_color_image(self.x, self.y, self.w, self.h, 'get_stock')
+
+
+	def get_inv_slot(self, cord):
+		""" 5
+			cord = (1000, 2000) 
+			pos1 = ( x < 750,  y < 550)
+			pos2 = (<1200, >800<1200)
+			pos3 = (<1200, >1200)
+			pos4 = (>1200, <800)
+			pos5 = (>1200, >800<1200)
+			pos6 = (>1200, >1200)
+
+		"""
+		x1= 710
+		x2= 840
+		y= 530
+		if cord[1] < y and cord[0] < x1:
+			out = 1
+			return out
+		elif cord[1] < y and x1 < cord[0] < x2:
+			out = 2
+			return out
+		elif cord[1] < y and cord[0] > x2:
+			out = 3
+			return out
+		elif cord[1] > y and cord[0] < x1:
+			out = 4
+			return out
+		elif cord[1] > y and x1 < cord[0] < x2:
+			out = 5
+			return out
+		elif cord[1] > y and cord[0] > x2:
+			out = 6
+			return out
+		else:
+			print("Couldn't find a slot... weird!")
+
+
+def delete_inv():
 	inventory = Inventory()
 	#inventory.get_color_image()
 	refresh_checker()
@@ -342,4 +436,14 @@ if __name__ == '__main__':
 	inventory.delete_all_of_item(fish_img_loc, 'fish')
 	refresh_checker()
 	inventory.delete_all_of_item(iron_scraps_img_loc, 'iron scraps')
-	inventory.close()
+	inventory.close()	
+
+
+if __name__ == '__main__':
+	delete_inv()
+	#s = Stock()
+	#s.count_item('stone blocks', '../templates/inventory/items/stone_blocks/', 10)
+
+
+
+#TODO: Horns

@@ -29,6 +29,12 @@ def swap_windows():
 	keyboard.release('`')
 	keyboard.release(Key.cmd)
 
+def unmaximise():
+    keyboard = Controller()
+    keyboard.press(Key.alt)
+    keyboard.press(Key.f10)
+    keyboard.release(Key.alt)
+    keyboard.release(Key.f10)
 
 def listen():
     quit_list = ["q"]

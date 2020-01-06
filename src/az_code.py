@@ -100,6 +100,13 @@ def move_and_click(pos, sleep_time=1):
     time.sleep(sleep_time)
 
 
+def move_and_dbl_click(pos, sleep_time=1):
+    mousePos(pos, 1)
+    mouse.click(Button.left, 0)
+    mouse.click(Button.left, 0)
+    time.sleep(sleep_time)
+
+
 def move_screen(start_point, end_point):
     """input:
         start_point

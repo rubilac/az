@@ -13,6 +13,8 @@ import cv2
 import warnings
 import subprocess
 from keyboard import *
+import toml
+config = toml.load('.config')
 
 
 trs_x = 70
@@ -26,7 +28,8 @@ threshold = 0.8
 
 # Button positions
 refresh_button = (769, 600)
-decline_special_offer = (-421, 598) #
+decline_special_offer = (855, 717) #
+confirm_decline = (853, 614)
 ok_pos = (833, 712)
 complete_pos = (750, 715) #
 sesterce_close_pos = (1052, 420)
@@ -38,10 +41,12 @@ credit_pos = (1016, 607)
 food_pos = (1049, 420)
 limit_pos = (906, 418)
 daily_bonus_pos = (781, 691)
+congratulations_pos = (783, 680)
+achievements_close = (1081, 356)
+race_on_pos = (783, 693)
 
 # Image locations
 refresh_img = '/opt/dev/az/templates/popups/refresh.png'
-special_offer_img = '/opt/dev/az/templates/popups/special_offer.png'
 ok_img = '/opt/dev/az/templates/popups/ok.png'
 complete_img = '/opt/dev/az/templates/popups/complete.png'
 sesterce_img = '/opt/dev/az/templates/popups/sesterce.png'
@@ -53,6 +58,11 @@ credit_img = '/opt/dev/az/templates/popups/credit_or_debit.png'
 food_img = '/opt/dev/az/templates/popups/food.png'
 limit_img = '/opt/dev/az/templates/popups/limit_reached.png'
 daily_bonus_img = '/opt/dev/az/templates/popups/daily_bonus.png'
+congratulations_img = config['popups']['congratulations']
+special_offer_img = config['popups']['special_offer']
+race_on_img = config['popups']['race_on']
+
+
 
 template_path_boar = '/opt/dev/az/templates/boar/'
 load_boars = os.listdir(template_path_boar)
@@ -82,8 +92,9 @@ def refresh_checker():
     threshold = 0.97
     popup_exists = False
     refresh_check()
-    #special_offer_check(screen)
+    special_offer_check(screen)
     ok_check(screen)
+    congratulations_check(screen)
     quest_complete_check(screen)
     get_more_sesterce_check(screen)
     get_more_roman_helmets_check(screen)
@@ -94,6 +105,8 @@ def refresh_checker():
     credit_check(screen)
     food_check(screen)
     limit_check(screen)
+    race_on_check(screen)
+
 
 def refresh_check():
     template = cv2.imread(refresh_img)
@@ -128,7 +141,7 @@ def special_offer_check(screen):
         print("Special offer popup found, clicking decline!")
         move_and_click(decline_special_offer, 1)
         time.sleep(1)
-        secure_click((-417, 543), anchor, 1) #change
+        secure_click(confirm_decline, anchor, 1) #change
     except:
         pass
 
@@ -142,6 +155,37 @@ def ok_check(screen):
         test = fres[0][0] > 0
         print("Ok button found, clicking ok!")
         move_and_click(ok_pos, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def race_on_check(screen):
+    template = cv2.imread(race_on_img, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Race on button found, clicking Race on!")
+        move_and_click(race_on_pos, 1)
+        time.sleep(1)
+    except:
+        pass
+
+
+def congratulations_check(screen):
+    template = cv2.imread(congratulations_img, cv2.IMREAD_GRAYSCALE)
+    result = cv2.matchTemplate(screen, template, method)
+    fres = np.where(result >= threshold)
+    try:
+        test = fres[0][0] > 0
+        print("Congratulations popup found, clicking complete!")
+        move_and_click(congratulations_pos, 1)
+        popup_grab()
+        screen = cv2.imread("popup.png", cv2.IMREAD_GRAYSCALE)
+        refresh_checker(screen)
+        print("Closing Achievements")
+        move_and_click(achievements_close, 1)
         time.sleep(1)
     except:
         pass
@@ -646,6 +690,7 @@ def cycle():
         clear_segment_type(n)
     refresh_checker()
     fish_path()
+    collect_path()
 
 
 def one_cycle():
@@ -724,23 +769,18 @@ def is_limit_reached(anchor):
 
 
 def collect_path():
-    anchor = get_anchor()
-    print("Starting Collecting now!")
+    print("Starting Collecting RP Now!")
     navy('top_right', 4)
-    secure_click((15, 162), anchor, 1)
-    secure_click((-1025, 634), anchor, 1)
-    secure_click((-942, 543), anchor, 1)
-    secure_click((-832, 595), anchor, 1)
+    move_and_click((1423, 335), 1)
     navy('bottom_right', 2)
-    secure_click((-178, 694), anchor, 1)
-    move_screen_left(2, 300)
-    secure_click((-592, 860), anchor, 1)
-    secure_click((-178, 694), anchor, 1)
+    move_and_click((1263, 705), 1)
+    move_and_click((454, 839), 1)
+    move_and_click((161, 487), 1)
     navy('bottom_left', 2)
-    secure_click((-814, 815), anchor, 1)
-    navy('top_left', 3)
-    secure_click((-830, 468), anchor, 1)
-    secure_click((-530, 294), anchor, 1)
+    move_and_click((310, 818), 1)
+    move_and_click((303, 220), 1)
+    navy('top_left', 2)
+    move_and_click((540, 443), 1)
 
 
 def anchor_convert(anchor, cord):

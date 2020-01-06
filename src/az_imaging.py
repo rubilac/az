@@ -1,5 +1,6 @@
 import pyscreenshot as ImageGrab
 import os
+import cv2
 from az_code import *
 from az_farmer import *
 from PIL import Image
@@ -49,12 +50,36 @@ def get_num_from_image(image):
 	return api.GetUTF8Text()
 
 
+class ImageLoader():
+	def __init__(self):
+		#print("Image Loader Initiated!")
+		pass
+
+
+	def load_images_from_dir(self, dir_path, colour=1):
+		"""
+			input: directory path
+			output: a list of cv2 loaded images
+		"""
+		images = os.listdir(dir_path)
+		loaded_images = []
+		for image in images:
+			if image.startswith('.'):
+				pass
+			elif image.endswith('.png'):
+				tmp_img = cv2.imread(dir_path+image)
+				loaded_images.append(tmp_img)
+			else:
+				pass
+		#print("{} images loaded from {}".format(len(loaded_images), dir_path))
+		return loaded_images
+
+
+
+
+
 if __name__ == '__main__':
-	#segment_grab_custom(food_cords, 'food')
-	get_num_from_image('segment_food.jpg')
-	#fixup_images()
-	#print("Colour Images")
-	#for image in images:
-	#	get_num_from_image(image)
-	#print(ocr_core('out.png'))
-	#print(ocr_core('segment_total.png'))
+	il = ImageLoader()
+	il.load_images_from_dir('../templates/brawl/coal/')
+
+

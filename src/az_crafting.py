@@ -6,13 +6,18 @@ import numpy as np
 import cv2
 from az_code import *
 from az_farmer import *
+from az_imaging import ImageLoader
+from az_cord_helper import CordHelper
+from az_inv import Stock, Inventory
 import pyscreenshot as ImageGrab
 from PIL import ImageOps
 from numpy import *
 from pynput.mouse import Controller
-from az_cord_helper import CordHelper
+
 import logging
 import toml
+
+
 config = toml.load('.config')
 
 mouse = pynput.mouse.Controller()
@@ -81,6 +86,11 @@ gaul_soup_img = '/opt/dev/az/templates/inventory/items/gaul_soup_single_2.png'
 #Tavern
 tavern_pos = (792, 703)
 
+#Water
+water_well_pos = (823, 535)
+
+#Foodpath
+food_level_path = '../templates/food_level/'
 
 class Craft():
 	def __init__(self):
@@ -113,6 +123,25 @@ class Craft():
 		a = a.sum()
 		logger.info("Got grayscale image: {}".format(a))
 		return int(a)
+
+
+	def load_image_from_dir(self, item_dir):
+		il = ImageLoader()
+		img_obj_list = il.load_images_from_dir(item_dir)
+		return img_obj_list
+
+
+	def get_color_image(self, x=1, y=1, w=1250, h=920, tag='merch_col'):
+		"""
+			Given x, y cords and width and length size, take a grayscale image and return the
+			summed value.
+			Option to save the image is off by default.
+		"""
+		box = (x, y, x+w, y+h)
+		im = ImageGrab.grab(box)
+		fn = "tmp_{}.png".format(tag)
+		im.save(fn,'PNG')
+		logger.info("Saved image: {}".format(fn))
 
 
 	def building_state(self, building):
@@ -276,7 +305,7 @@ class Craft():
 			move_and_click(blank_spot, 1)
 			move_and_click(leatherworker_pos, 1)
 			move_and_click(leatherworker_build, 1) 
-			move_and_click(first_pos, 1)
+			move_and_click(third_pos, 1)
 			move_and_click(craft_pos, 0.2)
 			move_and_click(craft_pos, 0.2)
 			move_and_click(craft_pos, 0.2)
@@ -426,6 +455,57 @@ class Craft():
 
 	def collect_tavern(self):
 		move_and_click(tavern_pos, 1)
+		#otherr
+
+
+	def max_food_check(self):
+		x, y, w, h = (1092, 158, 200, 80)
+		self.get_color_image(x, y, w, h, 'fc')
+		fll = self.load_image_from_dir(food_level_path)
+		screen = cv2.imread('tmp_fc.png')
+		for f in fll:
+			try:
+				result = cv2.matchTemplate(screen, f, method) # Does it match?
+				fres = np.where(result >= 0.90)
+				if fres[0].size == 0:
+					pass
+				elif fres[0].size > 1:
+					print("Food Level full, do stuff breh!")
+					return True
+				else:
+					print("Food Level full, do stuff breh!")
+					return True		
+			except:
+				print("Somethings wrong in max_food_check")
+		print("Food not full, keep grinding...")
+		return False
+
+
+	def get_water(self, n):
+		if self.max_food_check() != False:	
+			print("Fetching water {} times.".format(n))
+			while n > 0:
+				move_and_click(water_well_pos, 1)
+				n -= 1
+			print("Finished fetching water.")
+		else:
+			return False
+
+
+	def water_level(self):
+		max_water = 50
+		s = Stock()
+		water_count = s.count_item('water', '../templates/inventory/items/water/', 10)
+		if water_count < max_water:
+			water_counter = max_water-water_count
+			if water_counter > 20: # Never collect more than 20 water in 1 shot.
+				water_counter = 20
+			print("Max water is {} and current water is {}".format(max_water, water_counter))
+			self.get_water(water_counter)
+		else:
+			print("Water levels full, carry on your business")
+			pass
+
 
 	def craft(self):
 		ccfg = config['crafting']
@@ -513,9 +593,10 @@ class Craft():
 
 
 if __name__ == '__main__':
-	zoom_out()
+	#zoom_out()
 	crafter = Craft()
+	crafter.water_level()
 	crafter.craft()
 	crafter.restock()
-	#town_grab(crafter.town_x, crafter.town_y, crafter.town_w, crafter.town_h)
+	#nav_to_town()
 

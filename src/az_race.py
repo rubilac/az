@@ -223,7 +223,7 @@ class Race():
 		out = []
 		for i in miles_list:
 			result = cv2.matchTemplate(screen, cv2.imread(i), self.method)
-			fres = np.where(result >= self.threshold)
+			fres = np.where(result >= 0.94)
 			try:
 				fres = list(zip(fres[0], fres[1]))
 			except:
