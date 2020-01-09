@@ -56,7 +56,7 @@ class Brawl():
 		self.ironix = [(562, 680), 'ironix']
 		self.baltix = [(658, 680), 'baltix']
 		self.lyrix = [(738, 680), 'lyrix']
-		self.brawler_list = ['worker', 'edifis', 'ekonomikrisis', 'pointandclix', 'lunatix', 'ironix', 'baltix', 'democratix', 'lyrix']
+		self.brawler_list = ['worker','lunatix', 'ekonomikrisis', 'pointandclix', 'edifis', 'lyrix', 'ironix', 'baltix', 'democratix', ]
 		self.brawler_path = '../templates/brawl/villagers/'
 		self.full_brawler_list = [self.pointandclix, self.worker, self.lunatix, self.ekonomikrisis, self.ironix, self.lyrix, self.edifis, self.democratix, self.baltix]
 		# Squads
@@ -65,7 +65,7 @@ class Brawl():
 		self.squad_3 = [self.edifis[0], self.democratix[0], self.baltix[0]]
 		self.squad_list = [self.squad_1, self.squad_2, self.squad_3]
 		self.squad_loser = [self.pointandclix[0], self.democratix[0], self.lunatix[0]]	
-		self.item_list = ['coal', 'salt', 'rockoil']
+		self.item_list = self.list_from_config()
 		self.equipment_list = ['carpet', 'obelisk']
 		self.item_dir = '../templates/brawl/'
 		self.equipment_dir = '../templates/brawl/equipment/'
@@ -79,6 +79,16 @@ class Brawl():
 		nav_to_town()
 		move_and_click(self.ring_pos, 1)
 		move_and_click(self.challenge, 1)
+
+
+	def list_from_config(self):
+		out_list = []
+		for i in config['brawl_items']:
+			if config['brawl_items'][i] == "True" or config['brawl_items'][i] ==  True:
+				out_list.append(i)
+		print("Items to brawl farm: {}".format(out_list))
+		return out_list
+
 
 
 	def get_image(self, x=400, y=330, width=1150, length=760, tag="brawl"):
@@ -349,15 +359,12 @@ class Brawl():
 
 	def org_fight(self):
 		refresh_checker()
-		if self.all_available():
-			for squad in self.squad_list:
-				refresh_check()
-				self.squad_fight(squad)
-		else:
-			while len(self.whose_available()) >= 3:
-				tmp_squad = self.squad_generator()
-				self.squad_fight(tmp_squad)
-				self.whose_available()
+		self.open_ring()
+		time.sleep(2)
+		while len(self.whose_available()) >= 3:
+			tmp_squad = self.squad_generator()
+			self.squad_fight(tmp_squad)
+			self.whose_available()
 		move_and_click(self.close_pos, 1)
 
 
