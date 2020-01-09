@@ -115,7 +115,7 @@ class Craft():
 		self.potion_safe_spot = (746, 354)
 		self.brew_path = '../templates/potions/brew/'
 		refresh_checker()
-		is_popup()
+		#is_popup()
 		nav_to_town()
 
 
