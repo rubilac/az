@@ -100,6 +100,12 @@ def move_and_click(pos, sleep_time=1):
     time.sleep(sleep_time)
 
 
+def quick_click(pos, sleep_time=1):
+    mousePos(pos, 0)
+    mouse.click(Button.left, 1)
+    #time.sleep(sleep_time)
+
+
 def move_and_dbl_click(pos, sleep_time=1):
     mousePos(pos, 1)
     mouse.click(Button.left, 0)
