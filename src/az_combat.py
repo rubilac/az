@@ -44,6 +44,12 @@ egypt_img_path = config['zones']['egypt_img_path']
 zoomed_in_img = config['zones']['zoomed_in_img']
 
 
+def curr_time():
+	now = datetime.datetime.now()
+	current_time = now.strftime("%y%m%d%H%M%S")
+	return current_time
+
+
 class Combat():
 	def __init__(self):
 		self.screen_w = 1488
@@ -168,7 +174,6 @@ class Combat():
 	def get_atk_screen(self, cord):
 		#cord = self.get_combat_page_cord()
 		#cord = self.correct_cords(cord, 2, self.x, self.y)
-		print(cord)
 		x = cord[0]
 		y = cord[1]
 		x_s = x-240
@@ -300,9 +305,15 @@ class Legion():
 
 	def get_strength(self):
 		segment_grab_custom(self.strength_cords, 'strength') #
-		strength = int(get_num_from_image('segment_strength.jpg'))
+		try:
+			strength = int(get_num_from_image('segment_strength.jpg'))
+		except:
+			ct = curr_time()
+			fn = 'tmp_str_dump/str_{}.png'.format(ct)
+			print("Failed to resolved number")
+			return False
 		if strength > 170:
-			print("Strenght read badly, failing...")
+			print("Strength read badly, failing...")
 			return False
 		else:
 			print("********Strength is : {}".format(strength))
@@ -424,13 +435,18 @@ class Legion():
 		else:
 			screen = cv2.imread('village.png')
 		for enemy in enemies:
-			result = cv2.matchTemplate(screen, enemy, method)
-			fres = np.where(result >= 0.95)
-			if len(fres[0]) >= 1:
-				print("Attacker found @ {} {}".format(fres[1][0], fres[0][0]))
-				cord = (fres[1][0], fres[0][0])
-				return cord
+			if enemy is None:
+				pass
+			else:
+				#print(enemy.sum())
+				result = cv2.matchTemplate(screen, enemy, method)
+				fres = np.where(result >= 0.95)
+				if len(fres[0]) >= 1:
+					print("Attacker found @ {} {}".format(fres[1][0], fres[0][0]))
+					cord = (fres[1][0], fres[0][0])
+					return cord
 		print("No Attackers present, going back into town")
+		self.get_failed_to_find_attackers()
 		move_and_click(self.village_pos)
 		return False
 
@@ -471,6 +487,14 @@ class Legion():
 		y_s = 250
 		village_screen = self.get_screen_segment('village.png',x_s, y_s, 300, 200)
 		return village_screen
+
+
+	def get_failed_to_find_attackers(self):
+		x_s = 350
+		y_s = 250
+		ct = curr_time()
+		fp = 'tmp_village_dump/village_{}.png'.format(ct)
+		self.get_screen_segment(fp, x_s, y_s, 300, 200)	
 
 
 class Zone():
@@ -536,7 +560,6 @@ class Zone():
 			return 4
 
 
-
 def clear_segment():
 	cm = Combat()
 	c_l = cm.find_all_enemies(cm.enemies)
@@ -595,10 +618,4 @@ if __name__ == '__main__':
 	move_and_click((763, 42))
 	clear_all_enemies()
 	strength()
-	#get_zone()
-	#zoom_out() # Focus Chrome frame!
-	#cm = Legion()
-	#cm.get_screen('tmp_find.png',True)
-	#cm.where_am_i()
-	#cord = (cm.get_combat_page_cord())
-	#cm.get_atk_screen(cord)
+	

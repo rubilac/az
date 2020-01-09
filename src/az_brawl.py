@@ -72,6 +72,7 @@ class Brawl():
 		# Potions
 		self.first_pot_pos = (689, 510)
 		self.item_pos = ()
+		self.promoted = (957, 410)
 
 
 
@@ -366,6 +367,7 @@ class Brawl():
 			self.squad_fight(tmp_squad)
 			self.whose_available()
 		move_and_click(self.close_pos, 1)
+		move_and_click(self.promoted, 1)
 
 
 	def test_fight(self):
