@@ -114,6 +114,9 @@ class Craft():
 		self.potion_crafting = (450, 350, 660, 420)
 		self.potion_safe_spot = (746, 354)
 		self.brew_path = '../templates/potions/brew/'
+		refresh_checker()
+		is_popup()
+		nav_to_town()
 
 
 	def get_image(self, x=1, y=1, width=1250, length=920, save=True):
@@ -662,6 +665,12 @@ class Craft():
 			print('Skipping butcher crafting')
 		else:
 			print('I dont know how to do that at the butcher')
+		self.craft_stone() # Stone Mason
+		self.craft_wood_plank() # Carpenter
+		self.craft_nails() # Blacksmith
+		self.craft_leather() # Leatherworker
+		self.craft_gaul_soup() # Butcher
+		self.craft_fish_soup() # Fish Market
 
 
 	def restock(self):

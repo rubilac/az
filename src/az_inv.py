@@ -447,7 +447,6 @@ class Stock():
 
 def delete_inv():
 	inventory = Inventory()
-	#inventory.get_color_image()
 	refresh_checker()
 	inventory.delete_all_of_item(boar_skin_img_loc, 'boar skins')
 	refresh_checker()
@@ -465,7 +464,3 @@ if __name__ == '__main__':
 	for i in full_item_list:
 		item_dir = s.dir_path_gen(i[0])
 		s.count_item(i[0], item_dir, i[1]) # 0 - string, 1 - stack size
-
-
-
-#TODO: Horns
