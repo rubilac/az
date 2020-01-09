@@ -440,6 +440,7 @@ def delete_inv():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD:src/az_inv.py
 	delete_inv()
 	#s = Stock()
 	#s.count_item('stone blocks', '../templates/inventory/items/stone_blocks/', 10)
@@ -447,3 +448,16 @@ if __name__ == '__main__':
 
 
 #TODO: Horns
+=======
+	inventory = Inventory()
+	is_popup()
+	inventory.delete_all_of_item('boar skins')
+	is_popup()
+	inventory.delete_all_of_item('entrails')
+	is_popup()
+	inventory.delete_all_of_item('fish')
+	inventory.close()
+	#inventory.delete_items_from_pane('fish')
+	#inventory.delete_items_from_pane('entrails')
+	#inventory.delete_items_from_pane('boar skins')
+>>>>>>> 92c7ccde539f69b9b72cc8083feea5cb3f6411bf:src/inv_backup.py

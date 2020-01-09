@@ -101,7 +101,11 @@ class Craft():
 		self.town_h = 450
 		self.sell_cord_list = [(645, 460), (764, 460), (913, 460), (645, 600), (764, 600), (913, 600)]
 		print("Crafting Module Engaged!")
+<<<<<<< HEAD
 		refresh_checker()
+=======
+		is_popup()
+>>>>>>> 92c7ccde539f69b9b72cc8083feea5cb3f6411bf
 		nav_to_town()
 
 
@@ -508,6 +512,7 @@ class Craft():
 
 
 	def craft(self):
+<<<<<<< HEAD
 		ccfg = config['crafting']
 		print(ccfg)
 
@@ -574,6 +579,14 @@ class Craft():
 			print('Skipping butcher crafting')
 		else:
 			print('I dont know how to do that at the butcher')
+=======
+		self.craft_stone() # Stone Mason
+		self.craft_wood_plank() # Carpenter
+		self.craft_nails() # Blacksmith
+		self.craft_leather() # Leatherworker
+		self.craft_gaul_soup() # Butcher
+		self.craft_fish_soup() # Fish Market
+>>>>>>> 92c7ccde539f69b9b72cc8083feea5cb3f6411bf
 
 
 	def restock(self):
