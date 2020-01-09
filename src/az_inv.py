@@ -65,6 +65,11 @@ def get_match_result(ps, template, method, threshold):
 		return fres
 
 
+full_item_list = [['racing gloves', 10], ['map', 10], ['paintbrush', 10], ['chariot jack', 10], ['racing shirt', 10], ['horn', 10], ['chariot permit', 10], ['flagstone', 10], ['reins', 10], ['wheels', 5], ['grease', 10], ['milestone', 5], ['oats', 5], ['whip', 10], ['coal', 10], ['water', 10], ['salt', 10], ['nail', 5], ['leather', 5], ['leather strap', 5]]
+item_list_city = ['racing gloves', 'maps', 'paintbrush', 'chariot jack', 'racing shirt', 'horn', 'chariot permit']
+item_list_road = ['flagstone', 'reins', 'wheels', 'chariot', 'grease', 'milestone', 'oats', 'whip']
+item_list_materials = ['coal', 'water', 'salt', 'wooden plank', 'nail', 'leather', 'leather strap']
+
 class Inventory():
 	"""
 		This class manages the inventory of a player and can:
@@ -348,6 +353,7 @@ class Stock():
 		self.slot_4 = ()
 		self.slot_5 = ()
 		self.slot_6 = ()
+		self.item_dir = '../templates/inventory/items/'
 
 
 	def count_page(self, item_name, dir_path):
@@ -384,9 +390,23 @@ class Stock():
 		return count
 
 
-	def get_item(self, item_name):
+	def dir_path_gen(self, item_name):
+		if ' ' in item_name:
+			rs = item_name.split(' ')
+			item_name = "{}_{}".format(rs[0], rs[1])
+		out = "{}{}/".format(self.item_dir, item_name)
+		#print(out)
+		return out
+
+
+	def get_item(self, item_name, save=False):
 		self.inv.search_item(item_name)
 		self.inv.get_color_image(self.x, self.y, self.w, self.h, 'get_stock')
+
+
+	def save_item_page(self, item_name):
+		self.inv.search_item(item_name)
+		self.inv.get_color_image(self.x, self.y, self.w, self.h, item_name)		
 
 
 	def get_inv_slot(self, cord):
@@ -441,8 +461,10 @@ def delete_inv():
 
 if __name__ == '__main__':
 	delete_inv()
-	#s = Stock()
-	#s.count_item('stone blocks', '../templates/inventory/items/stone_blocks/', 10)
+	s = Stock()
+	for i in full_item_list:
+		item_dir = s.dir_path_gen(i[0])
+		s.count_item(i[0], item_dir, i[1]) # 0 - string, 1 - stack size
 
 
 

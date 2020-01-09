@@ -12,6 +12,8 @@ config = toml.load(fn)
 
 launch_falkon = ['falkon', '&>/dev/null']
 
+url = 'https://www.asterix-friends.com/en/login'
+
 class Launch():
 	def __init__(self):
 		pass

@@ -92,6 +92,16 @@ water_well_pos = (823, 535)
 #Foodpath
 food_level_path = '../templates/food_level/'
 
+#Potion
+potion_pos = (235, 494)
+brew_pos = (307, 492)
+potion_pg_up = (509, 527)
+potion_pg_dn = (510, 748)
+potion_close = (1109, 353)
+potion_list = ["major_potion_of_blocking", "major_potion_of_strength", "incredible_potion_of_knockout", "major_stonebreaker_potion"]
+potion_dir = '../templates/potions/'
+
+
 class Craft():
 	def __init__(self):
 		from az_farmer import town_grab, refresh_checker
@@ -101,8 +111,9 @@ class Craft():
 		self.town_h = 450
 		self.sell_cord_list = [(645, 460), (764, 460), (913, 460), (645, 600), (764, 600), (913, 600)]
 		print("Crafting Module Engaged!")
-		refresh_checker()
-		nav_to_town()
+		self.potion_crafting = (450, 350, 660, 420)
+		self.potion_safe_spot = (746, 354)
+		self.brew_path = '../templates/potions/brew/'
 
 
 	def get_image(self, x=1, y=1, width=1250, length=920, save=True):
@@ -346,6 +357,83 @@ class Craft():
 		else:
 			print("Tailor is busy, not crafting")
 
+
+	def get_potion_images(self):
+		print("Crafting Potions")
+		nav_top_l(2)
+		move_and_click(potion_pos, 1)
+		move_and_click(brew_pos, 1)
+		x, y, w, h = self.potion_crafting
+		n = 5
+		while n > 0:
+			r = "potion_craft_{}".format(n)
+			self.get_color_image(x, y, w, h, r)
+			move_and_click(potion_pg_dn, 1)
+			n -= 1
+
+
+	def craft_potion(self, potion):
+		print("Crafting Potions")
+		nav_top_l(2)
+		move_and_click(potion_pos, 1)
+		move_and_click(brew_pos, 1)
+		move_and_click(self.potion_safe_spot, 1)
+		cord = self.potion_find(potion)
+		move_and_click(cord, 1)
+		move_and_click(self.potion_safe_spot, 1)
+		print("Check if available")
+		time.sleep(2)
+		cord = self.potion_brew()
+		if cord != False:
+			move_and_click(cord, 1)
+			move_and_click(cord, 1)
+			move_and_click(cord, 1)
+		move_and_click(potion_close, 1)
+
+	def potion_find(self, potion):
+		x, y, w, h = self.potion_crafting
+		fp = '{}{}/'.format(potion_dir,potion)
+		pages = 0
+		while pages < 5:
+			imgs = self.load_image_from_dir(fp)
+			self.get_color_image(x, y, w, h, 'potion_craft')
+			screen = cv2.imread('tmp_potion_craft.png')
+			for img in imgs:
+				result = cv2.matchTemplate(screen, img, method) # Does it match?
+				fres = np.where(result >= 0.95)
+				if fres[0].size == 0:
+					pass
+				elif fres[0].size > 1:
+					cord = (int(fres[1][0]+x), int(fres[0][0]+y))
+					#print("Potion: {} found @ {}".format(potion, cord))
+					return cord
+				else:
+					cord = (int(fres[1]+x), int(fres[0]+y))
+					#print("Potion: {} found @ {}".format(potion, cord))
+					return cord
+			pages += 1
+			move_and_click(potion_pg_dn, 1)
+		print("Didn't find {}".format(potion))
+		return False
+
+
+	def potion_brew(self):
+		x, y, w, h = self.potion_crafting
+		imgs = self.load_image_from_dir(self.brew_path)
+		self.get_color_image(x, y, w, h, 'potion_craft')
+		screen = cv2.imread('tmp_potion_craft.png')
+		for img in imgs:
+			result = cv2.matchTemplate(screen, img, method) # Does it match?
+			fres = np.where(result >= 0.95)
+			if fres[0].size == 0:
+				pass
+			elif fres[0].size > 1:
+				cord = (int(fres[1][0]+x), int(fres[0][0]+y))
+				return cord
+			else:
+				cord = (int(fres[1]+x), int(fres[0]+y))
+				return cord		
+		return False
 
 	def restock_state(self, building, img_path):
 		# mouseover building
@@ -593,8 +681,10 @@ class Craft():
 
 
 if __name__ == '__main__':
-	#zoom_out()
+	#refresh_checker()
+	nav_to_town()
 	crafter = Craft()
+	#crafter.craft_potion("incredible_potion_of_knockout")
 	crafter.water_level()
 	crafter.craft()
 	crafter.restock()
